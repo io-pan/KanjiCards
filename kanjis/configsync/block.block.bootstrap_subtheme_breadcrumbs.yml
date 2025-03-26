@@ -1,0 +1,26 @@
+uuid: 6ff88bc6-a201-413c-8892-6da76e64c70d
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - bootstrap_subtheme
+_core:
+  default_config_hash: cLEgLqfGgUPrrw9pC1IZ4q3MrB6Nfg710UX4uONnz_k
+id: bootstrap_subtheme_breadcrumbs
+theme: bootstrap_subtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /cards

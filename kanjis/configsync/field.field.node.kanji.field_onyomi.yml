@@ -1,0 +1,19 @@
+uuid: e3ff0afd-2820-4069-b850-dc75e3dca4d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onyomi
+    - node.type.kanji
+id: node.kanji.field_onyomi
+field_name: field_onyomi
+entity_type: node
+bundle: kanji
+label: onyomi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

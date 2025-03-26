@@ -1,0 +1,19 @@
+uuid: 72bece1f-7ec6-4854-819c-2eae84054fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_fa_icon
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.field_fa_icon
+field_name: field_fa_icon
+entity_type: taxonomy_term
+bundle: tags
+label: 'fa icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

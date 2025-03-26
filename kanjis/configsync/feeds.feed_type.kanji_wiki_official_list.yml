@@ -1,0 +1,119 @@
+uuid: 23a03f62-afbe-41af-af05-bf44da8cbd50
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.kanji.title
+    - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_radical_text
+    - field.field.node.kanji.field_strokes
+    - field.field.node.kanji.field_traduction_generale
+    - field.field.node.kanji.field_wiki_reading
+    - node.type.kanji
+  module:
+    - node
+label: 'kanji wiki official list'
+id: kanji_wiki_official_list
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: kanji
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  radical:
+    value: Radical
+    label: Radical
+    machine_name: radical
+    type: csv
+  strokes:
+    value: Strokes
+    label: Strokes
+    machine_name: strokes
+    type: csv
+  grade:
+    value: Grade
+    label: Grade
+    machine_name: grade
+    type: csv
+  english:
+    value: English
+    label: English
+    machine_name: english
+    type: csv
+  readings:
+    value: Readings
+    label: Readings
+    machine_name: readings
+    type: csv
+  kanji:
+    value: Kanji
+    label: Kanji
+    machine_name: kanji
+    type: csv
+mappings:
+  -
+    target: field_radical_text
+    map:
+      value: radical
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_strokes
+    map:
+      value: strokes
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_grade
+    map:
+      value: grade
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_traduction_generale
+    map:
+      value: english
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_wiki_reading
+    map:
+      value: readings
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: title
+    map:
+      value: kanji
+    settings:
+      language: null
+    unique:
+      value: 1

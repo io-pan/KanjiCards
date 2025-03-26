@@ -1,0 +1,26 @@
+uuid: 840e012b-861c-4fa6-af43-2e91afa33120
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.kanji
+  module:
+    - text
+_core:
+  default_config_hash: 4Wxs1LseZ8JsNwD9uJVIbzZqG35yQXN8Eo1Hub6NMuI
+id: node.kanji.body
+field_name: body
+entity_type: node
+bundle: kanji
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

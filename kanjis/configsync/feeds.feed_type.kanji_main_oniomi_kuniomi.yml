@@ -1,0 +1,238 @@
+uuid: a5e034a2-7c81-41b2-93fd-277c7b323987
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.kanji.title
+    - field.field.node.kanji.field_jlptn
+    - field.field.node.kanji.field_kunyomi
+    - field.field.node.kanji.field_kunyomi_traduction
+    - field.field.node.kanji.field_onyomi
+    - field.field.node.kanji.field_onyomi_example
+    - field.field.node.kanji.field_onyomi_traduction
+    - field.field.node.kanji.field_prefixe
+    - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_suffixe
+    - field.field.node.kanji.field_tags
+    - field.field.node.kanji.field_type
+    - node.type.kanji
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      6a1fa554-1067-4cdf-b6c7-957b22bb0b49:
+        find: ' '
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 6a1fa554-1067-4cdf-b6c7-957b22bb0b49
+        plugin: find_replace
+        source: tags
+        weight: 0
+        label: 'Find replace'
+      55d74459-0345-4cd8-ab2f-968c3175583c:
+        separator: ','
+        limit: null
+        uuid: 55d74459-0345-4cd8-ab2f-968c3175583c
+        plugin: explode
+        source: tags
+        weight: 1
+        label: Explode
+      a7856ea5-4536-466f-9e8d-ab97d201fd0b:
+        find: ' '
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: a7856ea5-4536-466f-9e8d-ab97d201fd0b
+        plugin: find_replace
+        source: type
+        weight: 0
+        label: 'Find replace'
+      4de24b58-36f7-45b9-8a96-d632f6ffdc58:
+        separator: ','
+        limit: null
+        uuid: 4de24b58-36f7-45b9-8a96-d632f6ffdc58
+        plugin: explode
+        source: type
+        weight: 1
+        label: Explode
+label: 'Kanji Main Oniomi Kuniomi'
+id: kanji_main_oniomi_kuniomi
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: kanji
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  rang:
+    value: rang
+    label: rang
+    machine_name: rang
+    type: csv
+  prefixe:
+    value: prefixe
+    label: prefixe
+    machine_name: prefixe
+    type: csv
+  kanji:
+    value: kanji
+    label: kanji
+    machine_name: kanji
+    type: csv
+  onyomi:
+    value: onyomi
+    label: onyomi
+    machine_name: onyomi
+    type: csv
+  onyomi_example:
+    value: onyomi_example
+    label: onyomi_example
+    machine_name: onyomi_example
+    type: csv
+  onyomi_traduction:
+    value: onyomi_traduction
+    label: onyomi_traduction
+    machine_name: onyomi_traduction
+    type: csv
+  kunyomi:
+    value: kunyomi
+    label: kunyomi
+    machine_name: kunyomi
+    type: csv
+  kunyomi_traduction:
+    value: kunyomi_traduction
+    label: kunyomi_traduction
+    machine_name: kunyomi_traduction
+    type: csv
+  tags:
+    value: tags
+    label: tags
+    machine_name: tags
+    type: csv
+  type:
+    value: type
+    label: type
+    machine_name: type
+    type: csv
+  jlptn:
+    value: JLPTN
+    label: JLPTN
+    machine_name: jlptn
+    type: csv
+mappings:
+  -
+    target: field_rang
+    map:
+      value: rang
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_prefixe
+    map:
+      value: prefixe
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: title
+    map:
+      value: kanji
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_suffixe
+    map:
+      value: ''
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_onyomi
+    map:
+      value: onyomi
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_onyomi_example
+    map:
+      value: onyomi_example
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_onyomi_traduction
+    map:
+      value: onyomi_traduction
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_kunyomi
+    map:
+      value: kunyomi
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_kunyomi_traduction
+    map:
+      value: kunyomi_traduction
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tags
+    map:
+      target_id: tags
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: tags
+  -
+    target: field_type
+    map:
+      target_id: type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: type
+  -
+    target: field_jlptn
+    map:
+      value: jlptn
+    settings:
+      language: null
+    unique: {  }

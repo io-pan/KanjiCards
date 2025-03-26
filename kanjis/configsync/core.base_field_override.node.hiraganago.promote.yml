@@ -1,0 +1,22 @@
+uuid: 9f47eb77-f6b8-4422-970a-54b2ed1427dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hiraganago
+id: node.hiraganago.promote
+field_name: promote
+entity_type: node
+bundle: hiraganago
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

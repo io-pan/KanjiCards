@@ -1,0 +1,11 @@
+uuid: 2311e531-73ed-4161-a4c5-ae8664d9c38e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.verso
+label: Verso
+description: ''
+targetEntityType: node
+cache: true

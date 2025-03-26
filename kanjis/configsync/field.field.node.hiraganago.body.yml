@@ -1,0 +1,26 @@
+uuid: a5b1c1a0-250e-421c-b390-e8f1b0dd576e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.hiraganago
+  module:
+    - text
+_core:
+  default_config_hash: 4Wxs1LseZ8JsNwD9uJVIbzZqG35yQXN8Eo1Hub6NMuI
+id: node.hiraganago.body
+field_name: body
+entity_type: node
+bundle: hiraganago
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

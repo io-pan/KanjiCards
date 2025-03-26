@@ -1,0 +1,20 @@
+uuid: 1ab7f946-018e-4870-af65-6ce8049ebd61
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: Fe3N1uqaAyyKJbVkqT-btXy3t98puW8GCRD822xjl10
+name: kanji
+type: kanji
+description: 'Use <em>kanjis</em> for time-sensitive content like news, press releases or blog posts.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

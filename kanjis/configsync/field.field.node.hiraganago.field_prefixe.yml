@@ -1,0 +1,19 @@
+uuid: fba3d529-4442-4785-9096-68193bf67fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prefixe
+    - node.type.hiraganago
+id: node.hiraganago.field_prefixe
+field_name: field_prefixe
+entity_type: node
+bundle: hiraganago
+label: prefixe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

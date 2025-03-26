@@ -1,0 +1,21 @@
+uuid: 049d5fa8-4a4a-4363-b5d1-de4eee75a325
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_traduction_generale
+field_name: field_traduction_generale
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

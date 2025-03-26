@@ -1,0 +1,26 @@
+uuid: 2b45fab2-3852-4a16-9b44-5e540b5560a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bootstrap_subtheme
+_core:
+  default_config_hash: G7iRe5JsYWmKYl4yfcpZg7OuM-dJHKsy_OvDuAine_g
+id: bootstrap_subtheme_primary_admin_actions
+theme: bootstrap_subtheme
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /cards

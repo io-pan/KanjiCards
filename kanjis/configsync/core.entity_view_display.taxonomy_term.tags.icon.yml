@@ -1,0 +1,32 @@
+uuid: 17934126-99f9-48a3-8c84-698bc3d695b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.icon
+    - field.field.taxonomy_term.tags.field_color
+    - field.field.taxonomy_term.tags.field_fa_icon
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.icon
+targetEntityType: taxonomy_term
+bundle: tags
+mode: icon
+content:
+  field_color:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  field_fa_icon:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  description: true

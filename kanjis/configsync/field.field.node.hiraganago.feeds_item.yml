@@ -1,0 +1,23 @@
+uuid: 60003ff4-2501-4b6d-b2ca-017664bd6345
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.hiraganago
+  module:
+    - feeds
+id: node.hiraganago.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: hiraganago
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

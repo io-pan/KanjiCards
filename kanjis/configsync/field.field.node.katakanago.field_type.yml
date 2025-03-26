@@ -1,0 +1,29 @@
+uuid: 0de72ade-9b9a-451c-8157-4ed167b2efc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.katakanago
+    - taxonomy.vocabulary.type
+id: node.katakanago.field_type
+field_name: field_type
+entity_type: node
+bundle: katakanago
+label: type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type: type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: tags
+field_type: entity_reference

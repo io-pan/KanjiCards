@@ -1,0 +1,20 @@
+uuid: 173753b5-ec45-49c1-9f81-0c82fa3a8ad9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_strokes
+field_name: field_strokes
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

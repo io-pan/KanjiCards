@@ -1,0 +1,30 @@
+
+{%
+  set classes = [
+    'cardid-' ~ node.id,
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+{% embed "olivero:teaser" with {
+  attributes: attributes.addClass(classes),
+  content,
+  label,
+  title_attributes,
+  title_prefix,
+  title_suffix,
+  } only %}
+  {% block prefix %}
+    {{ title_prefix }}
+    {{ title_suffix }}
+  {% endblock %}
+  {% block content %}
+      <div {{ title_attributes.addClass('node__title', 'teaser__title') }}>
+        {{ label }}
+      </div>
+    {{ content|without('links') }}
+  {% endblock %}
+{% endembed %}

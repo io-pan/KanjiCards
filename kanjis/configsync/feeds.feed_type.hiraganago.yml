@@ -1,0 +1,81 @@
+uuid: de48e7e3-3130-4c8d-bef9-a3a40218eea0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.hiraganago.title
+    - field.field.node.hiraganago.field_jlptn
+    - field.field.node.hiraganago.field_type
+    - node.type.hiraganago
+  module:
+    - node
+label: HiraganaGo
+id: hiraganago
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: hiraganago
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  hiraganago:
+    value: hiraganago
+    label: hiraganago
+    machine_name: hiraganago
+    type: csv
+  type:
+    value: type
+    label: type
+    machine_name: type
+    type: csv
+  jlptn:
+    value: JLPTN
+    label: JLPTN
+    machine_name: jlptn
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: hiraganago
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_type
+    map:
+      target_id: type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: type
+  -
+    target: field_jlptn
+    map:
+      value: jlptn
+    settings:
+      language: null
+    unique: {  }

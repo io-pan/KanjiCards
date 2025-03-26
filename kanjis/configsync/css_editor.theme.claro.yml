@@ -1,0 +1,5 @@
+path: 'public://css_editor\claro.css'
+enabled: true
+css: "input[id^=\"edit-title-0-\"][type=\"text\"],\r\n.views-field-title {\r\n      font-size: 50px;\r\n}"
+plaintext_enabled: false
+autopreview_enabled: false

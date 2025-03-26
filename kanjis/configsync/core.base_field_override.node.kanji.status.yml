@@ -1,0 +1,22 @@
+uuid: 04fdea4b-8666-43ee-8884-123a5248564d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.kanji
+id: node.kanji.status
+field_name: status
+entity_type: node
+bundle: kanji
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

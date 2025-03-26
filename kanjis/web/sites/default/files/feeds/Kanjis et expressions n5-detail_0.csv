@@ -1,0 +1,620 @@
+rang	prefixe	kanji	suffixe	onyomi	onyomi_example	onyomi_traduction	kunyomi	kunyomi_traduction	tags	type	JLPTN
+1		一		イチ			ひと(つ)		Count 	num	5
+2		二		ニ			ふた(つ)		Count 	num	5
+3		三		サン			み(っつ)		Count 	num	5
+4		四		シ			よ(っつ), よん		Count 	num	5
+5		五		ゴ			いつ(つ)		Count 	num	5
+6		六		ロク			む(っつ)、むい		Count 	num	5
+7		七		シチ			なな(つ), なな		Count 	num	5
+8		八		ハチ			や(っつ), よう		Count 	num	5
+9		九		キュウ, ク			ここの(つ)		Count 	num	5
+10		十		ジュウ			とう, とお		Count 	num	5
+11		百		ヒャク					Count 	num	5
+12		千		セン			ち		Count 	num	5
+13		万		マン					Count 	num	5
+14		億		オク					Count 	num	5
+15		日		ニチ, ジツ			ひ, か		Temps		5
+16		週		シュウ					Temps		5
+17		月		ゲツ, ガツ			つき		Temps		5
+18		年		ネン			とし		Temps	nom	5
+19		時		ジ		hour	とき	time, when 	Temps	nom	5
+20		間		カン			あいだ, ま		Temps, Spatial	adv	5
+21		分		ブン, フン, ブ		minute	わ(かる)	comprendre	Temps	nom	5
+22		午		ゴ			ご		Temps		5
+23		前		ゼン			まえ		Temps, Spatial	nom	5
+24		後		ゴ, コウ			あと, うし		Temps	nom	5
+25		今		コン			いま		Temps	nom	5
+26		先		セン			さき		Temps	nom	5
+27		来		ライ			く(る)		Temps		5
+28		毎		マイ			ごと		Temps	nom	5
+29		人		ジン, ニン			ひと		Personnes	nom	5
+30		男		ダン, ナン			おとこ		Personnes	nom	5
+31		女		ジョ			おんな		Personnes	nom	5
+32		子		シ			こ		Personnes		5
+33		母		ボ			はは		Personnes	nom	5
+34		父		フ			ちち		Personnes	nom	5
+35		友		ユウ			とも		Personnes, Lieu		5
+36		本		ホン			もと		Personnes, Lieu	nom	5
+37		気		キ					Personnes, Lieu		5
+38		生		セイ, ショウ			い(きる), う(まれる)		Personnes, Lieu		5
+39		車		シャ			くるま		Personnes, Lieu	nom	5
+40		語		ゴ			かた(る)		Personnes, Lieu		5
+41		耳		ジ			みみ		Anatomie	nom	5
+42		手		シュ			て		Anatomie	nom	5
+43		足		ソク			あし、た(す)		Anatomie	nom	5
+44		目		モク			め		Anatomie	nom	5
+45		口		コウ			くち		Anatomie	nom	5
+46		店		テン			みせ		Lieu	nom	5
+47		駅		エキ					Lieu	nom	5
+48		道		ドウ			みち		Lieu	nom	5
+49		国		コク			くに		Lieu	nom	5
+50		学		ガク			まな(ぶ)		Personnes, Lieu		5
+51		校		コウ					Personnes, Lieu		5
+52		名		メイ, ミョウ			な		Personnes, Lieu		5
+53		円		エン		yen	まる(い)	cercle (rond)	Personnes, Lieu	nom	5
+54		半		ハン			なか(ば)		Personnes, Lieu	nom	5
+55		全		ゼン			まった(く), すべて		Personnes, Lieu		5
+56		何		カ			なん, なに		Personnes, Lieu	question	5
+57		火		カ			ひ		Nature	nom	5
+58		水		スイ			みず		Nature	nom	5
+59		木		モク			き		Nature	nom	5
+60		金		キン			かね		Nature		5
+61		土		ド			つち		Nature	nom	5
+62		海		カイ			うみ		Nature	nom	5
+63		川		セン			かわ		Nature	nom	5
+64		山		サン			やま		Nature	nom	5
+65		花		カ			はな		Nature	nom	5
+66		天		テン			あめ, あま		Nature		5
+67		空		クウ			そら, あける		Nature	nom	5
+68		晴		セイ			は(れ)		Nature		5
+69		雨		ウ			あめ		Nature	nom	5
+70		雪		セツ			ゆき		Nature	nom	5
+71		雲		ウン			くも(い)	cloud (cloudy)	Nature	nom	5
+72		風		フウ			かぜ		Nature	nom	5
+73		電		デン					Nature		5
+74		外		ガイ			そと,はず(れる)		Spatial	nom	5
+75		内		ナイ			うち		Nature		5
+76		上		ジョウ			うえ, あ(げる)		Spatial	nom	5
+77		下		カ, ゲ			した、く(だる)			nom	5
+78		右		ユウ			みぎ		Nature	nom	5
+79		左		サ			ひだり		Nature	nom	5
+80		中		チュウ, ジュウ			なか		Spatial	nom	5
+81		北		ホク			きた		Spatial	nom	5
+82		西		セイ, サイ			にし		Spatial	nom	5
+83		東		トウ			ひがし		Spatial	nom	5
+84		南		ナン			みなみ		Spatial	nom	5
+85		見		ケン			み(る)			verb	5
+86		聞		モン, ブン			き(く)			verb	5
+87		書		ショ			か(く)			verb	5
+88		言		ゲン			い(う)	(to say)		verb	5
+89		話		ワ			はなし, はな(す)	story (to speak, to talk)		verb	5
+90		読		ドク			よ(む)			verb	5
+91		行		コウ			い(く), おこな(う)			verb	5
+92		買		バイ			か(う)			verb	5
+93		出		シュツ			で(る), だ(す)			verb	5
+94		入		ニュウ			はい(る), い(れる)			verb	5
+95		食		ショク			た(べる)			verb	5
+96		飲		イン			の(む)			verb	5
+97		休		キュウ			やす(む), やす(み)			verb	5
+98		会		カイ			あ(う)			verb	5
+99		多		タ			おお(い)			adj	5
+100		少		ショ	少年 		すこ(し), すく(ない)	un peu, peu		adv, adj	5
+101		古		コ			ふる(い)			adj	5
+102		新		シン			あたら(しい)			adj	5
+103		大		ダイ, タイ			おお(きい)	grand		adj	5
+104		小		ショウ			ちい(さい)、こ			adj	5
+105		長		チョウ			なが(い)	long		adj	5
+106		短		タン			みじか(い)			adj	5
+107		遠		エン			とお(い)			adj	5
+108		近		キン, コン			ちか(い)			adj	5
+109		白		ハク			しろ, しろ(い)			adj	5
+110		黒		コク			くろ、くろ(い)			adj	5
+111		高		コウ			たか(い)			adj	5
+112		安		アン	安心 tranquilité d’esprit. 安全 sécurité	tranquilité	やす(い)	cheap		adj	5
+113		秋					あき			nom	5
+114		朝					あさ			nom	5
+116		明後日					あさって	Après-demain		nom	5
+117		明日					あした	demain		nom	5
+118		頭					あたま	tête		nom	5
+119		兄					あに			nom	5
+120		姉					あね			nom	5
+122		飴					あめ			nom	5
+124		家		イエ 			うち	maison		nom	5
+125		居酒屋					いざかや	bar de rue		nom	5
+126		医者					いしゃ	médecin		nom	5
+127		椅子					いす	chaise		nom	5
+128		一日					いちにち			nom	5
+129		一番					いちばん			nom	5
+130		一緒					いっしょ			nom	5
+131		犬					いぬ			nom	5
+132		意味					いみ			nom	5
+133		妹					いもうと		Famille	nom	5
+134		入口					いりぐち			nom	5
+135		色					いろ			nom	5
+136		色々					いろいろ			nom	5
+138		受付					うけつけ			nom	5
+139		後ろ					うしろ			nom	5
+140		歌					うた			nom	5
+141		上着					うわぎ			nom	5
+142		絵					え			nom	5
+143		映画					えいが			nom	5
+144		映画館					えいがかん			nom	5
+145		英語					えいご			nom	5
+147		鉛筆					えんぴつ			nom	5
+148		大勢					おおぜい			nom	5
+149		お母さん					おかあさん			nom	5
+150		お菓子					おかし			nom	5
+151		お金					おかね			nom	5
+152		お酒					おさけ			nom	5
+154		伯父					おじさん			nom	5
+155		お茶					おちゃ			nom	5
+156		夫					おっと			nom	5
+157		お手洗い					おてあらい			nom	5
+158		お寺					おてら			nom	5
+159		お父さん					おとうさん			nom	5
+160		弟					おとうと			nom	5
+161		男の子					おとこのこ			nom	5
+162		一昨日					おととい			nom	5
+163		一昨年					おととし			nom	5
+164		大人					おとな			nom	5
+165		お腹					おなか			nom	5
+166		同じ					おなじ			nom	5
+167		お兄さん					おにいさん			nom	5
+168		お姉さん					おねえさん			nom	5
+170		伯母					おばさん			nom	5
+171		音楽					おんがく			nom	5
+172		女の子					おんなのこ		Personnes	nom	5
+173		外国					がいこく			nom	5
+174		外国人					がいこくじん			nom	5
+175		会社					かいしゃ			nom	5
+176		階段					かいだん			nom	5
+177		買い物					かいもの			nom	5
+178		顔					かお			nom	5
+179		鍵					かぎ			nom	5
+180		学生					がくせい			nom	5
+181		傘					かさ			nom	5
+182		風邪					かぜ			nom	5
+183		家族					かぞく			nom	5
+184		片仮名					カタカナ			nom	5
+185		学校					がっこう			nom	5
+186		家庭					かてい			nom	5
+187		角					かど			nom	5
+188		彼女					かのじょ			pronom	5
+190		花瓶					かびん			nom	5
+191		紙					かみ			nom	5
+193		体					からだ			nom	5
+195		彼氏					かれし			nom	5
+197		側					がわ			nom	5
+198		漢字					かんじ			nom	5
+200		喫茶店					きっさてん			nom	5
+202		切手					きって			nom	5
+203		切符					きっぷ			nom	5
+204		昨日					きのう			nom	5
+205		牛肉					ぎゅうにく			nom	5
+206		牛乳					ぎゅうにゅう			nom	5
+207		今日					きょう			nom	5
+208		教室					きょうしつ			nom	5
+209		兄弟					きょうだい			nom	5
+210		去年					きょねん			nom	5
+211		綺麗					きれい			nom	5
+213		銀行					ぎんこう			nom	5
+214		空港					くうこう			nom	5
+215		薬					くすり			nom	5
+216		果物					くだもの			nom	5
+217		靴					くつ			nom	5
+218		靴下					くつした			nom	5
+219		靴屋					くつや			nom	5
+222		警官					けいかん			nom	5
+223		今朝					けさ			nom	5
+224		消しゴム					けしごむ			nom	5
+225		結婚					けっこん			nom	5
+226		玄関					げんかん			nom	5
+227		公園					こうえん			nom	5
+228		交差点					こうさてん			nom	5
+229		紅茶					こうちゃ			nom	5
+230		交番					こうばん			nom	5
+231		声					こえ			nom	5
+234		午後					ごご			nom	5
+235		午前					ごぜん			nom	5
+237		今年					ことし			nom	5
+238		言葉					ことば			nom	5
+239		子供					こども			nom	5
+240		御飯					ごはん			nom	5
+241		今月					こんげつ			nom	5
+242		今週					こんしゅう			nom	5
+243		今晩					こんばん			nom	5
+245		最後					さいご			nom	5
+246		財布					さいふ			nom	5
+247		魚					さかな			nom	5
+248		作文					さくぶん			nom	5
+250		雑貨屋					ざっかや			nom	5
+251		雑誌					ざっし			nom	5
+252		砂糖					さとう			nom	5
+253		皿					さら			nom	5
+254		再来年					さらいねん			nom	5
+256		散歩					さんぽ			nom	5
+257		塩					しお			nom	5
+258		時間					じかん			nom	5
+259		仕事					しごと			nom	5
+260		辞書					じしょ			nom	5
+261		静か					しずか			nom	5
+262		質問					しつもん			nom	5
+263		自転車					じてんしゃ			nom	5
+264		自動車					じどうしゃ			nom	5
+265		写真					しゃしん			nom	5
+269		週末					しゅうまつ			nom	5
+270		授業					じゅぎょう			nom	5
+271		宿題					しゅくだい			nom	5
+272		醤油					しょうゆ			nom	5
+273		食堂					しょくどう			nom	5
+274		神社					じんじゃ			nom	5
+275		新聞					しんぶん			nom	5
+278		寿司屋					すしや			nom	5
+284		背					せ			nom	5
+285		生徒					せいと			nom	5
+287		石鹸					せっけん			nom	5
+288		背広					せびろ			nom	5
+290		先月					せんげつ			nom	5
+291		先週					せんしゅう			nom	5
+292		先生					せんせい			nom	5
+293		洗濯					せんたく			nom	5
+294		全部					ぜんぶ			nom	5
+295		掃除					そうじ			nom	5
+296		側					そば			nom	5
+297		大学					だいがく			nom	5
+298		大使館					たいしかん			nom	5
+299		大丈夫					だいじょうぶ			nom	5
+300		台所					だいどころ			nom	5
+302		縦					たて			nom	5
+303		建物					たてもの			nom	5
+305		食べ物					たべもの			nom	5
+306		卵					たまご			nom	5
+307		誕生日					たんじょうび			nom	5
+308		地下鉄					ちかてつ			nom	5
+309		地球					ちきゅう			nom	5
+310		地図					ちず			nom	5
+311		茶色					ちゃいろ			nom	5
+312		中国					ちゅうごく			nom	5
+313		次					つぎ			nom	5
+314		机					つくえ			nom	5
+315		妻					つま			nom	5
+318		手紙					てがみ			nom	5
+319		出口					でぐち			nom	5
+324		天気					てんき			nom	5
+325		電気					でんき			nom	5
+326		電車					でんしゃ			nom	5
+327		電話					でんわ			nom	5
+328		戸					と			nom	5
+331		動物					どうぶつ			nom	5
+332		時計					とけい			nom	5
+333		所					ところ			nom	5
+334		図書館					としょかん			nom	5
+336		隣					となり			nom	5
+337		友達					ともだち			nom	5
+338		鳥					とり			nom	5
+339		鶏肉					とりにく			nom	5
+341		夏					なつ			nom	5
+342		夏休み					なつやすみ			nom	5
+343		何も〜ない					なにも〜ない			nom	5
+344		名前					なまえ			nom	5
+345		肉					にく			nom	5
+346		二番					にばん			nom	5
+347		日本					にほん			nom	5
+348		日本語					にほんご			nom	5
+349		日本酒					にほんしゅ			nom	5
+350		荷物					にもつ			nom	5
+352		庭					にわ			nom	5
+354		猫					ねこ			nom	5
+356		飲み物					のみもの			nom	5
+357		歯					は			nom	5
+359		灰皿					はいざら			nom	5
+361		箱					はこ			nom	5
+362		橋					はし			nom	5
+363		箸					はし			nom	5
+364		初め, 始め					はじめ			nom	5
+366		停					てい	バス停		nom	5
+369		二十歳					はたち			nom	5
+370		鼻					はな			nom	5
+371		花火					はなび			nom	5
+372		花屋					はなや			nom	5
+373		春					はる			nom	5
+374		晩					ばん			nom	5
+377		番号					ばんごう			nom	5
+379		半分					はんぶん			nom	5
+381		飛行機					ひこうき			nom	5
+382		一人					ひとり			nom	5
+383		病院					びょういん			nom	5
+384		病気					びょうき			nom	5
+385		平仮名					ひらがな			nom	5
+386		昼					ひる			nom	5
+388		封筒					ふうとう			nom	5
+391		服					ふく			nom	5
+392		服屋					ふくや			nom	5
+393		豚肉					ぶたにく			nom	5
+394		二人					ふたり			nom	5
+395		冬					ふゆ			nom	5
+396	お	風呂					ふろ			nom	5
+397		文章					ぶんしょう			nom	5
+401		部屋					へや			nom	5
+402		辺					へん			nom	5
+404		勉強					べんきょう			nom	5
+405	お	弁当					べんとう			nom	5
+406		方					ほう			nom	5
+407		帽子					ぼうし			nom	5
+409		他					ほか			nom	5
+414		本棚					ほんだな	bibliothèque		nom	5
+415		本当					ほんとう ほんとうに	Vérité,  vraiment sérieusement		nom, adv	5
+416		本屋					ほんや	librairie		nom	5
+417		毎朝					まいあさ			nom	5
+418		毎週					まいしゅう			nom	5
+419		毎月					まいつき			nom	5
+420		毎年					まいとし			nom	5
+421		毎日					まいにち			nom	5
+422		毎晩					まいばん			nom	5
+423		町					まち	ville		nom	5
+425		窓					まど			nom	5
+426		緑					みどり			nom	5
+427		港					みなと			nom	5
+428		皆					みんな			nom	5
+429		向こう					むこう			nom	5
+430		村					むら			nom	5
+432		眼鏡					めがね			nom	5
+434		物					もの			nom	5
+435		問題					もんだい			nom	5
+436		野菜					やさい			nom	5
+437		矢印					やじるし			nom	5
+438		休み					やすみ			nom	5
+439		夕方					ゆうがた			nom	5
+440		夕飯					ゆうはん			nom	5
+441		郵便局					ゆうびんきょく			nom	5
+442		昨夜, 夕べ					ゆうべ			nom	5
+443		洋服					ようふく			nom	5
+444		横					よこ			nom	5
+445		夜					よる			nom	5
+447		来月					らいげつ			nom	5
+448		来週					らいしゅう			nom	5
+449		来年					らいねん			nom	5
+451		留学生					りゅうがくせい			nom	5
+452		両親					りょうしん			nom	5
+453		料理					りょうり			nom	5
+454		旅行					りょこう			nom	5
+455		零					れい			nom	5
+456		冷蔵庫					れいぞうこ			nom	5
+458		練習					れんしゅう			nom	5
+459		廊下					ろうか			nom	5
+462		月曜日					げつようび			nom	5
+463		火曜日					かようび			nom	5
+464		水曜日					すいようび			nom	5
+465		木曜日					もくようび			nom	5
+466		金曜日					きんようび			nom	5
+467		土曜日					どようび			nom	5
+468		日曜日					にちようび			nom	5
+469		一月					いちがつ			nom	5
+470		二月					にがつ			nom	5
+471		三月					さんがつ			nom	5
+472		四月					しがつ			nom	5
+473		五月					ごがつ			nom	5
+474		六月					ろくがつ			nom	5
+475		七月					しちがつ, なながつ			nom	5
+476		八月					はちがつ			nom	5
+477		九月					くがつ			nom	5
+478		十月					じゅうがつ			nom	5
+479		十一月					じゅういちがつ			nom	5
+480		十二月					じゅうにがつ			nom	5
+481		会う					あう			verb	5
+482		開く					あく			verb	5
+483		開ける					あける			verb	5
+484		上げる					あげる			verb	5
+486		遊ぶ					あそぶ			verb	5
+487		浴びる					あびる			verb	5
+488		洗う					あらう			verb	5
+490		歩く					あるく			verb	5
+491		行く					いく			verb	5
+493		要る					いる			verb	5
+494		入れる					いれる			verb	5
+495		歌う					うたう			verb	5
+496		生まれる					うまれる			verb	5
+497		売る					うる			verb	5
+498		起きる					おきる			verb	5
+499		置く					おく			verb	5
+500		教える					おしえる			verb	5
+501		押す					おす			verb	5
+502		覚える					おぼえる			verb	5
+503		泳ぐ					およぐ			verb	5
+504		降りる					おりる			verb	5
+505		終わる					おわる			verb	5
+506		返す					かえす			verb	5
+507		帰る					かえる			verb	5
+510		貸す					か(す)			verb	5
+511		被					かぶる			verb	5
+512		借りる					かりる			verb	5
+513		消える					きえる			verb	5
+514		聞く					きく			verb	5
+515		切る					きる			verb	5
+516		着る					きる			verb	5
+518		来る					くる			verb	5
+519		消す					けす			verb	5
+520		答える					こたえる			verb	5
+522		困る					こまる			verb	5
+523		咲く					さく			verb	5
+524		死ぬ					しぬ			verb	5
+525		閉まる					しまる			verb	5
+526		閉める					しめる			verb	5
+527		締める					しめる			verb	5
+528		知る					しる			verb	5
+529		吸う					すう			verb	5
+530		住む					すむ			verb	5
+532		座る					すわる			verb	5
+533		出す					だす			verb	5
+534		立つ					たつ			verb	5
+535		頼む					たのむ			verb	5
+536		食べる					たべる			verb	5
+537		違う					ちがう			verb	5
+538		使う					つかう			verb	5
+539		疲れる					つかれる			verb	5
+540		着く					つく			verb	5
+541		作る					つくる			verb	5
+543		勤める					つとめる			verb	5
+544		出かける					でかける			verb	5
+545		出来る					できる			verb	5
+546		出る					でる			verb	5
+547		飛ぶ					とぶ			verb	5
+548		止まる					とまる			verb	5
+549		取る					とる			verb	5
+550		撮る					とる			verb	5
+551		鳴く					なく			verb	5
+552		無くす					なくす			verb	5
+553		習う					ならう			verb	5
+554		並ぶ					ならぶ			verb	5
+555		並べる					ならべる			verb	5
+556		成る					なる			verb	5
+557		脱ぐ					ぬぐ			verb	5
+558		寝る					ねる			verb	5
+559		登る					のぼる			verb	5
+560		飲む					のむ			verb	5
+561		乗る					のる			verb	5
+562		入る					はいる			verb	5
+563		履く					はく			verb	5
+564		始まる					はじまる			verb	5
+565		走る					はしる			verb	5
+566		働く					はたらく			verb	5
+567		貼る					はる			verb	5
+568		晴れ					はれ			verb	5
+569		引く					ひく			verb	5
+570		弾く					ひく			verb	5
+571		吹く					ふく			verb	5
+572		降る					ふる			verb	5
+573		曲がる					まがる			verb	5
+574		待つ					まつ			verb	5
+575		磨く					みがく			verb	5
+576		見せる					みせる			verb	5
+577		見る					みる			verb	5
+578		持つ					もつ			verb	5
+579		休む					やすむ			verb	5
+581		呼ぶ					よぶ			verb	5
+582		読む					よむ			verb	5
+583		分かる					わかる			verb	5
+584		忘れる					わすれる			verb	5
+585		渡す					わたす			verb	5
+586		渡る					わたる			verb	5
+587		青					あお ~い			adj	5
+588		赤					あか ~い			adj	5
+589		明るい					あか(るい)	brillant		adj	5
+590		暖かい					あたた(かい)	chaud		adj	5
+591		新しい					あたらしい			adj	5
+592		暑		ショ			あつ(い)	chaud (désagréable)		adj	5
+593		熱					あつ(い)	Très chaud (aliment, objets)		adj	5
+594		厚					あつ(い)	épais (livre, sentiments profonds)		adj	5
+595		危					あぶ(ない)	dangereux		adj	5
+596		甘					あま(い)	Doux, sucré (aussi fig. personne)		adj	5
+598		良					い(い), よ(い)	bon, bien		adj	5
+599		忙					いそが(しい)	occupé		adj	5
+600		痛					いた(い)	douloureux		adj	5
+601		嫌					いや, きら(い)	détestable, désagréable 		adj	5
+602		薄					うす(い)	Mince, fin, clair, dilué, pale		adj	5
+604		美味しい					おいしい	délicieux		adj	5
+605		多		タ	多分		おお(い)	beaucoup		adj	5
+607		遅					おそ(い)	lent		adj	5
+608		重					おも(い)	lourd		adj	5
+609		面白					おもしろ(い)	amusant, intéressant		adj	5
+610		辛					から(い)	dur, pénible, douloureux		adj	5
+611		軽					かる(い)	léger 		adj	5
+612		可愛					かわい(い)	mignon		adj	5
+613		黄色					きいろ(い)	jaune		adj	5
+614		汚					きたな(い)	sale		adj	5
+616		暗					くら(い)	sombre		adj	5
+617		黒					くろ(い)	noir		adj	5
+618		元気					げんき	bonne santé, énergique dynamique 		adj	5
+619		寒					さむい	° froid		adj	5
+620		上手					じょうず	Compétent, habile, doué		adj	5
+621		丈夫					じょうぶ	durable		adj	5
+622		白					しろ(い)	blanc		adj	5
+623		好					す(き)	aimer, préférer		adj	5
+624		涼					すず(しい)	frais		adj	5
+625		狭					せま(い)	exigu 		adj	5
+626		大好					だいす(き)	j’adore		adj	5
+627		大切					たいせつ	important		adj	5
+629		楽しい					たのしい	amusant		adj	5
+631		近					ちか(い)	fermé		adj	5
+633		冷					つめ(たい)	froid (qq ch)		adj	5
+634		強					つよ(い)	fort		adj	5
+635		無					ない	rien		adj	5
+638		早					はや(い), はや(く)	tôt, précoce 		adj	5
+639		速					はや(い), はや(く)	rapide, rapidement		adj	5
+640		低					ひく(い)	Bas, faible, bas niveau, inférieur 		adj	5
+641		暇					ひま	libre		adj	5
+642		広					ひろ(い)	large		adj	5
+643		太					ふと(い)	gros		adj	5
+644		古					ふる(い)	vieux		adj	5
+645		下手					へた	pauvre		adj	5
+646		便利					べんり	pratique		adj	5
+647		欲					ほ(しい)	désirable (vouloir un objet)		adj	5
+648		細					ほそ(い)	mince, étroit, fin		adj	5
+650		丸					まる(い)	cercle (circulaire)		adj, nom	5
+651		短		タン	短期　court terme 		みじか(い)	court		adj	5
+652		難					むずか(しい)	difficile		adj	5
+653		易					やさ(しい)	facile, agréable, gentil		adj	5
+654		有名					ゆうめい	Célèbre, bien connu, renommé 		adj	5
+655		弱					よわ(い)	Faible, fragile, doux, timide		adj	5
+656		立派					りっぱ	magnifique, impressionnant, digne		adj	5
+657		若					わか(い)	jeune		adj	5
+658		悪					わる(い)	mauvais, méchant		adj	5
+679		結構					けっこう	Assez, suffisant		adv	5
+681		大変					たいへん	Difficile, sérieux, grave 		adv	5
+683		多分					たぶん	Peut-être		adv	5
+685		丁度					ちょうど	exactement, juste", pile, au moment précis		adv	5
+689		時々					ときどき	parfois		adv	5
+696		何でも					なんでも	rien		adv	5
+697		初めて					はじめて	Pour la première fois		adv	5
+701		真っ直ぐ					まっすぐ	Droit, tout droit, sans déviation		adv	5
+706		一つ					ひとつ		Count 	cont	5
+707		二つ					ふたつ		count	cont	5
+708		三つ					みっつ		count	cont	5
+709		四つ					よっつ		count	cont	5
+710		五つ					いつつ		count	cont	5
+711		六つ					むっつ		count	cont	5
+712		七つ					ななつ		count	cont	5
+713		八つ					やっつ		count	cont	5
+714		九つ					ここのつ		count	cont	5
+715		一日					ついたち		count	cont	5
+716		二日					ふつか		count	cont	5
+717		三日					みっか		count	cont	5
+718		四日					よっか		count	cont	5
+719		五日					いつか		count	cont	5
+720		六日					むいか		count	cont	5
+721		七日					なのか		count	cont	5
+722		八日					ようか		count	cont	5
+723		九日					ここのか		count	cont	5
+724		十日					とおか		count	cont	5
+725		二十日					はつか		count	cont	5
+726		～ヶ月					～かげつ		count	cont	5
+727		～回					～かい		count	cont	5
+728		～階					～かい		count	cont	5
+729		～個					～こ		count	cont	5
+730		～歳, 〜才					～さい		count	cont	5
+731		～冊					～さつ		count	cont	5
+732		〜時					～じ		count	cont	5
+733		～週間					～しゅうかん		count	cont	5
+734		～人					～にん		count	cont	5
+735		～台					～だい		count	cont	5
+736		～日					～にち		count	cont	5
+737		～年					～ねん		count	cont	5
+738		～杯					～はい		count	cont	5
+739		～匹					～ひき		count	cont	5
+740		～分					～ふん		count	cont	5
+741		～本					～ほん		count	cont	5
+742		～枚					～まい		count	cont	5
+748		自分					じぶん		Personnes	pronom	5
+749		私					わたし		Personnes	pronom	5
+750		私達					わたしたち		Personnes	pronom	5
+751		俺					おれ		Personnes	pronom	5
+752		僕					ぼく		Personnes	pronom	5
+755		君					きみ		Personnes	pronom	5
+756		君たち					きみたち		Personnes	pronom	5
+757		彼					かれ		Personnes	pronom	5
+758		彼ら					かれら		Personnes	pronom	5
+759		彼女たち					かのじょたち		Personnes	pronom	5
+760		誰か					だれか		Personnes	pronom	5
+761		誰でも					だれでも		Personnes	pronom	5
+762		誰も〜ない					だれも〜ない		Personnes	pronom	5
+766		誰					だれ  だれも〜ない		Personnes	question	5

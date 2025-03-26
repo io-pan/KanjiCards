@@ -1,0 +1,164 @@
+uuid: 6e36a78b-d679-4a1a-a014-0a9ca12c5aa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.recto
+    - field.field.node.katakanago.body
+    - field.field.node.katakanago.feeds_item
+    - field.field.node.katakanago.field_image
+    - field.field.node.katakanago.field_jlptn
+    - field.field.node.katakanago.field_rang
+    - field.field.node.katakanago.field_tags
+    - field.field.node.katakanago.field_traduction_generale
+    - field.field.node.katakanago.field_type
+    - node.type.katakanago
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_front:
+      children:
+        - field_katakanago_jlpn
+        - field_katakanago
+      label: front
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: front
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_back:
+      children:
+        - group_categories
+        - field_image
+      label: Back
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: back
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_categories:
+      children:
+        - field_tags
+        - field_type
+        - field_jlpn
+      label: categories
+      parent_name: group_back
+      region: content
+      weight: 16
+      format_type: html_element
+      format_settings:
+        classes: categories
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
+id: node.katakanago.recto
+targetEntityType: node
+bundle: katakanago
+mode: recto
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_katakanago:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_katakanago_jlpn:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_origine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_jlptn: true
+  field_kunyomi: true
+  field_kunyomi_traduction: true
+  field_onyomi: true
+  field_onyomi_example: true
+  field_onyomi_traduction: true
+  field_rang: true
+  links: true

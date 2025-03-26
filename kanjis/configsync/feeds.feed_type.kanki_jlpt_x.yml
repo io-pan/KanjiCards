@@ -1,0 +1,80 @@
+uuid: 41ff84b6-cbba-4737-9721-f95804065b6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.kanji.title
+    - field.field.node.kanji.field_jlptn
+    - field.field.node.kanji.field_jlptn_kanji
+    - node.type.kanji
+  module:
+    - node
+label: 'kanki jlpt x'
+id: kanki_jlpt_x
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: kanji
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  kanji:
+    value: Kanji
+    label: Kanji
+    machine_name: kanji
+    type: csv
+  jlptn:
+    value: JLPTN
+    label: JLPTN
+    machine_name: jlptn
+    type: csv
+  jlptn_kanji:
+    value: JLPTN_kanji
+    label: JLPTN_kanji
+    machine_name: jlptn_kanji
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: kanji
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_jlptn
+    map:
+      value: jlptn
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_jlptn_kanji
+    map:
+      value: jlptn_kanji
+    settings:
+      language: null
+    unique: {  }

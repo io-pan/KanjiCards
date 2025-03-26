@@ -1,0 +1,19 @@
+uuid: 903be772-7e78-4d74-bb46-96074f21c702
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.type
+id: taxonomy_term.type.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: type
+label: color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

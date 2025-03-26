@@ -1,0 +1,18 @@
+uuid: 35f97d46-41db-42c5-8417-f93276b036f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.katakanago
+id: node.katakanago.title
+field_name: title
+entity_type: node
+bundle: katakanago
+label: katakanago
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

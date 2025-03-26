@@ -1,0 +1,286 @@
+uuid: 4fa7a7bf-96bf-4ba0-a7f0-17a5d56cc16a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.katakanago.body
+    - field.field.node.katakanago.feeds_item
+    - field.field.node.katakanago.field_image
+    - field.field.node.katakanago.field_jlptn
+    - field.field.node.katakanago.field_rang
+    - field.field.node.katakanago.field_tags
+    - field.field.node.katakanago.field_traduction_generale
+    - field.field.node.katakanago.field_type
+    - image.style.wide
+    - node.type.katakanago
+  module:
+    - field_group
+    - file
+    - image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_recto:
+      children:
+        - group_front
+        - group_back
+      label: Recto
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: recto
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_verso:
+      children:
+        - group_front_verso
+        - group_back_verso
+      label: Verso
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: verso
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_front:
+      children: {  }
+      label: front
+      parent_name: group_recto
+      region: content
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: front
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_front_verso:
+      children: {  }
+      label: front
+      parent_name: group_verso
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: front
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_back:
+      children:
+        - group_categories
+        - field_image
+      label: back
+      parent_name: group_recto
+      region: content
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: back
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_back_verso:
+      children:
+        - body
+      label: back
+      parent_name: group_verso
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: back
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_categories:
+      children:
+        - field_tags
+        - field_type
+        - field_jlptn
+        - field_jlpn
+      label: categories
+      parent_name: group_back
+      region: content
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: categories
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
+id: node.katakanago.full
+targetEntityType: node
+bundle: katakanago
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_jlptn:
+    type: file_size
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_katakanago:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_katakanago_jlpn:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_kunyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_kunyomi_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_onyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_onyomi_example:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_onyomi_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_origine:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  feeds_item: true
+  field_rang: true
+  field_traduction_generale: true
+  links: true

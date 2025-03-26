@@ -1,0 +1,22 @@
+<?php
+
+function bootstrap_subtheme_preprocess_views_view(&$variables) {
+ 	if ($variables['view']->id()=="cards") {
+		//  $pager = \Drupal\views\Views::getView('cards')->getDisplay('page_recto')->options['pager'];
+		// // var_dump($variables['view']->current_display);
+		//  var_dump($pager);
+		//  	if ($variables['view']->current_display=="verso_att"){
+		// var_dump($variables['view']->getDisplay('verso_att')->options['pager']);
+		// die();	
+		// }
+
+		$settings = \Drupal::config('print.settings');
+  	$variables['#attached']['drupalSettings']['printSettings'] = [
+  		'marginT' => $settings->get('marginT'),
+  		'marginB' => $settings->get('marginB'),
+  		'marginW' => $settings->get('marginW')
+  	];
+  	$variables['#cache']['tags'] = $settings->getCacheTags();
+
+  }
+}

@@ -1,0 +1,19 @@
+uuid: 710760d4-5e4d-4c8e-9899-a6d830123525
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traduction_generale
+    - node.type.katakanago
+id: node.katakanago.field_traduction_generale
+field_name: field_traduction_generale
+entity_type: node
+bundle: katakanago
+label: traduction_generale
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 5519287c-54bc-410d-a7cc-f339f2eed054
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_jlptn_kanji
+field_name: field_jlptn_kanji
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

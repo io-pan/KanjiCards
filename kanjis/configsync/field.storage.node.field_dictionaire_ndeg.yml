@@ -1,0 +1,20 @@
+uuid: 5ab7979f-c811-45bc-bbba-3ddb1e3acc9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_dictionaire_ndeg
+field_name: field_dictionaire_ndeg
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

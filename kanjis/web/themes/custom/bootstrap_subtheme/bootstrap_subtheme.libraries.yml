@@ -1,0 +1,18 @@
+global-styling:
+  version: VERSION
+  js:
+    js/global.js: {}
+  css:
+    component:
+      css/style.css: { weight: 100 }
+      css/colors.css: { weight: 99 }
+  dependencies:
+    - core/drupal
+    - core/once
+
+fontawesome:
+  js:
+    /libraries/fontawesome-free-6.7.2-web/js/all.js: { weight: -4, minified: true }
+  css:
+    component:
+      /libraries/fontawesome-free-6.7.2-web/css/all.css: { weight: 100 }

@@ -1,0 +1,19 @@
+uuid: d1a615f7-33b9-4c31-9d03-99fbe0908a1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade
+    - node.type.kanji
+id: node.kanji.field_grade
+field_name: field_grade
+entity_type: node
+bundle: kanji
+label: Grade
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

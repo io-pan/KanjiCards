@@ -1,0 +1,19 @@
+uuid: 0608f373-a21c-489c-b08e-0e531cf37d90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_radical_text
+    - node.type.kanji
+id: node.kanji.field_radical_text
+field_name: field_radical_text
+entity_type: node
+bundle: kanji
+label: 'radical text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

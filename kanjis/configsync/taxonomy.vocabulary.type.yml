@@ -1,0 +1,9 @@
+uuid: 695f38d7-ddb1-4132-90a8-735f7c7c4c20
+langcode: en
+status: true
+dependencies: {  }
+name: type
+vid: type
+description: 'non, verb, adj ...'
+weight: 0
+new_revision: false

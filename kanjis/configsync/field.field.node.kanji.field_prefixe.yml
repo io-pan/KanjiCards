@@ -1,0 +1,19 @@
+uuid: 9e489ba1-aa3f-4859-b63f-862cb1ea797b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prefixe
+    - node.type.kanji
+id: node.kanji.field_prefixe
+field_name: field_prefixe
+entity_type: node
+bundle: kanji
+label: prefixe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

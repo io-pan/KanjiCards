@@ -1,0 +1,178 @@
+uuid: 77f66cdc-5147-4207-bbe7-5800ccc9d245
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.kanji.body
+    - field.field.node.kanji.feeds_item
+    - field.field.node.kanji.field_dictionaire_ndeg
+    - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_image
+    - field.field.node.kanji.field_jlptn
+    - field.field.node.kanji.field_jlptn_kanji
+    - field.field.node.kanji.field_kunyomi
+    - field.field.node.kanji.field_kunyomi_example
+    - field.field.node.kanji.field_kunyomi_traduction
+    - field.field.node.kanji.field_okurigana
+    - field.field.node.kanji.field_onyomi
+    - field.field.node.kanji.field_onyomi_example
+    - field.field.node.kanji.field_onyomi_traduction
+    - field.field.node.kanji.field_prefixe
+    - field.field.node.kanji.field_radical_text
+    - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_strokes
+    - field.field.node.kanji.field_suffixe
+    - field.field.node.kanji.field_tags
+    - field.field.node.kanji.field_traduction_generale
+    - field.field.node.kanji.field_type
+    - field.field.node.kanji.field_wiki_reading
+    - node.type.kanji
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_front:
+      children:
+        - field_kanji_jlpn
+        - field_kanji
+      label: front
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: front
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_back:
+      children:
+        - group_categories
+        - field_image
+      label: Back
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: back
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_categories:
+      children:
+        - field_tags
+        - field_type
+        - field_origine
+        - field_jlpn
+      label: categories
+      parent_name: group_back
+      region: content
+      weight: 16
+      format_type: html_element
+      format_settings:
+        classes: categories
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
+id: node.kanji.teaser
+targetEntityType: node
+bundle: kanji
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_prefixe:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_suffixe:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_dictionaire_ndeg: true
+  field_grade: true
+  field_jlptn: true
+  field_jlptn_kanji: true
+  field_kunyomi: true
+  field_kunyomi_example: true
+  field_kunyomi_traduction: true
+  field_okurigana: true
+  field_onyomi: true
+  field_onyomi_example: true
+  field_onyomi_traduction: true
+  field_radical_text: true
+  field_rang: true
+  field_strokes: true
+  field_wiki_reading: true
+  links: true

@@ -1,0 +1,23 @@
+uuid: 10ac0b5b-9111-42a2-9027-290ac60b3639
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dictionaire_ndeg
+    - node.type.kanji
+id: node.kanji.field_dictionaire_ndeg
+field_name: field_dictionaire_ndeg
+entity_type: node
+bundle: kanji
+label: 'dictionaire n°'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

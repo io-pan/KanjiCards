@@ -1,0 +1,20 @@
+print.settings:
+  type: config_object
+  label: 'Print settings'
+  mapping:
+    marginT:
+      type: string
+      label: 'printer margin top'
+    marginB:
+      type: string
+      label: 'printer margin bottom'
+    marginW:
+      type: string
+      label: 'printer margin width' # on fait du recto verso => on prend la marge max gauche/droite pour les 2 cotés.
+
+    versoOffsetY:
+      type: string
+      label: 'printer offset Y for verso'
+    versoOffsetX:
+      type: string
+      label: 'printer offset X for verso'

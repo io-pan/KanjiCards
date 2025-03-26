@@ -1,0 +1,4 @@
+input[id^="edit-title-0-"][type="text"],
+.views-field-title {
+      font-size: 50px;
+}

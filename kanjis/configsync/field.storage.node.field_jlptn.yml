@@ -1,0 +1,20 @@
+uuid: ede169d1-044d-4e9c-b0a1-2e018b7b81a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_jlptn
+field_name: field_jlptn
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: a7761f5f-4275-4a80-88ac-87007cf7ab3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jlptn
+    - node.type.kanji
+id: node.kanji.field_jlptn
+field_name: field_jlptn
+entity_type: node
+bundle: kanji
+label: JLPTN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

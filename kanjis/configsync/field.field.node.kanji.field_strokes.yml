@@ -1,0 +1,23 @@
+uuid: e2780b5c-bcf3-46c7-b367-c852c116426d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_strokes
+    - node.type.kanji
+id: node.kanji.field_strokes
+field_name: field_strokes
+entity_type: node
+bundle: kanji
+label: Strokes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
