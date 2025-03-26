@@ -1,6 +1,6 @@
 name: 'Print utilities'
 type: module
-description: ''
+description: 'Print utilities'
 # @todo Remove DeprecationHelper from src/Form/SettingsForm when minimum version
 # is 11.1.
 core_version_requirement: ^10.2 || ^11.0

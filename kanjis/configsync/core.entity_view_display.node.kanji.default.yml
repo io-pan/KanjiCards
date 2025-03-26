@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.kanji.body
     - field.field.node.kanji.feeds_item
     - field.field.node.kanji.field_dictionaire_ndeg
+    - field.field.node.kanji.field_godan_disguised_as_ichidan
     - field.field.node.kanji.field_grade
     - field.field.node.kanji.field_image
     - field.field.node.kanji.field_jlptn
@@ -54,6 +55,16 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 24
+    region: content
+  field_godan_disguised_as_ichidan:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 25
     region: content
   field_grade:
     type: string

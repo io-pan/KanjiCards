@@ -24,9 +24,12 @@
     console.log('setMainMargin',drupalSettings['printSettings']);
     // Set padding
     domitem.style.paddingTop    = drupalSettings['printSettings']['marginT']+'mm';
-    domitem.style.paddingBottom = drupalSettings['printSettings']['marginB']+'mm';
+    domitem.style.paddingBottom = 1*drupalSettings['printSettings']['marginB']
+                                +(1*297)+'mm';
     domitem.style.paddingRight  = drupalSettings['printSettings']['marginW']+'mm';
     domitem.style.paddingLeft   = drupalSettings['printSettings']['marginW']+'mm';
+
+ 
     setPageBreak(domitem, index);
   }
 
@@ -84,7 +87,7 @@
 
     const top =  297 
                 + 1*drupalSettings['printSettings']['marginT']
-               // + 1*drupalSettings['printSettings']['versoOffsetY']
+                + 1*drupalSettings['printSettings']['versoOffsetY']
                 +'mm',
           width = cardsPerRow*cW+'mm';
           // Verso est flippé avec un bête style direction: rtl;
