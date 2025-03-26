@@ -1,0 +1,13 @@
+kanjis/web/sites/default/files/php/*
+
+kanjis/vendor
+kanjis/composer.phar
+kanjis/composer
+kanjis/robo.phar
+kanjis/robo
+kanjis/drush.phar
+kanjis/drush
+kanjis/drupal.phar
+kanjis/drupal
+kanjis/web/sites/default/files/php/twig/.K8TaM_76of-P5n1YHZn75bbFyOw
+desktop.ini

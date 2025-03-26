@@ -39,8 +39,6 @@ third_party_settings:
         - field_onyomi
         - field_onyomi_traduction
         - field_onyomi_example
-        - field_kunyomi
-        - field_kunyomi_traduction
       label: front
       parent_name: ''
       region: content
@@ -60,7 +58,9 @@ third_party_settings:
         speed: fast
     group_back:
       children:
-        - body
+        - field_kunyomi
+        - field_kunyomi_traduction
+        - field_kunyomi_example
         - group_categories
       label: back
       parent_name: ''
@@ -86,7 +86,7 @@ third_party_settings:
       label: categories
       parent_name: group_back
       region: content
-      weight: 8
+      weight: 7
       format_type: html_element
       format_settings:
         classes: categories
@@ -112,7 +112,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 2
     region: content
   field_kunyomi:
     type: string
@@ -121,6 +121,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_kunyomi_example:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_kunyomi_traduction:
     type: string
@@ -179,7 +187,6 @@ hidden:
   field_image: true
   field_jlptn: true
   field_jlptn_kanji: true
-  field_kunyomi_example: true
   field_okurigana: true
   field_prefixe: true
   field_radical_text: true

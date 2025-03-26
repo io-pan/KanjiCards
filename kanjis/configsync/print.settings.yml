@@ -1,3 +1,5 @@
-marginT: '4'
-marginB: '4'
-marginW: '4'
+marginT: '10'
+marginB: '10'
+marginW: '10'
+versoOffsetY: '2'
+versoOffsetX: '0'

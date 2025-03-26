@@ -84,6 +84,7 @@
 
     const top =  297 
                 + 1*drupalSettings['printSettings']['marginT']
+               // + 1*drupalSettings['printSettings']['versoOffsetY']
                 +'mm',
           width = cardsPerRow*cW+'mm';
           // Verso est flippé avec un bête style direction: rtl;
@@ -92,6 +93,7 @@
           // on doit prendre la max pour les 2 cotés.
           margeVerso =  210
                       - 1*drupalSettings['printSettings']['marginW']
+                      - 1*drupalSettings['printSettings']['versoOffsetX']
                       - cardsPerRow*cW
                       +'mm';
 
