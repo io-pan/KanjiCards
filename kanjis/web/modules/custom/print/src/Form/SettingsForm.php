@@ -44,7 +44,7 @@ class SettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'print_settings.settings',
+      'print.settings',
     ];
   }
 
@@ -53,10 +53,10 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Get current settings.
-    $print_config = $this->config('print_settings.settings');
+    $print_config = $this->config('print.settings');
 
     // Load the print libraries so we can use its definitions here.
-    $print_library = $this->libraryDiscovery->getLibraryByName('print_settings', 'print.svg');
+    $print_library = $this->libraryDiscovery->getLibraryByName('print', 'print.svg');
 
     $form['marginT'] = [
       '#type' => 'number',
