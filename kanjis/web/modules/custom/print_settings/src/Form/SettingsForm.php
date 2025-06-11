@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\print\Form;
+namespace Drupal\print_settings\Form;
 
 use Drupal\Component\Utility\DeprecationHelper;
 use Drupal\Component\Utility\UrlHelper;
@@ -44,7 +44,7 @@ class SettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'print.settings',
+      'print_settings.admin',
     ];
   }
 
@@ -53,10 +53,11 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Get current settings.
-    $print_config = $this->config('print.settings');
+    $print_config = $this->config('print_settings.admin');
 
     // Load the print libraries so we can use its definitions here.
-    $print_library = $this->libraryDiscovery->getLibraryByName('print', 'print.svg');
+    $print_library = $this->libraryDiscovery->getLibraryByName('print_settings', 'print.svg');
+
 
     $form['marginT'] = [
       '#type' => 'number',
@@ -120,4 +121,34 @@ return true;
     parent::submitForm($form, $form_state);
   }
 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function save(array $form, FormStateInterface $form_state) {
+    $printSettings = $this->entity;
+    $status = $printSettings->save();
+
+    if ($status === SAVED_NEW) {
+      $this->messenger()->addMessage($this->t('The %label Example created.', [
+        '%label' => $printSettings->label(),
+      ]));
+    }
+    else {
+      $this->messenger()->addMessage($this->t('The %label Example updated.', [
+        '%label' => $printSettings->label(),
+      ]));
+    }
+
+    $form_state->setRedirect('entity.print_settings.collection');
+  }
+/**
+   * Helper function to check whether an Example configuration entity exists.
+   */
+  public function exist($id) {
+    $entity = $this->entityTypeManager->getStorage('print_settings')->getQuery()
+      ->condition('id', $id)
+      ->execute();
+    return (bool) $entity;
+  }
 }

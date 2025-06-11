@@ -1,0 +1,5 @@
+entity.print_settings.collection:
+  title: 'Print Settings'
+  description: 'Global settings for Print.'
+  route_name: entity.print_settings.collection
+  parent: 'system.admin_config_content'

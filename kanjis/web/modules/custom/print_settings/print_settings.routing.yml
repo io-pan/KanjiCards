@@ -1,0 +1,40 @@
+# print_settings.admin_settings:
+#   path: '/admin/config/media/print_settings'
+#   defaults:
+#     #_form: '\Drupal\print_settings\Form\SettingsForm'
+#     _entity_list: 'print_settings'
+#     _title: 'Print settings'
+#   requirements:
+#     _permission: 'administer site configuration'
+
+entity.print_settings.collection:
+  path: '/admin/config/media/print_settings'
+  defaults:
+    _entity_list: 'print_settings'
+    _title: 'Print settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.print_settings.add_form:
+  path: '/admin/config/media/print_settings/add'
+  defaults:
+    _entity_form: 'print_settings.add'
+    _title: 'Add Print settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.print_settings.edit_form:
+  path: '/admin/config/media/print_settings/{print_settings}'
+  defaults:
+    _entity_form: 'print_settings.edit'
+    _title: 'Edit Print settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.print_settings.delete_form:
+  path: '/admin/config/media/print_settings/{print_settings}/delete'
+  defaults:
+    _entity_form: 'print_settings.delete'
+    _title: 'Delete Print settings'
+  requirements:
+    _permission: 'administer site configuration'

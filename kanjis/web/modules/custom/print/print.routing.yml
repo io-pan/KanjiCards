@@ -1,7 +1,0 @@
-print.admin_settings:
-  path: '/admin/config/content/print'
-  defaults:
-    _form: '\Drupal\print\Form\SettingsForm'
-    _title: 'Print settings'
-  requirements:
-    _permission: 'administer site configuration'
