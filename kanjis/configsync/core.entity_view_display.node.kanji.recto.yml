@@ -73,7 +73,6 @@ third_party_settings:
         speed: fast
     group_back:
       children:
-        - group_categories
         - field_image
       label: Back
       parent_name: ''
@@ -98,9 +97,9 @@ third_party_settings:
         - field_i_na_adjective
         - field_godan_disguised_as_ichidan
       label: categories
-      parent_name: group_back
+      parent_name: ''
       region: content
-      weight: 16
+      weight: 2
       format_type: html_element
       format_settings:
         classes: categories
@@ -159,16 +158,6 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-  field_godan_disguised_as_ichidan:
-    type: boolean
-    label: hidden
-    settings:
-      format: custom
-      format_custom_false: ''
-      format_custom_true: o
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_grade:
     type: string
     label: hidden
@@ -176,16 +165,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 8
-    region: content
-  field_i_na_adjective:
-    type: boolean
-    label: hidden
-    settings:
-      format: custom
-      format_custom_false: ''
-      format_custom_true: o
-    third_party_settings: {  }
-    weight: 7
     region: content
   field_image:
     type: image
@@ -224,19 +203,12 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
-  field_tags:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: icon
-      link: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
 hidden:
   body: true
   feeds_item: true
   field_composant: true
+  field_godan_disguised_as_ichidan: true
+  field_i_na_adjective: true
   field_is_josushi: true
   field_is_radical: true
   field_jlptn: true
@@ -257,6 +229,7 @@ hidden:
   field_secondary_radical: true
   field_strokes: true
   field_suffixe: true
+  field_tags: true
   field_traduction_generale: true
   field_type: true
   field_wiki_reading: true

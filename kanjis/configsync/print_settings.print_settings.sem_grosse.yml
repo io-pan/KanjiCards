@@ -1,0 +1,11 @@
+uuid: 3de37f43-781a-4028-8e9e-fc27266032c8
+langcode: en
+status: true
+dependencies: {  }
+id: sem_grosse
+label: 'sem grosse'
+marginT: '15'
+marginB: '15'
+marginW: '20'
+versoOffsetY: '0'
+versoOffsetX: '-1'

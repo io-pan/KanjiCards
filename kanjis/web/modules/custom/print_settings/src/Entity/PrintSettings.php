@@ -5,6 +5,7 @@ namespace Drupal\print_settings\Entity;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\print_settings\PrintSettingsInterface;
 
+use Drupal\Core\Entity\ContentEntityBase;
 /**
  * Defines the Print Settings entity.
  *
@@ -27,7 +28,12 @@ use Drupal\print_settings\PrintSettingsInterface;
  *   },
  *   config_export = {
  *     "id",
- *     "label"
+ *     "label",
+ *     "marginT",
+ *     "marginB",
+ *     "marginW",
+ *     "versoOffsetY",
+ *     "versoOffsetX"
  *   },
  *   links = {
  *     "edit-form" = "/admin/config/media/print_settings/{print_settings}",

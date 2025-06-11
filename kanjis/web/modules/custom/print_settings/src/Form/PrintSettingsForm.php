@@ -3,6 +3,9 @@ namespace Drupal\print_settings\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 class PrintSettingsForm extends EntityForm {
 
@@ -72,6 +75,6 @@ class PrintSettingsForm extends EntityForm {
     $entity->save();
 
     $this->messenger()->addMessage($this->t('Saved %label.', ['%label' => $entity->label()]));
-    $form_state->setRedirectUrl($entity->toUrl('collection'));
+    $form_state->setRedirectUrl( new Url('entity.print_settings.collection'));
   }
 }
