@@ -5,22 +5,34 @@ dependencies:
   config:
     - field.field.node.kanji.body
     - field.field.node.kanji.feeds_item
+    - field.field.node.kanji.field_componant_ref
+    - field.field.node.kanji.field_composant
     - field.field.node.kanji.field_dictionaire_ndeg
     - field.field.node.kanji.field_godan_disguised_as_ichidan
     - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_i_na_adjective
     - field.field.node.kanji.field_image
+    - field.field.node.kanji.field_is_josushi
+    - field.field.node.kanji.field_is_radical
     - field.field.node.kanji.field_jlptn
     - field.field.node.kanji.field_jlptn_kanji
+    - field.field.node.kanji.field_jukugo_exemple
+    - field.field.node.kanji.field_kanji_ref
     - field.field.node.kanji.field_kunyomi
     - field.field.node.kanji.field_kunyomi_example
+    - field.field.node.kanji.field_kunyomi_exemples
+    - field.field.node.kanji.field_kunyomi_s
     - field.field.node.kanji.field_kunyomi_traduction
+    - field.field.node.kanji.field_main_radical
     - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
     - field.field.node.kanji.field_onyomi_example
+    - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
     - field.field.node.kanji.field_radical_text
     - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_secondary_radical
     - field.field.node.kanji.field_strokes
     - field.field.node.kanji.field_suffixe
     - field.field.node.kanji.field_tags
@@ -30,6 +42,7 @@ dependencies:
     - image.style.wide
     - node.type.kanji
   module:
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -46,6 +59,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 15
+    region: content
+  field_componant_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_composant:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
     region: content
   field_dictionaire_ndeg:
     type: number_integer
@@ -74,6 +103,16 @@ content:
     third_party_settings: {  }
     weight: 17
     region: content
+  field_i_na_adjective:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 31
+    region: content
   field_image:
     type: image
     label: hidden
@@ -84,6 +123,26 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_is_josushi:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_is_radical:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 27
     region: content
   field_jlptn:
     type: number_integer
@@ -103,6 +162,22 @@ content:
     third_party_settings: {  }
     weight: 22
     region: content
+  field_jukugo_exemple:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 41
+    region: content
+  field_kanji_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 37
+    region: content
   field_kunyomi:
     type: string
     label: hidden
@@ -119,6 +194,24 @@ content:
     third_party_settings: {  }
     weight: 23
     region: content
+  field_kunyomi_exemples:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 40
+    region: content
+  field_kunyomi_s:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 38
+    region: content
   field_kunyomi_traduction:
     type: string
     label: hidden
@@ -126,6 +219,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 11
+    region: content
+  field_main_radical:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 33
     region: content
   field_okurigana:
     type: string
@@ -151,6 +252,15 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
+  field_onyomi_exemples:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 39
+    region: content
   field_onyomi_traduction:
     type: string
     label: hidden
@@ -174,6 +284,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 19
+    region: content
+  field_secondary_radical:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 26
     region: content
   field_strokes:
     type: number_integer

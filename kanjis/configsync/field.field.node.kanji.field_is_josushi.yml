@@ -1,0 +1,21 @@
+uuid: 7a34185d-4762-4173-8a70-e0f677f37ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_josushi
+    - node.type.kanji
+id: node.kanji.field_is_josushi
+field_name: field_is_josushi
+entity_type: node
+bundle: kanji
+label: josūshi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

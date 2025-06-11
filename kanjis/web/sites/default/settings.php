@@ -890,3 +890,11 @@ $databases['default']['default'] = array (
 $settings['config_sync_directory'] = '../configsync';
 $settings['trusted_host_patterns'] = ['.*'];
 $settings['rebuild_access'] = FALSE;
+
+// Show all errors.
+$config['system.logging']['error_level'] = 'verbose';
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
+ini_set('memory_limit', '-1');

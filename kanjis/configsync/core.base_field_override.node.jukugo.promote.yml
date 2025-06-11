@@ -1,0 +1,22 @@
+uuid: 50356d04-a677-4fc2-b747-6abfa7a1dc0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.jukugo
+id: node.jukugo.promote
+field_name: promote
+entity_type: node
+bundle: jukugo
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

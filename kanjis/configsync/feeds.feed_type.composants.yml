@@ -1,0 +1,79 @@
+uuid: 83b25b06-b005-4279-b5c2-c051f40539a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.kanji.title
+    - field.field.node.kanji.field_composant
+    - node.type.kanji
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      c5b8ab44-f68b-46ba-9a2e-723a7096d299:
+        separator: ','
+        limit: null
+        uuid: c5b8ab44-f68b-46ba-9a2e-723a7096d299
+        plugin: explode
+        source: decomp
+        weight: 0
+        label: Explode
+label: composants
+id: composants
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: kanji
+  langcode: und
+  insert_new: 0
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  decomp:
+    value: decomp
+    label: decomp
+    machine_name: decomp
+    type: csv
+  kanji:
+    value: kanji
+    label: kanji
+    machine_name: kanji
+    type: csv
+mappings:
+  -
+    target: field_composant
+    map:
+      value: decomp
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: title
+    map:
+      value: kanji
+    settings:
+      language: null
+    unique:
+      value: 1

@@ -1,0 +1,19 @@
+uuid: 84cd9a81-4319-48c7-93cc-91864990656c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kanji
+    - paragraphs.paragraphs_type.exemple
+id: paragraph.exemple.field_kanji
+field_name: field_kanji
+entity_type: paragraph
+bundle: exemple
+label: kanji
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

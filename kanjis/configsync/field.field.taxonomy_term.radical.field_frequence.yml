@@ -1,0 +1,21 @@
+uuid: d9566224-d49a-47c4-962e-88c6445a9955
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_frequence
+    - taxonomy.vocabulary.radical
+  module:
+    - options
+id: taxonomy_term.radical.field_frequence
+field_name: field_frequence
+entity_type: taxonomy_term
+bundle: radical
+label: fréquence
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,61 @@
+uuid: 3cf563b6-1e34-46f3-b973-c064890d40f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.jukugo.field_i_na_adjective
+    - field.field.node.jukugo.field_image
+    - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_onyomi
+    - field.field.node.jukugo.field_onyomi_example
+    - field.field.node.jukugo.field_rang
+    - field.field.node.jukugo.field_tags
+    - field.field.node.jukugo.field_traduction_generale
+    - node.type.jukugo
+  module:
+    - image
+    - user
+id: node.jukugo.teaser
+targetEntityType: node
+bundle: jukugo
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_i_na_adjective: true
+  field_jlptn: true
+  field_onyomi: true
+  field_onyomi_example: true
+  field_rang: true

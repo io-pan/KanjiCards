@@ -6,22 +6,34 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.kanji.body
     - field.field.node.kanji.feeds_item
+    - field.field.node.kanji.field_componant_ref
+    - field.field.node.kanji.field_composant
     - field.field.node.kanji.field_dictionaire_ndeg
     - field.field.node.kanji.field_godan_disguised_as_ichidan
     - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_i_na_adjective
     - field.field.node.kanji.field_image
+    - field.field.node.kanji.field_is_josushi
+    - field.field.node.kanji.field_is_radical
     - field.field.node.kanji.field_jlptn
     - field.field.node.kanji.field_jlptn_kanji
+    - field.field.node.kanji.field_jukugo_exemple
+    - field.field.node.kanji.field_kanji_ref
     - field.field.node.kanji.field_kunyomi
     - field.field.node.kanji.field_kunyomi_example
+    - field.field.node.kanji.field_kunyomi_exemples
+    - field.field.node.kanji.field_kunyomi_s
     - field.field.node.kanji.field_kunyomi_traduction
+    - field.field.node.kanji.field_main_radical
     - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
     - field.field.node.kanji.field_onyomi_example
+    - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
     - field.field.node.kanji.field_radical_text
     - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_secondary_radical
     - field.field.node.kanji.field_strokes
     - field.field.node.kanji.field_suffixe
     - field.field.node.kanji.field_tags
@@ -278,15 +290,27 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_componant_ref: true
+  field_composant: true
   field_dictionaire_ndeg: true
   field_godan_disguised_as_ichidan: true
   field_grade: true
+  field_i_na_adjective: true
+  field_is_josushi: true
+  field_is_radical: true
   field_jlptn: true
+  field_jukugo_exemple: true
+  field_kanji_ref: true
   field_kunyomi_example: true
+  field_kunyomi_exemples: true
+  field_kunyomi_s: true
+  field_main_radical: true
   field_okurigana: true
+  field_onyomi_exemples: true
   field_prefixe: true
   field_radical_text: true
   field_rang: true
+  field_secondary_radical: true
   field_strokes: true
   field_suffixe: true
   field_traduction_generale: true

@@ -1,0 +1,19 @@
+uuid: 0224fedf-46fb-48b6-ae95-fbce6e15fa8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hiragana
+    - taxonomy.vocabulary.radical
+id: taxonomy_term.radical.field_hiragana
+field_name: field_hiragana
+entity_type: taxonomy_term
+bundle: radical
+label: Hiragana
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

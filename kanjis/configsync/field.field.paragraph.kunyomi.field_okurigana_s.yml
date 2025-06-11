@@ -1,0 +1,37 @@
+uuid: 2ce68ead-20e1-4dc8-95d6-1ccd3c1709c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_okurigana_s
+    - paragraphs.paragraphs_type.kunyomi
+    - paragraphs.paragraphs_type.okurigana
+  module:
+    - entity_reference_revisions
+id: paragraph.kunyomi.field_okurigana_s
+field_name: field_okurigana_s
+entity_type: paragraph
+bundle: kunyomi
+label: Okurigana_s
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      okurigana: okurigana
+    negate: 0
+    target_bundles_drag_drop:
+      exemple:
+        weight: 4
+        enabled: false
+      kunyomi:
+        weight: 3
+        enabled: false
+      okurigana:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

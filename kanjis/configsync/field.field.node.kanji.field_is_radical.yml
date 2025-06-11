@@ -1,0 +1,21 @@
+uuid: 79733e84-6741-4e84-8300-7140859771a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_radical
+    - node.type.kanji
+id: node.kanji.field_is_radical
+field_name: field_is_radical
+entity_type: node
+bundle: kanji
+label: 'is radical'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

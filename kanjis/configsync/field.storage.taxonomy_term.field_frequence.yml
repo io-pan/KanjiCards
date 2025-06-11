@@ -1,0 +1,36 @@
+uuid: 916c40b3-f150-47e9-99f2-2d1989b61101
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_frequence
+field_name: field_frequence
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: "1)   6 -> 25\_%"
+    -
+      value: '2'
+      label: "2)  +13 -> 50\_%"
+    -
+      value: '3'
+      label: "3)  +32 → 75\_%"
+    -
+      value: '4'
+      label: 4)
+    -
+      value: '5'
+      label: 5)
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

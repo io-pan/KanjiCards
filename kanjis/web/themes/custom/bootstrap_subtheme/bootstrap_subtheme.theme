@@ -1,6 +1,47 @@
 <?php
 
+function bootstrap_subtheme_preprocess_node__view__cards(&$variables) {
+// var_dump($variables);
+// die();
+
+//var_dump($variables['node']->field_is_radical->value);
+	if ($variables['node']->field_is_radical->value) {
+		$variables['attributes']['class'][] = "is-radical";
+	}
+}
+
+
 function bootstrap_subtheme_preprocess_views_view(&$variables) {
+
+	/*
+	 	if ($variables['view']->id()=="cards") {
+
+				$vid = 'radical';
+				$terms = \Drupal::entityTypeManager()
+					->getStorage('taxonomy_term')
+					->loadByProperties([
+						'vid' => $vid
+					])
+					->order;
+
+
+
+				foreach ($terms as $term) {
+					if($term->field_rang && $term->field_rang->value){
+						$term->weight->value = $term->field_rang->value;
+						$term->save();
+					}
+					else{
+						\Drupal::logger('radicaux')->info( ' -> ' . $term->id());
+
+						$term->delete();
+					}
+
+				}
+
+	  }
+	*/
+
  	if ($variables['view']->id()=="cards") {
 		//  $pager = \Drupal\views\Views::getView('cards')->getDisplay('page_recto')->options['pager'];
 		// // var_dump($variables['view']->current_display);
@@ -20,5 +61,99 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
   	];
   	$variables['#cache']['tags'] = $settings->getCacheTags();
 
-  }
+
+		/*
+
+				 		\Drupal::logger('radicaux')->info('go copponents');
+						$vid = 'radical';
+
+						$nids = \Drupal::entityQuery('node')
+						  ->condition('type','kanji')
+						  ->accessCheck(FALSE)
+						  ->execute();
+						$nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+						foreach ($nodes as $key => $node) {
+							if(count($node->get('field_kanji_ref'))==2){
+								$node->get('field_kanji_ref')->removeItem(1);
+								// $node->set('field_kanji_ref', 
+								$node->save();
+							}
+							
+	
+							if(!empty($node->field_componant_ref->getValue())){
+								// continue;
+							}
+
+							$refs = $node->field_composant->getValue();
+							foreach($refs as $ref){
+								$term_name = $ref['value'];//$node->field_radical_text->value;
+								if (empty($term_name)) {
+	 							//	\Drupal::logger('radicaux')->warning('no radical' . $node->id());
+									continue;
+								}
+
+								// seach radical
+								$terms = \Drupal::entityTypeManager()
+							            ->getStorage('taxonomy_term')
+							            ->loadByProperties([
+							                    'vid' => $vid,
+							                    'name' =>$term_name,
+							                ]);
+								$term_id = FALSE;
+								foreach ($terms as $term) {
+								    $term_id = $term->id();
+								}
+								if($term_id!==FALSE){
+									$skip = FALSE;
+									foreach($node->field_componant_ref as $oldref){
+										if ($oldref->target_id ==  $term_id){
+											$skip = TRUE;
+										}
+									}
+									if(!$skip){
+										\Drupal::logger('radicaux')->info('found RAD '.$node->id() . ' -> ' . $term_id);
+										$node->field_componant_ref[] = ['target_id' => $term_id];
+									}
+									else{
+										\Drupal::logger('radicaux')->info('skip '.$node->id() . ' -> ' . $term_id);
+									}
+								}
+								else {	//seach kanji
+									
+									\Drupal::logger('radicaux')->info('NO radical found '.$node->id() . ' -> ' . $term_name);
+									$ref_kanji_nids = \Drupal::entityQuery('node')
+									  ->accessCheck(FALSE)
+										->condition('title', $ref['value'])
+										->execute();
+
+									// load a single node
+									if(count($ref_kanji_nids)==0){
+										\Drupal::logger('radicaux')->error('NO kanji '.$node->id() . ' -> ' . $ref['value']);
+										continue;
+									}
+									elseif(count($ref_kanji_nids)>1){ 
+										\Drupal::logger('radicaux')->warning('many kanji found '.$node->id() . ' -> ' . $term_name);
+										continue;
+									}
+									else {
+										\Drupal::logger('radicaux')->info('found KAN '.$node->id() . ' -> ' . $ref['value']);
+
+										//$ref_kanjis = \Drupal\node\Entity\Node::loadMultiple($ref_kanji_nids);
+										//var_dump($ref_kanjis);
+										$node->field_kanji_ref[] = ['target_id' => reset($ref_kanji_nids)];
+									}
+								
+								}//seach kanji
+
+
+							} // each ref
+							$node->save();
+
+						} // each node
+					*/
+
+						
+
+ 	  }
 }

@@ -1,0 +1,21 @@
+uuid: 128fbb57-4db6-4d9a-a54d-a45f272123a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_i_na_adjective
+    - node.type.kanji
+id: node.kanji.field_i_na_adjective
+field_name: field_i_na_adjective
+entity_type: node
+bundle: kanji
+label: 'i na adjective'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: na
+  off_label: i
+field_type: boolean

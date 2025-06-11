@@ -1,0 +1,11 @@
+uuid: a91df591-efc7-45d5-8724-79e9eda0f451
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.exemple_like
+label: 'exemple like'
+description: ''
+targetEntityType: node
+cache: true

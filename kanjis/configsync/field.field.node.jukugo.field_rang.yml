@@ -1,0 +1,23 @@
+uuid: 5ae62f51-2928-42fb-99a3-9fa7981564c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rang
+    - node.type.jukugo
+id: node.jukugo.field_rang
+field_name: field_rang
+entity_type: node
+bundle: jukugo
+label: rang
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 3000
+  prefix: ''
+  suffix: ''
+field_type: integer

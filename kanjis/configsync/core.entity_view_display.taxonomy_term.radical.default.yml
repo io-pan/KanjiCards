@@ -1,0 +1,53 @@
+uuid: ff42d56f-47a0-40a2-a6a9-4b487a7ed62c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.radical.feeds_item
+    - field.field.taxonomy_term.radical.field_2nd_form
+    - field.field.taxonomy_term.radical.field_79
+    - field.field.taxonomy_term.radical.field_frequence
+    - field.field.taxonomy_term.radical.field_hiragana
+    - field.field.taxonomy_term.radical.field_meaning
+    - field.field.taxonomy_term.radical.field_position
+    - field.field.taxonomy_term.radical.field_rang
+    - field.field.taxonomy_term.radical.field_stroke
+    - taxonomy.vocabulary.radical
+id: taxonomy_term.radical.default
+targetEntityType: taxonomy_term
+bundle: radical
+mode: default
+content:
+  field_2nd_form:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_meaning:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_stroke:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  description: true
+  feeds_item: true
+  field_79: true
+  field_frequence: true
+  field_hiragana: true
+  field_position: true
+  field_rang: true

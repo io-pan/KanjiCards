@@ -1,0 +1,29 @@
+uuid: b3ed1bab-322f-442a-9a84-45ecde080349
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_radical
+    - node.type.kanji
+    - taxonomy.vocabulary.radical
+id: node.kanji.field_main_radical
+field_name: field_main_radical
+entity_type: node
+bundle: kanji
+label: bushu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      radical: radical
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

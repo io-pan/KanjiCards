@@ -1,0 +1,29 @@
+uuid: dab8a614-144d-4ae6-b206-dd93d0c17b39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jukugo_exemple
+    - node.type.jukugo
+    - node.type.kanji
+id: node.kanji.field_jukugo_exemple
+field_name: field_jukugo_exemple
+entity_type: node
+bundle: kanji
+label: 'jukugo exemple'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      jukugo: jukugo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+{
+    "name": "drupal/node_weight",
+    "description": "Adds a weight field to the node and allows for ordering of configured content types.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://drupal.org/project/node_weight",
+    "support": {
+        "issues": "https://drupal.org/project/issues/node_weight",
+        "source": "https://git.drupalcode.org/project/node_weight"
+    },
+    "require": {
+        "drupal/core": "^10.1 || ^11"
+    },
+    "minimum-stability": "dev"
+}

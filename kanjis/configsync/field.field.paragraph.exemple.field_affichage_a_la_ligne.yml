@@ -1,0 +1,21 @@
+uuid: a95bc697-7fcd-4900-93a7-f92834a3e174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_affichage_a_la_ligne
+    - paragraphs.paragraphs_type.exemple
+id: paragraph.exemple.field_affichage_a_la_ligne
+field_name: field_affichage_a_la_ligne
+entity_type: paragraph
+bundle: exemple
+label: 'affichage à la ligne'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

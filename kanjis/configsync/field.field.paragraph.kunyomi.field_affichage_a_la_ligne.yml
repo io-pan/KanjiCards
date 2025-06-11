@@ -1,0 +1,21 @@
+uuid: 194e16ad-1635-4ff4-8ea9-2e9776ff604a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_affichage_a_la_ligne
+    - paragraphs.paragraphs_type.kunyomi
+id: paragraph.kunyomi.field_affichage_a_la_ligne
+field_name: field_affichage_a_la_ligne
+entity_type: paragraph
+bundle: kunyomi
+label: 'affichage à la ligne'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

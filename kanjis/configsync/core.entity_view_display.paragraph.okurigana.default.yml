@@ -1,0 +1,30 @@
+uuid: 0f5f42d2-4308-4f97-bbc7-40d3c015cce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.okurigana.field_okurigana
+    - field.field.paragraph.okurigana.field_traduction
+    - paragraphs.paragraphs_type.okurigana
+id: paragraph.okurigana.default
+targetEntityType: paragraph
+bundle: okurigana
+mode: default
+content:
+  field_okurigana:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

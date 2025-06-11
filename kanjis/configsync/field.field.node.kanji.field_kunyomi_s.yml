@@ -1,0 +1,34 @@
+uuid: 63b893c2-17ba-48c7-bfbc-ec7436402750
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kunyomi_s
+    - node.type.kanji
+    - paragraphs.paragraphs_type.kunyomi
+  module:
+    - entity_reference_revisions
+id: node.kanji.field_kunyomi_s
+field_name: field_kunyomi_s
+entity_type: node
+bundle: kanji
+label: kunyomi_s
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kunyomi: kunyomi
+    negate: 0
+    target_bundles_drag_drop:
+      kunyomi:
+        weight: 3
+        enabled: true
+      okurigana:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

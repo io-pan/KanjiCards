@@ -1,0 +1,10 @@
+uuid: be891491-b46b-4fba-9f23-bc87a808e9d3
+langcode: en
+status: true
+dependencies: {  }
+id: okurigana
+label: Okurigana
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

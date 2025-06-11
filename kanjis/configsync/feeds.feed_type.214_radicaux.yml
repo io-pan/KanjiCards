@@ -1,0 +1,129 @@
+uuid: f88ec7d6-58d9-487f-a21f-bdab674e8616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.radical.field_2nd_form
+    - field.field.taxonomy_term.radical.field_meaning
+    - field.field.taxonomy_term.radical.field_rang
+    - field.field.taxonomy_term.radical.field_stroke
+    - taxonomy.vocabulary.radical
+  module:
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      c0447402-5b71-4391-a230-56ace2400007:
+        find: ' '
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: c0447402-5b71-4391-a230-56ace2400007
+        plugin: find_replace
+        source: otherforms
+        weight: 0
+        label: 'Find replace'
+      9e54708f-b73b-43f7-b236-84413e5d7092:
+        separator: ','
+        limit: null
+        uuid: 9e54708f-b73b-43f7-b236-84413e5d7092
+        plugin: explode
+        source: otherforms
+        weight: 1
+        label: Explode
+label: '214 radicaux'
+id: 214_radicaux
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: radical
+  langcode: und
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  rang:
+    value: Rang
+    label: Rang
+    machine_name: rang
+    type: csv
+  radical:
+    value: Radical
+    label: Radical
+    machine_name: radical
+    type: csv
+  otherforms:
+    value: Otherforms
+    label: Otherforms
+    machine_name: otherforms
+    type: csv
+  stroke:
+    value: Stroke
+    label: Stroke
+    machine_name: stroke
+    type: csv
+  meaning:
+    value: Meaning
+    label: Meaning
+    machine_name: meaning
+    type: csv
+mappings:
+  -
+    target: field_rang
+    map:
+      value: rang
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: name
+    map:
+      value: radical
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_2nd_form
+    map:
+      value: otherforms
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_stroke
+    map:
+      value: stroke
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_meaning
+    map:
+      value: meaning
+    settings:
+      language: null
+    unique: {  }

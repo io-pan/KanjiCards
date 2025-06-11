@@ -1,0 +1,19 @@
+uuid: b953a2df-80e1-478a-94dd-17f1b4678359
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_traduction
+    - paragraphs.paragraphs_type.okurigana
+id: paragraph.okurigana.field_traduction
+field_name: field_traduction
+entity_type: paragraph
+bundle: okurigana
+label: traduction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

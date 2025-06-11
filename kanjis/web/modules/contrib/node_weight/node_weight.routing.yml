@@ -1,0 +1,32 @@
+node_weight.list:
+  path: '/admin/structure/node-weight'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'List of content types available for manage'
+  requirements:
+    _permission: 'administer node weight+assign node weight'
+  options:
+    _admin_route: TRUE
+
+node_weight.form:
+  path: '/admin/config/node-weight'
+  defaults:
+    _form: 'Drupal\node_weight\Form\NodeWeightForm'
+    _title: 'Node Weight'
+  requirements:
+    _permission: 'administer node weight'
+  options:
+    _admin_route: TRUE
+
+node_weight.order:
+  path: '/admin/structure/types/manage/{node_type}/order'
+  defaults:
+    _form: 'Drupal\node_weight\Form\NodeOrderForm'
+    _title: 'Manage order'
+  requirements:
+    _permission: 'administer node weight+assign node weight'
+  options:
+    _admin_route: TRUE
+    parameters:
+      node_type:
+        type: node_type

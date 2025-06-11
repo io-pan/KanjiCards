@@ -1,0 +1,9 @@
+uuid: 597d137e-e9d4-445e-96e3-cfabc6bf261c
+langcode: en
+status: true
+dependencies: {  }
+name: radical
+vid: radical
+description: null
+weight: 0
+new_revision: false

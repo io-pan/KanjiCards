@@ -1,0 +1,11 @@
+uuid: 8ca6711d-6398-4e4e-859c-21137510622f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.radical_variants
+label: 'radical variants'
+description: ''
+targetEntityType: taxonomy_term
+cache: true

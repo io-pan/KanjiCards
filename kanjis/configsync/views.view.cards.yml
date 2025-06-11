@@ -9,8 +9,10 @@ dependencies:
     - node.type.hiraganago
     - node.type.kanji
     - node.type.katakanago
+    - taxonomy.vocabulary.tags
   module:
     - node
+    - taxonomy
     - user
 id: cards
 label: Cards
@@ -80,7 +82,7 @@ display:
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 100
+          items_per_page: 1000
           total_pages: null
           id: 0
           tags:
@@ -116,6 +118,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_dictionaire_ndeg_value:
+          id: field_dictionaire_ndeg_value
+          table: node__field_dictionaire_ndeg
+          field: field_dictionaire_ndeg_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: 'dictionaire n° (field_dictionaire_ndeg)'
+            field_identifier: field_dictionaire_ndeg_value
+          exposed: false
         field_rang_value:
           id: field_rang_value
           table: node__field_rang
@@ -129,8 +144,68 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+        changed:
+          id: changed
+          table: node_field_data
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: changed
+          plugin_id: date
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       arguments: {  }
       filters:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         type:
           id: type
           table: node_field_data
@@ -251,7 +326,7 @@ display:
             identifier: field_jlptn_kanji_value
             required: false
             remember: true
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -259,6 +334,123 @@ display:
               administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
+          is_grouped: true
+          group_info:
+            label: 'JLPTN_kanji (field_jlptn_kanji)'
+            description: ''
+            identifier: field_jlptn_kanji_value
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple:
+              1: 1
+              2: 2
+              3: 3
+            group_items:
+              1:
+                title: '5'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '5'
+              2:
+                title: '4'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '4'
+              3:
+                title: '3'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '3'
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_op
+            label: 'Tags (field_tags)'
+            description: ''
+            use_operator: false
+            operator: field_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tags_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: 'Tags (field_tags)'
+            description: null
+            identifier: field_tags_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          reduce_duplicates: false
+          vid: tags
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_grade_value:
+          id: field_grade_value
+          table: node__field_grade
+          field: field_grade_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_grade_value_op
+            label: 'Grade (field_grade)'
+            description: ''
+            use_operator: false
+            operator: field_grade_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_grade_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -272,6 +464,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: html_list
         options:

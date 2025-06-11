@@ -1,0 +1,5 @@
+entity.print_settings.add_form:
+  route_name: 'entity.print_settings.add_form'
+  title: 'Add Print Setting'
+  appears_on:
+    - entity.print_settings.collection

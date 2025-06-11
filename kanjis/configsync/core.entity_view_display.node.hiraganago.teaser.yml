@@ -8,9 +8,8 @@ dependencies:
     - field.field.node.hiraganago.feeds_item
     - field.field.node.hiraganago.field_image
     - field.field.node.hiraganago.field_jlptn
-    - field.field.node.hiraganago.field_prefixe
+    - field.field.node.hiraganago.field_kunyomi_example
     - field.field.node.hiraganago.field_rang
-    - field.field.node.hiraganago.field_suffixe
     - field.field.node.hiraganago.field_tags
     - field.field.node.hiraganago.field_traduction_generale
     - field.field.node.hiraganago.field_type
@@ -129,22 +128,6 @@ content:
     third_party_settings: {  }
     weight: 14
     region: content
-  field_prefixe:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_suffixe:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
   field_tags:
     type: entity_reference_label
     label: hidden
@@ -174,6 +157,7 @@ hidden:
   feeds_item: true
   field_jlptn: true
   field_kunyomi: true
+  field_kunyomi_example: true
   field_kunyomi_traduction: true
   field_onyomi: true
   field_onyomi_example: true

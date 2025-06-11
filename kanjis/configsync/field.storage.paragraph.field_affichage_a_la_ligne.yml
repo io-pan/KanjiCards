@@ -1,0 +1,18 @@
+uuid: d22b9bb0-446d-4cc0-ad6c-7a1966f13c68
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_affichage_a_la_ligne
+field_name: field_affichage_a_la_ligne
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 3bf921f9-5821-4702-8970-4be9e41f715c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jlptn
+    - node.type.jukugo
+id: node.jukugo.field_jlptn
+field_name: field_jlptn
+entity_type: node
+bundle: jukugo
+label: JLPTN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

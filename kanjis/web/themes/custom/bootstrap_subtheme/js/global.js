@@ -16,9 +16,96 @@
 
       const attachements = once('fixLayout2', '.view-display-id-verso_att', context);
       attachements.forEach(setVersoPos);
+
+      const traitsDeCoupe = once('settraitsDeCoupe', '.view-content > .item-list > ul', context);
+      traitsDeCoupe.forEach(setTraitsDeCoupe);
     }
   };
 
+  function setTraitsDeCoupe(domitem, index) {
+    console.log('traitsDeCoupe');
+    const pH =  297
+          - drupalSettings['printSettings']['marginT']
+          - drupalSettings['printSettings']['marginB'],
+      pW =  210
+          - 2*drupalSettings['printSettings']['marginW'],
+      cH =  60, // mm
+      cW =  35; // mm
+
+    cardsPerCol = Math.floor(pH / cH);
+    cardsPerRow = Math.floor(pW / cW);
+ 
+    // scan cards and select 1st/last row, 1st/last column of page.
+    curcol=0;
+    currow=0;
+    itemlist = domitem.querySelectorAll(':scope > li > article.teaser');
+    for (var i = 0; i < itemlist.length; i++) {
+
+      if(i%(cardsPerRow*cardsPerCol)==0){
+        curcol=0;
+        currow=0;
+      }
+      if(i%cardsPerCol==0){
+        curcol=0;
+      }
+      curcol++;
+      if(i%cardsPerRow==0){
+        currow++;
+      }  
+
+      // les coins
+      if(currow==1 && curcol==1) {
+        let div = document.createElement("div");
+        div.classList.add('coupe', 'TopLeft');
+        itemlist[i].appendChild(div);
+      }
+      if(currow==1 && curcol==cardsPerCol) {
+        let div = document.createElement("div");
+        div.classList.add('coupe', 'TopRight');
+        itemlist[i].appendChild(div);
+      }
+      if(currow==cardsPerRow && curcol==1) {
+        let div = document.createElement("div");
+        div.classList.add('coupe', 'BottomLeft');
+        itemlist[i].appendChild(div);
+      }
+      if(currow==cardsPerRow && curcol==cardsPerCol) {
+        let div = document.createElement("div");
+        div.classList.add('coupe', 'BottomRight');
+        itemlist[i].appendChild(div);
+      }
+
+
+
+      // horizontaux
+      if(i%2==0 && currow==1) {
+        let div = document.createElement("div");
+        div.classList.add('coupe','top');
+        itemlist[i].appendChild(div);
+      }
+      if(i%2==0 && currow==cardsPerRow) {
+        let div = document.createElement("div");
+        div.classList.add('coupe','bottom');
+        itemlist[i].appendChild(div);
+      }
+
+
+      // verticaux
+      if(curcol==1 && currow%2==0) {
+        let div = document.createElement("div");
+        div.classList.add('coupe','left');
+        itemlist[i].appendChild(div);
+      }
+      if(curcol==cardsPerCol && currow%2==0) {
+        let div = document.createElement("div");
+        div.classList.add('coupe','right');
+        itemlist[i].appendChild(div);
+      }
+
+      // console.log('curcol row', i+ ' : '+curcol +  ' - ' +currow);
+    }
+ 
+  }
 
   function setMainMargin(domitem, index) {
     console.log('setMainMargin',drupalSettings['printSettings']);

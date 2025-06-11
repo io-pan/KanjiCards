@@ -1,0 +1,19 @@
+uuid: 53abb204-90e6-4f1c-b433-c4c2422a6531
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traduction_generale
+    - node.type.jukugo
+id: node.jukugo.field_traduction_generale
+field_name: field_traduction_generale
+entity_type: node
+bundle: jukugo
+label: traduction_generale
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 2ff1b598-b2fe-434a-974a-c82cf35669e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_exception
+    - paragraphs.paragraphs_type.exemple
+id: paragraph.exemple.field_exception
+field_name: field_exception
+entity_type: paragraph
+bundle: exemple
+label: exception
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

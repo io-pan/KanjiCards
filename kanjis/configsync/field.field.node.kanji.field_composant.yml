@@ -1,0 +1,19 @@
+uuid: 5a6ed608-0b67-494c-91bc-58c92e3ef782
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_composant
+    - node.type.kanji
+id: node.kanji.field_composant
+field_name: field_composant
+entity_type: node
+bundle: kanji
+label: composant
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

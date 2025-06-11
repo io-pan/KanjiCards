@@ -1,0 +1,5 @@
+node_weight:
+  checked_node_types: { }
+  min_weight: -10
+  max_weight: 10
+  include_unpublished: 1

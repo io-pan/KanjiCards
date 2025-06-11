@@ -7,9 +7,8 @@ dependencies:
     - field.field.node.hiraganago.feeds_item
     - field.field.node.hiraganago.field_image
     - field.field.node.hiraganago.field_jlptn
-    - field.field.node.hiraganago.field_prefixe
+    - field.field.node.hiraganago.field_kunyomi_example
     - field.field.node.hiraganago.field_rang
-    - field.field.node.hiraganago.field_suffixe
     - field.field.node.hiraganago.field_tags
     - field.field.node.hiraganago.field_traduction_generale
     - field.field.node.hiraganago.field_type
@@ -73,6 +72,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_kunyomi_example:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_kunyomi_traduction:
     type: string_textfield
     weight: 14
@@ -115,27 +122,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_prefixe:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_rang:
     type: number
     weight: 8
     region: content
     settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_suffixe:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_tags:

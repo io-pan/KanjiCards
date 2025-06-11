@@ -1,0 +1,21 @@
+uuid: 7d7f7e50-ba70-45f8-b08c-edc170030e21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_i_na_adjective
+    - node.type.jukugo
+id: node.jukugo.field_i_na_adjective
+field_name: field_i_na_adjective
+entity_type: node
+bundle: jukugo
+label: 'i na adjective'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: na
+  off_label: i
+field_type: boolean

@@ -1,0 +1,116 @@
+uuid: a2a8e9e1-8ba9-4ecd-86fa-c0891072d6f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.radical.field_hiragana
+    - field.field.taxonomy_term.radical.field_meaning
+    - field.field.taxonomy_term.radical.field_position
+    - field.field.taxonomy_term.radical.field_stroke
+    - taxonomy.vocabulary.radical
+  module:
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers: {  }
+label: 'radical with example'
+id: radical_with_example
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: TAB
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: radical
+  langcode: und
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  radical:
+    value: Radical
+    label: Radical
+    machine_name: radical
+    type: csv
+  strokes:
+    value: Strokes
+    label: Strokes
+    machine_name: strokes
+    type: csv
+  hiragana:
+    value: Hiragana
+    label: Hiragana
+    machine_name: hiragana
+    type: csv
+  meaning:
+    value: Meaning
+    label: Meaning
+    machine_name: meaning
+    type: csv
+  position:
+    value: Position
+    label: Position
+    machine_name: position
+    type: csv
+  examples:
+    value: Examples
+    label: Examples
+    machine_name: examples
+    type: csv
+mappings:
+  -
+    target: name
+    map:
+      value: radical
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_stroke
+    map:
+      value: strokes
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_hiragana
+    map:
+      value: hiragana
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_meaning
+    map:
+      value: meaning
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_position
+    map:
+      target_id: position
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: radical_position

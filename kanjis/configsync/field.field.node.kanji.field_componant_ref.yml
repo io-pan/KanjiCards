@@ -1,0 +1,29 @@
+uuid: 399e64f4-3c30-4a23-a239-0c4b16be4a24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_componant_ref
+    - node.type.kanji
+    - taxonomy.vocabulary.radical
+id: node.kanji.field_componant_ref
+field_name: field_componant_ref
+entity_type: node
+bundle: kanji
+label: componant_ref
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      radical: radical
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

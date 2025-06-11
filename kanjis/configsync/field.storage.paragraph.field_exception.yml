@@ -1,0 +1,18 @@
+uuid: 93e41596-426e-4bcd-a75d-6b032ef3b9ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_exception
+field_name: field_exception
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

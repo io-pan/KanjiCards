@@ -1,0 +1,19 @@
+uuid: 98c48d4d-1ca5-48b8-be87-cbaf5e3f4d30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onyomi
+    - node.type.mazegaki
+id: node.mazegaki.field_onyomi
+field_name: field_onyomi
+entity_type: node
+bundle: mazegaki
+label: onyomi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

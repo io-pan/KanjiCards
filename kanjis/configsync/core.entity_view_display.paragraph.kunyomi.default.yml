@@ -1,0 +1,78 @@
+uuid: 6659f9c8-d9d0-418b-b282-bbe7480a7579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kunyomi.field_affichage_a_la_ligne
+    - field.field.paragraph.kunyomi.field_kunyomi
+    - field.field.paragraph.kunyomi.field_okurigana_s
+    - field.field.paragraph.kunyomi.field_okurigana_unique
+    - field.field.paragraph.kunyomi.field_traduction
+    - paragraphs.paragraphs_type.kunyomi
+  module:
+    - entity_reference_revisions
+    - field_group
+third_party_settings:
+  field_group:
+    group_kunyomi_header:
+      children:
+        - field_kunyomi
+        - field_okurigana_unique
+        - field_traduction
+      label: ' kunyomi-header'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ' kunyomi-header'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.kunyomi.default
+targetEntityType: paragraph
+bundle: kunyomi
+mode: default
+content:
+  field_kunyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_okurigana_s:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_okurigana_unique:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_affichage_a_la_ligne: true

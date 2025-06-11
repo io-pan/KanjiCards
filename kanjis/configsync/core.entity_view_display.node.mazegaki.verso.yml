@@ -1,0 +1,35 @@
+uuid: a4bd2006-d141-4a38-aecf-4f4c14d8384e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.verso
+    - field.field.node.mazegaki.field_image
+    - field.field.node.mazegaki.field_jlptn
+    - field.field.node.mazegaki.field_onyomi
+    - field.field.node.mazegaki.field_rang
+    - field.field.node.mazegaki.field_tags
+    - field.field.node.mazegaki.field_traduction_generale
+    - node.type.mazegaki
+  module:
+    - user
+id: node.mazegaki.verso
+targetEntityType: node
+bundle: mazegaki
+mode: verso
+content:
+  field_onyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_image: true
+  field_jlptn: true
+  field_rang: true
+  field_tags: true
+  field_traduction_generale: true
+  links: true

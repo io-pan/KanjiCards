@@ -1,0 +1,57 @@
+uuid: c101d0b1-5634-4f99-aaed-7fbab8373ef8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.exemple.field_affichage_a_la_ligne
+    - field.field.paragraph.exemple.field_exception
+    - field.field.paragraph.exemple.field_kana
+    - field.field.paragraph.exemple.field_kanji
+    - field.field.paragraph.exemple.field_traduction
+    - paragraphs.paragraphs_type.exemple
+id: paragraph.exemple.default
+targetEntityType: paragraph
+bundle: exemple
+mode: default
+content:
+  field_affichage_a_la_ligne:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_exception:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_kana:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_kanji:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_traduction:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

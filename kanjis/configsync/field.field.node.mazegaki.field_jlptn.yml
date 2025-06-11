@@ -1,0 +1,23 @@
+uuid: b00f1711-e8f9-4d47-b692-d1bf7e2e5185
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jlptn
+    - node.type.mazegaki
+id: node.mazegaki.field_jlptn
+field_name: field_jlptn
+entity_type: node
+bundle: mazegaki
+label: JLPTN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

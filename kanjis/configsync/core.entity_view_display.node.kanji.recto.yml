@@ -6,22 +6,34 @@ dependencies:
     - core.entity_view_mode.node.recto
     - field.field.node.kanji.body
     - field.field.node.kanji.feeds_item
+    - field.field.node.kanji.field_componant_ref
+    - field.field.node.kanji.field_composant
     - field.field.node.kanji.field_dictionaire_ndeg
     - field.field.node.kanji.field_godan_disguised_as_ichidan
     - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_i_na_adjective
     - field.field.node.kanji.field_image
+    - field.field.node.kanji.field_is_josushi
+    - field.field.node.kanji.field_is_radical
     - field.field.node.kanji.field_jlptn
     - field.field.node.kanji.field_jlptn_kanji
+    - field.field.node.kanji.field_jukugo_exemple
+    - field.field.node.kanji.field_kanji_ref
     - field.field.node.kanji.field_kunyomi
     - field.field.node.kanji.field_kunyomi_example
+    - field.field.node.kanji.field_kunyomi_exemples
+    - field.field.node.kanji.field_kunyomi_s
     - field.field.node.kanji.field_kunyomi_traduction
+    - field.field.node.kanji.field_main_radical
     - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
     - field.field.node.kanji.field_onyomi_example
+    - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
     - field.field.node.kanji.field_radical_text
     - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_secondary_radical
     - field.field.node.kanji.field_strokes
     - field.field.node.kanji.field_suffixe
     - field.field.node.kanji.field_tags
@@ -40,6 +52,8 @@ third_party_settings:
         - field_jlptn_kanji
         - field_grade
         - field_dictionaire_ndeg
+        - field_main_radical
+        - group_composants
       label: front
       parent_name: ''
       region: content
@@ -61,7 +75,6 @@ third_party_settings:
       children:
         - group_categories
         - field_image
-        - field_traduction_generale
       label: Back
       parent_name: ''
       region: content
@@ -82,7 +95,8 @@ third_party_settings:
     group_categories:
       children:
         - field_tags
-        - field_type
+        - field_i_na_adjective
+        - field_godan_disguised_as_ichidan
       label: categories
       parent_name: group_back
       region: content
@@ -100,6 +114,27 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+    group_composants:
+      children:
+        - field_componant_ref
+        - field_kanji_ref
+      label: composants
+      parent_name: group_front
+      region: content
+      weight: 11
+      format_type: html_element
+      format_settings:
+        classes: composants
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 _core:
   default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
 id: node.kanji.recto
@@ -107,6 +142,14 @@ targetEntityType: node
 bundle: kanji
 mode: recto
 content:
+  field_componant_ref:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_dictionaire_ndeg:
     type: number_integer
     label: hidden
@@ -116,6 +159,16 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
+  field_godan_disguised_as_ichidan:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: o
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_grade:
     type: string
     label: hidden
@@ -123,6 +176,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_i_na_adjective:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: o
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_image:
     type: image
@@ -144,6 +207,23 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_kanji_ref:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_main_radical:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: radical_variants
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_tags:
     type: entity_reference_entity_view
     label: hidden
@@ -153,39 +233,31 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_traduction_generale:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 18
-    region: content
-  field_type:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: icon
-      link: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
 hidden:
   body: true
   feeds_item: true
-  field_godan_disguised_as_ichidan: true
+  field_composant: true
+  field_is_josushi: true
+  field_is_radical: true
   field_jlptn: true
+  field_jukugo_exemple: true
   field_kunyomi: true
   field_kunyomi_example: true
+  field_kunyomi_exemples: true
+  field_kunyomi_s: true
   field_kunyomi_traduction: true
   field_okurigana: true
   field_onyomi: true
   field_onyomi_example: true
+  field_onyomi_exemples: true
   field_onyomi_traduction: true
   field_prefixe: true
   field_radical_text: true
   field_rang: true
+  field_secondary_radical: true
   field_strokes: true
   field_suffixe: true
+  field_traduction_generale: true
+  field_type: true
   field_wiki_reading: true
   links: true

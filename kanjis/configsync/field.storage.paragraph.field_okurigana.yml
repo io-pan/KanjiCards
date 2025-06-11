@@ -1,0 +1,21 @@
+uuid: 0f193d33-0f3b-4a2e-9c1e-2b34c7597fa6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_okurigana
+field_name: field_okurigana
+entity_type: paragraph
+type: string
+settings:
+  max_length: 10
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

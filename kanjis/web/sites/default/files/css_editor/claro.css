@@ -1,4 +1,41 @@
-input[id^="edit-title-0-"][type="text"],
+@font-face {
+    font-family: 'kanji';
+    src: url('/themes/custom/bootstrap_subtheme/css/dejima-mincho-r227.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'kanjiBIZUDGothic';
+    src: url('/themes/custom/bootstrap_subtheme/css/BIZUDGothic-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'kanjiNSimSun';
+    src: url('/themes/custom/bootstrap_subtheme/css/NSimSun.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'radicaux';
+    src: url('/themes/custom/bootstrap_subtheme/css/JapaneseRadicals-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+input[id^="edit-title"][type="text"],
 .views-field-title {
-      font-size: 50px;
+	font-size: 50px;
+	font-family: 'kanji';
+}
+.views-field-field-componant-ref,
+.views-field-field-main-radical,
+.views-field-field-kanji-ref{
+  
+	font-family: 'kanji';
+}
+a {
+text-decoration: none;
+}
+
+.view-id-radicaux .view-content .views-field-title {
+	font-size:18px;
+}
+.view-id-radicaux .view-content .views-field-title br {
+  display:none;
+}
+
+ .view-id-radicaux .views-field-name {
+font-family: 'radicaux';
 }

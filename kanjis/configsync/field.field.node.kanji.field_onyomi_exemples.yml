@@ -1,0 +1,37 @@
+uuid: 0ac2cb82-ecc6-4ac0-91d6-62dcf6743ce2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onyomi_exemples
+    - node.type.kanji
+    - paragraphs.paragraphs_type.exemple
+  module:
+    - entity_reference_revisions
+id: node.kanji.field_onyomi_exemples
+field_name: field_onyomi_exemples
+entity_type: node
+bundle: kanji
+label: 'onyomi exemples'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      exemple: exemple
+    negate: 0
+    target_bundles_drag_drop:
+      exemple:
+        weight: 4
+        enabled: true
+      kunyomi:
+        weight: 5
+        enabled: false
+      okurigana:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

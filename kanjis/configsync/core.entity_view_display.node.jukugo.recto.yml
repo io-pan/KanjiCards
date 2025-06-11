@@ -1,0 +1,122 @@
+uuid: 9dd33a58-9c7f-4121-818e-c57d2d016657
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.recto
+    - field.field.node.jukugo.field_i_na_adjective
+    - field.field.node.jukugo.field_image
+    - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_onyomi
+    - field.field.node.jukugo.field_onyomi_example
+    - field.field.node.jukugo.field_rang
+    - field.field.node.jukugo.field_tags
+    - field.field.node.jukugo.field_traduction_generale
+    - node.type.jukugo
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_front:
+      children: {  }
+      label: front
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: front
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_back:
+      children:
+        - group_categories
+        - field_image
+        - field_traduction_generale
+      label: back
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: back
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_categories:
+      children:
+        - field_tags
+      label: categories
+      parent_name: group_back
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: categories
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.jukugo.recto
+targetEntityType: node
+bundle: jukugo
+mode: recto
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tags:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: icon
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_i_na_adjective: true
+  field_jlptn: true
+  field_onyomi: true
+  field_onyomi_example: true
+  field_rang: true
+  links: true

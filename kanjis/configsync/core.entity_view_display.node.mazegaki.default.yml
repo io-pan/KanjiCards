@@ -1,0 +1,73 @@
+uuid: 294e3991-54b1-4a09-a9fb-a66486f9bafe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mazegaki.field_image
+    - field.field.node.mazegaki.field_jlptn
+    - field.field.node.mazegaki.field_onyomi
+    - field.field.node.mazegaki.field_rang
+    - field.field.node.mazegaki.field_tags
+    - field.field.node.mazegaki.field_traduction_generale
+    - image.style.wide
+    - node.type.mazegaki
+  module:
+    - image
+    - user
+id: node.mazegaki.default
+targetEntityType: node
+bundle: mazegaki
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_jlptn:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_onyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_rang:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_traduction_generale: true

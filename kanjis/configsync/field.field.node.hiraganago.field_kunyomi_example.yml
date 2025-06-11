@@ -1,0 +1,19 @@
+uuid: e2c8d050-84ed-42bd-a8ab-78aa043e4b9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kunyomi_example
+    - node.type.hiraganago
+id: node.hiraganago.field_kunyomi_example
+field_name: field_kunyomi_example
+entity_type: node
+bundle: hiraganago
+label: kunyomi_example
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

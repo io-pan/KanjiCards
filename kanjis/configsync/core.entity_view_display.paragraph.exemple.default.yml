@@ -1,0 +1,68 @@
+uuid: d43d0faa-1de9-4c27-9533-f2fb029f545c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.exemple.field_affichage_a_la_ligne
+    - field.field.paragraph.exemple.field_exception
+    - field.field.paragraph.exemple.field_kana
+    - field.field.paragraph.exemple.field_kanji
+    - field.field.paragraph.exemple.field_traduction
+    - paragraphs.paragraphs_type.exemple
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_kanji_kana:
+      children:
+        - field_kanji
+        - field_kana
+      label: kanji-kana
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: kanji-kana
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.exemple.default
+targetEntityType: paragraph
+bundle: exemple
+mode: default
+content:
+  field_kana:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_kanji:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_affichage_a_la_ligne: true
+  field_exception: true

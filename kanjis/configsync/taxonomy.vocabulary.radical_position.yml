@@ -1,0 +1,9 @@
+uuid: 2b196daf-6c21-49b3-b1c1-888424eba1ff
+langcode: en
+status: true
+dependencies: {  }
+name: 'radical position'
+vid: radical_position
+description: null
+weight: 0
+new_revision: false

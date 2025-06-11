@@ -1,0 +1,23 @@
+uuid: 42deae17-031a-4405-a6f8-6bd5ff9e18d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_stroke
+    - taxonomy.vocabulary.radical
+id: taxonomy_term.radical.field_stroke
+field_name: field_stroke
+entity_type: taxonomy_term
+bundle: radical
+label: Stroke
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

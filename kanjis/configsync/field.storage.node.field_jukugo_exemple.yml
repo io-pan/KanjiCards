@@ -1,0 +1,19 @@
+uuid: 701a194a-d06f-474a-b1fa-34dfa70f7c10
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_jukugo_exemple
+field_name: field_jukugo_exemple
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

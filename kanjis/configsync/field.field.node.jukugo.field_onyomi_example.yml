@@ -1,0 +1,19 @@
+uuid: 198b6c88-b2cf-4747-bed1-f0deaec41978
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onyomi_example
+    - node.type.jukugo
+id: node.jukugo.field_onyomi_example
+field_name: field_onyomi_example
+entity_type: node
+bundle: jukugo
+label: onyomi_example
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

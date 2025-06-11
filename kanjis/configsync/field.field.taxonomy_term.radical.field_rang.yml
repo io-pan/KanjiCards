@@ -1,0 +1,23 @@
+uuid: f109a134-cf3a-4755-b8c8-8e333fd0a6e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rang
+    - taxonomy.vocabulary.radical
+id: taxonomy_term.radical.field_rang
+field_name: field_rang
+entity_type: taxonomy_term
+bundle: radical
+label: rang
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

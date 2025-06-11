@@ -1,0 +1,58 @@
+uuid: da35948c-7d52-4deb-a2c4-dd8611c07f4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.mazegaki.field_image
+    - field.field.node.mazegaki.field_jlptn
+    - field.field.node.mazegaki.field_onyomi
+    - field.field.node.mazegaki.field_rang
+    - field.field.node.mazegaki.field_tags
+    - field.field.node.mazegaki.field_traduction_generale
+    - image.style.wide
+    - node.type.mazegaki
+  module:
+    - image
+    - user
+id: node.mazegaki.full
+targetEntityType: node
+bundle: mazegaki
+mode: full
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_onyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_jlptn: true
+  field_rang: true
+  field_traduction_generale: true
