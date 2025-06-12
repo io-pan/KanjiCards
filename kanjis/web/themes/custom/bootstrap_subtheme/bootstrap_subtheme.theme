@@ -50,18 +50,7 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 		// var_dump($variables['view']->getDisplay('verso_att')->options['pager']);
 		// die();	
 		// }
-
-		$settings = \Drupal::config('print.settings');
-  	$variables['#attached']['drupalSettings']['printSettings'] = [
-  		'marginT' => $settings->get('marginT'),
-  		'marginB' => $settings->get('marginB'),
-  		'marginW' => $settings->get('marginW'),
-  		'versoOffsetY' => $settings->get('versoOffsetY'),
-  		'versoOffsetX' => $settings->get('versoOffsetX')
-  	];
-  	$variables['#cache']['tags'] = $settings->getCacheTags();
-
-
+ 		
 		/*
 
 				 		\Drupal::logger('radicaux')->info('go copponents');

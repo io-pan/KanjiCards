@@ -126,24 +126,36 @@ body.path-cardsverso 	.main-content  .container {
     display: block;
     background-color: white;
     position: fixed;
-    right: 30px;
-    top: 77px;
+    right: 0;
     z-index: 100;
 }
-.view-cards .views-exposed-form{
+
+.view-cards .print-settings-select-form,
+.view-cards .views-exposed-form {
 	padding: 20px;
 	display: block;
 	background-color: white;
-  position: fixed;
-  right:30px;
-  top: 77px;
-  z-index: 99;
+	position: fixed;
+	right:0;
+	top: 120px;
+	z-index: 99;
 }
+.view-cards .print-settings-select-form {
+	top: 0;
+}
+.view-cards .print-settings-select-form .form-item {
+    display: inline;
+}
+
 .view-cards .views-exposed-form.form--inline > * {
   display: block; 
   margin-top: 10px 10px 0 10px;
   vertical-align: top;
 }
+.view-cards .views-exposed-form .form-item-field-tags-target-id *{
+	max-width: 331px;
+}
+
 .view-cards .pager {
 	max-width: 500px;
     display: block;
@@ -199,6 +211,7 @@ body.path-cardsverso 	.main-content  .container {
 
 .view-id-cards.view-display-id-verso_att {
 	position: absolute;
+	display: block;
 }
 
 .view-id-cards.view-display-id-verso_att > .view-content > .item-list > ul {
@@ -708,20 +721,22 @@ body.path-cardsverso 	.main-content  .container {
 }
 
 @media print {
-  body { 
-    background: #e0e0e0;
-    height: 297mm;
-    width: 210mm; 
-  }
-  #page,
-  .dialog-off-canvas-main-canvas,
-  .page-wrapper {
-  	height: 297mm;
-    width: 210mm; 
-  }
-  .view-cards .view-header,
-  .view-cards .pager,
-	.view-cards .views-exposed-form {
+	body { 
+	background: #e0e0e0;
+	height: 297mm;
+	width: 210mm; 
+	}
+
+	#page,
+	.dialog-off-canvas-main-canvas,
+	.page-wrapper {
+		height: 297mm;
+		width: 210mm; 
+	}
+	.view-cards .view-header,
+	.view-cards .pager,
+	.view-cards .views-exposed-form,
+	.view-cards .print-settings-select-form {
 		display: none;
 	}
 
@@ -747,7 +762,10 @@ body.path-cardsverso 	.main-content  .container {
 	}
 }
 
+	.coupe {
 
+	  	background-color: #000;
+	}
 
 	/* coins */
 	.coupe.TopLeft,

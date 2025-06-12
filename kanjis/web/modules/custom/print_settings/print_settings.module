@@ -1,9 +1,9 @@
 <?php
-
+use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 
-function print_page_attachments(array &$page) {
+function print_settings_page_attachments(array &$page) {
   // $routeName = \Drupal::routeMatch()->getRouteName();
   // if (!in_array($routeName, [
   // 	'layout_builder.overrides.node.view', 
@@ -13,9 +13,49 @@ function print_page_attachments(array &$page) {
   // }
 }
 
-function print_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
 
-  if (in_array($entity->getEntityTypeId(), ['taxonomy_term'])) {
- //   unset($build['#contextual_links']);
+
+
+// Avant l’exécution de la requête SQL
+function print_settings_views_pre_view(ViewExecutable $view, $display_id, array &$args, \Drupal\Core\Routing\RouteMatchInterface $route_match = NULL) {
+
+  if ($view->id() === 'cards') {
+    $form = \Drupal::formBuilder()->getForm('\Drupal\print_settings\Form\PrintSettingsSelectForm');
+    $view->attachment_before[] = [
+      '#markup' => \Drupal::service('renderer')->render($form),
+    ];
+  }
+}
+
+// Après la requête
+// function print_settings_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+//   die('2');
+//   if (in_array($entity->getEntityTypeId(), ['taxonomy_term'])) {
+//     unset($build['#contextual_links']);
+//   }
+// }
+
+// Juste avant le rendu HTML final.
+function print_settings_preprocess_views_view(&$variables) {
+ // die('3');
+  $view = $variables['view'];
+  if ($view->id() === 'cards') {
+    
+    // $settings = \Drupal::config('print.settings');
+    $session = \Drupal::request()->getSession();
+    if ($imprimante = $session->get('imprimante_selectionnee')) {
+      $settings = \Drupal::entityTypeManager()
+        ->getStorage('print_settings')
+        ->load($imprimante);
+
+      $variables['#attached']['drupalSettings']['printSettings'] = [
+        'marginT' => $settings->get('marginT'),
+        'marginB' => $settings->get('marginB'),
+        'marginW' => $settings->get('marginW'),
+        'versoOffsetY' => $settings->get('versoOffsetY'),
+        'versoOffsetX' => $settings->get('versoOffsetX')
+      ];
+      $variables['#cache']['tags'] = $settings->getCacheTags();
+    }
   }
 }
