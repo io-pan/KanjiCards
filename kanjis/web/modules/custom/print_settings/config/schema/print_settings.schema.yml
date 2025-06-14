@@ -8,6 +8,12 @@ print_settings.settings.*:
     label:
       type: label
       label: 'Label'
+    pageH:
+      type: number
+      label: 'page height'
+    pageW:
+      type: number
+      label: 'page width'
     marginT:
       type: number
       label: 'printer margin top'
@@ -23,3 +29,12 @@ print_settings.settings.*:
     versoOffsetX:
       type: number
       label: 'printer offset X for verso'
+    cardH:
+      type: number
+      label: 'card height'
+    cardW:
+      type: number
+      label: 'card width'
+    cardLandscape:
+      type: boolean
+      label: 'Imprimer les cartes en mode paysage'

@@ -29,6 +29,17 @@ class PrintSettingsForm extends EntityForm {
       '#disabled' => !$entity->isNew(),
     ];
 
+    $form['pageH'] = [
+      '#type' => 'number',
+      '#title' => $this->t('hauteur de page (mm)'),
+      '#default_value' => $entity->get('pageH'),
+    ];
+    $form['pageW'] = [
+      '#type' => 'number',
+      '#title' => $this->t('largeur de page (mm)'),
+      '#default_value' => $entity->get('pageW'),
+    ];
+
     $form['marginT'] = [
       '#type' => 'number',
       '#title' => $this->t('Top margin'),
@@ -56,6 +67,22 @@ class PrintSettingsForm extends EntityForm {
       '#default_value' => $entity->get('versoOffsetX')
     ];
 
+    $form['cardH'] = [
+      '#type' => 'number',
+      '#title' => $this->t('hauteur de carte (mm)'),
+      '#default_value' => $entity->get('cardH'),
+    ];
+    $form['cardW'] = [
+      '#type' => 'number',
+      '#title' => $this->t('largeur de carte (mm)'),
+      '#default_value' => $entity->get('cardW'),
+    ];
+    $form['cardLandscape'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Imprimer les cartes en mode paysage'),
+      '#default_value' => $entity->get('cardLandscape')
+    ];
+
     // Ajoute d'autres champs ici...
 
     return parent::buildForm($form, $form_state);
@@ -66,11 +93,16 @@ class PrintSettingsForm extends EntityForm {
     $entity = $this->entity;
     $entity->set('label', $form_state->getValue('label'));
     $entity->set('id', $form_state->getValue('id'));
+    $entity->set('pageH', $form_state->getValue('pageH'));
+    $entity->set('pageW', $form_state->getValue('pageW'));
     $entity->set('marginT', $form_state->getValue('marginT'));
     $entity->set('marginB', $form_state->getValue('marginB'));
     $entity->set('marginW', $form_state->getValue('marginW'));
     $entity->set('versoOffsetY', $form_state->getValue('versoOffsetY'));
     $entity->set('versoOffsetX', $form_state->getValue('versoOffsetX'));
+    $entity->set('cardH', $form_state->getValue('cardH'));
+    $entity->set('cardW', $form_state->getValue('cardW'));
+    $entity->set('cardLandscape', $form_state->getValue('cardLandscape'));
 
     $entity->save();
 

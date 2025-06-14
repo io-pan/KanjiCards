@@ -3,17 +3,6 @@
  * Subtheme specific CSS.
  */
 
-
-@media screen {
-    body { 
-        background: #e0e0e0;
-    }
-	#page { 
-	    /*height: 297mm;*/
-	    /*width: 210mm; */
-	}
-}
-
 @font-face {
     font-family: 'kanji';
     src: url('dejima-mincho-r227.ttf')  format('truetype'), /* Safari, Android, iOS */
@@ -45,7 +34,6 @@ a {
 }
 
 
-
 form.user-login-form{
 	display: block;
 }
@@ -66,8 +54,8 @@ body[class^="path-cards"] .social-bar {
 
 .teaser {
   padding-block-end: 0;
-  width: var(--card-width);
-  height: var(--card-height);
+/*  width: var(--card-width);
+  height: var(--card-height);*/
 }
 
 body.path-cards 	 .page-wrapper,
@@ -100,8 +88,8 @@ body.path-cardsverso 	.main-content  .container {
 
 .view-cards .teaser {
 	/* padding-block-end: 0; */
-	border-top: 1px solid var(--sheetBGColor);
-	border-left: 1px solid var(--sheetBGColor);
+	/*border-top: 1px solid var(--sheetBGColor);
+	border-left: 1px solid var(--sheetBGColor);*/
 }
 .view-cards .teaser::after {content:""; width: 0; height: 0}
 .view-cards .field--tags__item {
@@ -200,6 +188,7 @@ body.path-cardsverso 	.main-content  .container {
     height: var(--card-height);
 	line-height: 5mm;
 	font-size: 3.5mm;
+	transform: rotate(90deg);
 }
 .view-cards.view-display-id-page_recto  .view-content .item-list > ul > li {
 	text-align: center;
@@ -366,7 +355,7 @@ body.path-cardsverso 	.main-content  .container {
   line-height: 3mm;
   padding: var(--card-margin);
 
-	/*transform: rotate(180deg);*/
+	/*transform: rotate(90deg);*/
 }
 	.view-cards .node--view-mode-verso .field--name-field-traduction-generale {
 		text-align: center;
@@ -516,9 +505,13 @@ body.path-cardsverso 	.main-content  .container {
 	.view-cards .kunyomi .field--name-field-okurigana-s > .field__item .field--name-field-traduction {
 		margin-top: 0.5mm;
 		    min-height: 5mm;
-		display: flex;
+		/*display: flex;
 	    flex-direction: column;
-	    justify-content: center;
+	    justify-content: center;*/
+
+	      /*  display: inline;*/
+    line-height: 4.5mm;
+    text-align: right;
 	}
 		.field--name-field-okurigana,
 		.field--name-field-okurigana-unique {
@@ -533,12 +526,17 @@ body.path-cardsverso 	.main-content  .container {
 			text-align:right;
 		}
 
+	.view-cards .kunyomi .paragraph--type--okurigana {
+		overflow: hidden;
+		/*display: inline-block;*/
+	}
 	.view-cards .kunyomi .paragraph--type--okurigana * {
 		/*display: inline-block;*/
 	}
 	.view-cards .kunyomi .paragraph--type--okurigana .field--name-field-okurigana {
 		color:#2e7bc3;
 		float: left;
+		display: inline-block;
 		margin-right: 1mm;
 	}
 
@@ -626,6 +624,7 @@ body.path-cardsverso 	.main-content  .container {
     line-height: 3.5mm;
     color:#939393;
     padding-bottom: 0.5mm;
+ 
 }
 
 .view-cards .field--name-field-onyomi-example,
@@ -756,11 +755,6 @@ body.path-cardsverso 	.main-content  .container {
 	.view-cards.view-display-id-page_recto{
 		background-color: white;	
 	}
-	.coupe {
-
-	  	background-color: #000;
-	}
-}
 
 	.coupe {
 
@@ -832,6 +826,8 @@ body.path-cardsverso 	.main-content  .container {
 
 
 
+
+}
 
 
 

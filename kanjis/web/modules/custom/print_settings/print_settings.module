@@ -53,7 +53,8 @@ function print_settings_preprocess_views_view(&$variables) {
         'marginB' => $settings->get('marginB'),
         'marginW' => $settings->get('marginW'),
         'versoOffsetY' => $settings->get('versoOffsetY'),
-        'versoOffsetX' => $settings->get('versoOffsetX')
+        'versoOffsetX' => $settings->get('versoOffsetX'),
+        'cardLandscape' => $settings->get('cardLandscape'),
       ];
       $variables['#cache']['tags'] = $settings->getCacheTags();
     }

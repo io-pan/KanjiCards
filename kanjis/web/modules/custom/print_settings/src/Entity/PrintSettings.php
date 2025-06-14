@@ -29,11 +29,16 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   config_export = {
  *     "id",
  *     "label",
+ *     "pageH",
+ *     "pageW",
  *     "marginT",
  *     "marginB",
  *     "marginW",
  *     "versoOffsetY",
- *     "versoOffsetX"
+ *     "versoOffsetX",
+ *     "cardH",
+ *     "cardW",
+ *     "cardLandscape"
  *   },
  *   links = {
  *     "edit-form" = "/admin/config/media/print_settings/{print_settings}",
