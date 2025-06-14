@@ -82,6 +82,11 @@ class PrintSettingsForm extends EntityForm {
       '#title' => $this->t('Imprimer les cartes en mode paysage'),
       '#default_value' => $entity->get('cardLandscape')
     ];
+    $form['traitCoupe'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Taille des traits de coupe'),
+      '#default_value' => $entity->get('traitCoupe')
+    ];
 
     // Ajoute d'autres champs ici...
 
@@ -103,10 +108,11 @@ class PrintSettingsForm extends EntityForm {
     $entity->set('cardH', $form_state->getValue('cardH'));
     $entity->set('cardW', $form_state->getValue('cardW'));
     $entity->set('cardLandscape', $form_state->getValue('cardLandscape'));
+    $entity->set('traitCoupe', $form_state->getValue('traitCoupe'));
 
     $entity->save();
 
     $this->messenger()->addMessage($this->t('Saved %label.', ['%label' => $entity->label()]));
-    $form_state->setRedirectUrl( new Url('entity.print_settings.collection'));
+    //$form_state->setRedirectUrl( new Url('entity.print_settings.collection'));
   }
 }

@@ -36,8 +36,8 @@ function print_settings_views_pre_view(ViewExecutable $view, $display_id, array 
 // }
 
 // Juste avant le rendu HTML final.
-function print_settings_preprocess_views_view(&$variables) {
- // die('3');
+function print_settings_preprocess_views_view_list(&$variables) {
+
   $view = $variables['view'];
   if ($view->id() === 'cards') {
     
@@ -48,13 +48,22 @@ function print_settings_preprocess_views_view(&$variables) {
         ->getStorage('print_settings')
         ->load($imprimante);
 
+      $variables['orientation'] = $settings->get('cardLandscape')
+                                  ? 'orientation-paysage'
+                                  : 'orientation-portrait';
+
       $variables['#attached']['drupalSettings']['printSettings'] = [
+        'pageH' => $settings->get('pageH'),
+        'pageW' => $settings->get('pageW'),
         'marginT' => $settings->get('marginT'),
         'marginB' => $settings->get('marginB'),
         'marginW' => $settings->get('marginW'),
         'versoOffsetY' => $settings->get('versoOffsetY'),
         'versoOffsetX' => $settings->get('versoOffsetX'),
+        'cardH' => $settings->get('cardH'),
+        'cardW' => $settings->get('cardW'),
         'cardLandscape' => $settings->get('cardLandscape'),
+        'traitCoupe' => $settings->get('traitCoupe')
       ];
       $variables['#cache']['tags'] = $settings->getCacheTags();
     }

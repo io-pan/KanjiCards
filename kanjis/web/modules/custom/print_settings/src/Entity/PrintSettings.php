@@ -38,7 +38,8 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "versoOffsetX",
  *     "cardH",
  *     "cardW",
- *     "cardLandscape"
+ *     "cardLandscape",
+ *     "traitCoupe"
  *   },
  *   links = {
  *     "edit-form" = "/admin/config/media/print_settings/{print_settings}",

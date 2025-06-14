@@ -22,15 +22,24 @@
     }
   };
 
+
   function setTraitsDeCoupe(domitem, index) {
     console.log('traitsDeCoupe');
-    const pH =  297
+
+    document.documentElement.style.setProperty('--traitCoupe', drupalSettings['printSettings']['traitCoupe']+'mm');
+
+    // on laisse la pace aux traits de coupe.
+    domitem.style.padding = drupalSettings['printSettings']['traitCoupe']+'mm';
+
+    const pH =  drupalSettings['printSettings']['pageH']
           - drupalSettings['printSettings']['marginT']
-          - drupalSettings['printSettings']['marginB'],
-      pW =  210
-          - 2*drupalSettings['printSettings']['marginW'],
-      cH =  60, // mm
-      cW =  35; // mm
+          - drupalSettings['printSettings']['marginB']
+          - 2*drupalSettings['printSettings']['traitCoupe'],
+      pW =  drupalSettings['printSettings']['pageW']
+          - 2*drupalSettings['printSettings']['marginW']
+          - 2*drupalSettings['printSettings']['traitCoupe'],
+      cH =  drupalSettings['printSettings']['cardH'], // mm
+      cW =  drupalSettings['printSettings']['cardW']; // mm
 
     cardsPerCol = Math.floor(pH / cH);
     cardsPerRow = Math.floor(pW / cW);
@@ -112,7 +121,7 @@
     // Set padding
     domitem.style.paddingTop    = drupalSettings['printSettings']['marginT']+'mm';
     domitem.style.paddingBottom = 1*drupalSettings['printSettings']['marginB']
-                                +(1*297)+'mm';
+                                +(1*drupalSettings['printSettings']['pageH'])+'mm';
     domitem.style.paddingRight  = drupalSettings['printSettings']['marginW']+'mm';
     domitem.style.paddingLeft   = drupalSettings['printSettings']['marginW']+'mm';
 
@@ -125,13 +134,15 @@
     console.log('setPageBreak', drupalSettings['printSettings']);
 
     // Add page-break after each last card on page.
-    const pH =  297
+    const pH =  drupalSettings['printSettings']['pageH']
               - drupalSettings['printSettings']['marginT']
-              - drupalSettings['printSettings']['marginB'],
-          pW =  210
-              - 2*drupalSettings['printSettings']['marginW'],
-          cH =  60, // mm
-          cW =  35; // mm
+              - drupalSettings['printSettings']['marginB']
+              - 2*drupalSettings['printSettings']['traitCoupe'],
+          pW =  drupalSettings['printSettings']['pageW']
+              - 2*drupalSettings['printSettings']['marginW']
+              - 2*drupalSettings['printSettings']['traitCoupe'],
+          cH =  drupalSettings['printSettings']['cardH'], // mm
+          cW =  drupalSettings['printSettings']['cardW']; // mm
 
     cardsPerCol = Math.floor(pH / cH);
     cardsPerRow = Math.floor(pW / cW);
@@ -150,47 +161,39 @@
       // give it a margin top to reach next page + let place for verso
       // const spac = ( 297 - drupalSettings['printSettings']['marginT'] - (cH*cardsPerCol)
       // Page break does the stuff ... give only space for verso   
-      itemlist[i].style.marginTop = 1*drupalSettings['printSettings']['marginT']
-                                    +297 +"mm";
+      itemlist[i].style.marginTop = ((1*drupalSettings['printSettings']['marginT'])
+                                    +(1*drupalSettings['printSettings']['pageH'])
+                                    +(1*drupalSettings['printSettings']['traitCoupe'])) +"mm";
     }
     // add last page break ... not needed.
-    // let div = document.createElement("div");
-    // div.classList.add("breakpage");
-    // itemlist[itemlist.length-1].after(div);
+     let div = document.createElement("div");
+     div.classList.add("breakpage");
+     itemlist[itemlist.length-1].after(div);
   }
 
   function setVersoPos(domitem, index) {
     console.log('setVersoPos',drupalSettings['printSettings']);
-    const pH =  297
-              - drupalSettings['printSettings']['marginT']
-              - drupalSettings['printSettings']['marginB'],
-          pW = 210
-              - 2*drupalSettings['printSettings']['marginW'],
-          cH =  60, // mm
-          cW =  35; // mm
+    const 
+      pW =  drupalSettings['printSettings']['pageW']
+          - 2*drupalSettings['printSettings']['marginW'],
 
-    cardsPerCol = Math.floor(pH / cH);
-    cardsPerRow = Math.floor(pW / cW);
+      top =   1*drupalSettings['printSettings']['pageH'] 
+            + 1*drupalSettings['printSettings']['marginT']
+            + 1*drupalSettings['printSettings']['versoOffsetY']
+            + 'mm',
 
-    const top =  297 
-                + 1*drupalSettings['printSettings']['marginT']
-                + 1*drupalSettings['printSettings']['versoOffsetY']
-                +'mm',
-          width = cardsPerRow*cW+'mm';
-          // Verso est flippé avec un bête style direction: rtl;
-          // mais faut de toue façon  inverser la marge ...
-          // les marges gauche/droite de l'imprimante étant fixes
-          // on doit prendre la max pour les 2 cotés.
-          margeVerso =  210
-                      - 1*drupalSettings['printSettings']['marginW']
-                      - 1*drupalSettings['printSettings']['versoOffsetX']
-                      - cardsPerRow*cW
-                      +'mm';
+      // Verso est flippé avec un bête style direction: rtl;
+      // mais faut de toue façon  inverser la marge ...
+      // les marges gauche/droite de l'imprimante étant fixes
+      // on doit prendre la max pour les 2 cotés.
+      margeVerso =  1*drupalSettings['printSettings']['marginW']
+                  + 1*drupalSettings['printSettings']['versoOffsetX']
+                  +'mm';
 
-    console.log('top, width, margeVerso:',top+ ", "+width+", "+margeVerso);
-    domitem.style.top = top;
-    domitem.style.width = width;
-    domitem.style.left = margeVerso;
+    console.log('top, width, margeVerso:',top+ ", " +pW+', '+margeVerso);
+    domitem.style.top   = top;
+    domitem.style.width = pW+'mm';
+    domitem.style.left  = margeVerso;
   }
     
 }(Drupal, drupalSettings, once));
