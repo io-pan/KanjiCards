@@ -738,12 +738,7 @@ body[class*="path-cards"] .main-content  .container {
 
 .coupe {
 	position: absolute;
-  	background-color: var(--sheetBGColor);
-}
-
-	.coupe {
-
-	  	background-color: #000;
+	background-color: #000;
 	}
 
 	/* coins */
@@ -754,6 +749,8 @@ body[class*="path-cards"] .main-content  .container {
 		width: var(--traitCoupe);
 		height: var(--traitCoupe);
 	}
+
+
 	.coupe.TopLeft,
 	.node--view-mode-verso .coupe.TopRight {
 		top: calc(var(--traitCoupe)*-1);
@@ -766,11 +763,13 @@ body[class*="path-cards"] .main-content  .container {
 		right: calc(var(--traitCoupe)*-1);
 		left: initial;
 	}
+
 	.coupe.BottomLeft,
 	.node--view-mode-verso .coupe.BottomRight {
 		bottom: calc(var(--traitCoupe)*-1);
 		left: calc(var(--traitCoupe)*-1);
 	}
+
 	.coupe.BottomRight,
 	.node--view-mode-verso .coupe.BottomLeft {
 		bottom: calc(var(--traitCoupe)*-1);
@@ -784,6 +783,7 @@ body[class*="path-cards"] .main-content  .container {
 		width: var(--card-width);
 		height: calc(var(--traitCoupe)/2);
 	}
+
 	.coupe.top {
 		top:calc(var(--traitCoupe)*-1);
 	}
@@ -798,10 +798,12 @@ body[class*="path-cards"] .main-content  .container {
 		width: calc(var(--traitCoupe)/2);
 		height: var(--card-height);
 	}
+
 	.coupe.left,
 	.node--view-mode-verso .coupe.right {
 		left:calc(var(--traitCoupe)/-1);
 	}
+
 	.coupe.right,
 	.node--view-mode-verso .coupe.left {
 		right:calc(var(--traitCoupe)/-1);
@@ -809,6 +811,87 @@ body[class*="path-cards"] .main-content  .container {
 	}
 
 
+	/* orientation-paysage */
+
+	.orientation-paysage .coupe.TopLeft {
+		left:initial;
+		right: calc(var(--traitCoupe)*-1);
+	}
+	.orientation-paysage .node--view-mode-verso .coupe.TopRight {
+		top: calc(var(--traitCoupe)*-1);
+		left:initial;
+		right: calc(var(--traitCoupe)*-1);
+	}
+
+	.orientation-paysage .coupe.TopRight,
+	.orientation-paysage .node--view-mode-verso .coupe.TopLeft {
+		top: initial;
+		bottom: calc(var(--traitCoupe)*-1);
+/*		right: calc(var(--traitCoupe)*-1);
+		left: initial;*/
+	}
+
+	.orientation-paysage .coupe.BottomLeft,
+	.orientation-paysage .node--view-mode-verso .coupe.BottomRight {
+		bottom: initial;
+		top: calc(var(--traitCoupe)*-1);
+		left: calc(var(--traitCoupe)*-1);
+	}
+
+	.orientation-paysage .coupe.BottomRight {
+		bottom: calc(var(--traitCoupe)*-1);
+		top: initial;
+		right: initial;
+		left: calc(var(--traitCoupe)*-1);
+	}
+	.orientation-paysage .node--view-mode-verso .coupe.BottomLeft {
+		bottom: calc(var(--traitCoupe)*-1);
+		top: initial;
+	}
+	/* horizontal */
+	.orientation-paysage .coupe.top,
+	.orientation-paysage .coupe.bottom{
+		width: calc(var(--traitCoupe) / 2);
+	    height: var(--card-height);
+	}
+
+	.orientation-paysage .coupe.top {
+		top:0;
+		left: initial;
+    	right: calc(var(--traitCoupe)*-1);
+	}
+	.orientation-paysage .coupe.bottom {
+	    bottom: 0;
+	    left: calc(var(--traitCoupe) * -1);
+	    right: initial;
+	}
+
+	/* vertical */
+	.orientation-paysage .coupe.left,
+	.orientation-paysage .coupe.right{
+		top:initial;
+		bottom: calc(var(--traitCoupe)*-1);
+		width: var(--card-width);
+		height: calc(var(--traitCoupe)/2);
+	}
+
+	.orientation-paysage .coupe.left,
+	.orientation-paysage .node--view-mode-verso .coupe.right {
+	    left: 0;
+	    bottom: initial;
+	    top: calc(var(--traitCoupe) / -1);
+	}
+
+	.orientation-paysage .coupe.right {
+		right: initial;
+    	left: 0;
+	}
+	.orientation-paysage .node--view-mode-verso .coupe.left {
+	    right: initial;
+	    left: initial;
+	    top: initial;
+	    bottom: calc(var(--traitCoupe) / -1);
+	}
 
 @media print {
 	body { 
@@ -858,7 +941,7 @@ body[class*="path-cards"] .main-content  .container {
 
 
 /*debug*/
-
+/*
 .view-cards > .view-content {
 	background-color: #ff8;
 }
@@ -866,3 +949,4 @@ body[class*="path-cards"] .main-content  .container {
 .view-display-id-verso_att >  .view-content {
 	background-color: #8f8;
 }
+*/

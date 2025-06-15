@@ -7,6 +7,12 @@
 
   Drupal.behaviors.fixLayout = {
     attach(context) {
+
+
+      const traitsDeCoupe = once('settraitsDeCoupe', '.view-content > .item-list > ul', context);
+      traitsDeCoupe.forEach(setTraitsDeCoupe);
+
+
       // Set printer margins to all recto.
       const container = once('fixLayout', '.view-display-id-page_recto', context);
       container.forEach(setMainMargin);
@@ -16,9 +22,6 @@
 
       const attachements = once('fixLayout2', '.view-display-id-verso_att', context);
       attachements.forEach(setVersoPos);
-
-      const traitsDeCoupe = once('settraitsDeCoupe', '.view-content > .item-list > ul', context);
-      traitsDeCoupe.forEach(setTraitsDeCoupe);
     }
   };
 
@@ -31,68 +34,84 @@
     // on laisse la pace aux traits de coupe.
     domitem.style.padding = drupalSettings['printSettings']['traitCoupe']+'mm';
 
+    let   itemlist = domitem.querySelectorAll(':scope > li > article.teaser');
     const pH =  drupalSettings['printSettings']['pageH']
-          - drupalSettings['printSettings']['marginT']
-          - drupalSettings['printSettings']['marginB']
-          - 2*drupalSettings['printSettings']['traitCoupe'],
-      pW =  drupalSettings['printSettings']['pageW']
-          - 2*drupalSettings['printSettings']['marginW']
-          - 2*drupalSettings['printSettings']['traitCoupe'],
-      cH =  drupalSettings['printSettings']['cardH'], // mm
-      cW =  drupalSettings['printSettings']['cardW']; // mm
+                - drupalSettings['printSettings']['marginT']
+                - drupalSettings['printSettings']['marginB']
+                - 2*drupalSettings['printSettings']['traitCoupe'],
+          pW =  drupalSettings['printSettings']['pageW']
+                - 2*drupalSettings['printSettings']['marginW']
+                - 2*drupalSettings['printSettings']['traitCoupe'],
+          cH =  drupalSettings['printSettings']['cardLandscape']
+                ? drupalSettings['printSettings']['cardW']
+                : drupalSettings['printSettings']['cardH'], // mm
+          cW =  drupalSettings['printSettings']['cardLandscape']
+                ? drupalSettings['printSettings']['cardH']
+                : drupalSettings['printSettings']['cardW'], // mm
 
-    cardsPerCol = Math.floor(pH / cH);
-    cardsPerRow = Math.floor(pW / cW);
+          cardsPerCol = Math.floor(pH / cH),
+          cardsPerRow = Math.floor(pW / cW),
+          cardsPerPage = cardsPerRow * cardsPerCol,
+          remainder = itemlist.length % cardsPerPage,
+          missingCards = remainder === 0 ? 0 : cardsPerPage - remainder;
+  
+
+    // console.log('itemlist',itemlist);
+    // console.log('cardsPerCol',cardsPerCol);
+    // console.log('cardsPerRow',cardsPerRow);
  
-    // scan cards and select 1st/last row, 1st/last column of page.
-    curcol=0;
-    currow=0;
+    // On duplique la dernière carte pour remplir la grille.
+    // Sinon on a pas les traits de coupe.
+    let li, article;
+    for (let imiss = 0; imiss < missingCards; imiss++) {
+      li = document.createElement("li");
+      article = itemlist[itemlist.length-1].cloneNode(true);
+      li.appendChild(article);
+      domitem.appendChild(li);
+    }
+    // On récupère le dom modifié.
     itemlist = domitem.querySelectorAll(':scope > li > article.teaser');
-    for (var i = 0; i < itemlist.length; i++) {
-
-      if(i%(cardsPerRow*cardsPerCol)==0){
-        curcol=0;
-        currow=0;
-      }
-      if(i%cardsPerCol==0){
-        curcol=0;
-      }
-      curcol++;
-      if(i%cardsPerRow==0){
-        currow++;
-      }  
+   
+    // Insertion des traits de coupe.
+    for (let i = 0; i < itemlist.length; i++) {
+      const page = Math.floor(i / cardsPerPage),
+            positionInPage = i % cardsPerPage,
+            row = Math.floor(positionInPage / cardsPerRow) + 1,
+            col = (positionInPage % cardsPerRow) + 1;
+      // console.log(`Carte ${i + 1}: page ${page + 1}, ligne ${row}, colonne ${col}`);
 
       // les coins
-      if(currow==1 && curcol==1) {
+      if(row==1 && col==1) {
         let div = document.createElement("div");
         div.classList.add('coupe', 'TopLeft');
         itemlist[i].appendChild(div);
+       // console.log(`Carte ${i + 1}: page ${page + 1}, ligne ${row}, colonne ${col}`);
       }
-      if(currow==1 && curcol==cardsPerCol) {
+      if(row==1 && col==cardsPerRow) {
         let div = document.createElement("div");
         div.classList.add('coupe', 'TopRight');
         itemlist[i].appendChild(div);
+       // console.log(`Carte ${i + 1}: page ${page + 1}, ligne ${row}, colonne ${col}`);
       }
-      if(currow==cardsPerRow && curcol==1) {
+      if(row==cardsPerCol && col==1) {
         let div = document.createElement("div");
         div.classList.add('coupe', 'BottomLeft');
         itemlist[i].appendChild(div);
       }
-      if(currow==cardsPerRow && curcol==cardsPerCol) {
+      if(row==cardsPerCol && col==cardsPerRow) {
         let div = document.createElement("div");
         div.classList.add('coupe', 'BottomRight');
         itemlist[i].appendChild(div);
       }
 
-
-
+//.. dernier si pas ?
       // horizontaux
-      if(i%2==0 && currow==1) {
+      if(i%2==0 && row==1) {
         let div = document.createElement("div");
         div.classList.add('coupe','top');
         itemlist[i].appendChild(div);
       }
-      if(i%2==0 && currow==cardsPerRow) {
+      if(i%2==0 && row==cardsPerCol) {
         let div = document.createElement("div");
         div.classList.add('coupe','bottom');
         itemlist[i].appendChild(div);
@@ -100,19 +119,21 @@
 
 
       // verticaux
-      if(curcol==1 && currow%2==0) {
+      if(col==1 && row%2==0) {
         let div = document.createElement("div");
         div.classList.add('coupe','left');
         itemlist[i].appendChild(div);
       }
-      if(curcol==cardsPerCol && currow%2==0) {
+      if(col==cardsPerRow && row%2==0) {
         let div = document.createElement("div");
         div.classList.add('coupe','right');
         itemlist[i].appendChild(div);
       }
 
-      // console.log('curcol row', i+ ' : '+curcol +  ' - ' +currow);
     }
+
+
+    
  
   }
 
@@ -141,8 +162,12 @@
           pW =  drupalSettings['printSettings']['pageW']
               - 2*drupalSettings['printSettings']['marginW']
               - 2*drupalSettings['printSettings']['traitCoupe'],
-          cH =  drupalSettings['printSettings']['cardH'], // mm
-          cW =  drupalSettings['printSettings']['cardW']; // mm
+          cH =  drupalSettings['printSettings']['cardLandscape']
+                ? drupalSettings['printSettings']['cardW']
+                : drupalSettings['printSettings']['cardH'], // mm
+          cW =  drupalSettings['printSettings']['cardLandscape']
+                ? drupalSettings['printSettings']['cardH']
+                : drupalSettings['printSettings']['cardW']; // mm
 
     cardsPerCol = Math.floor(pH / cH);
     cardsPerRow = Math.floor(pW / cW);
