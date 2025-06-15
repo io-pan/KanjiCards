@@ -4,8 +4,14 @@ status: true
 dependencies: {  }
 id: sem_grosse
 label: 'sem grosse'
-marginT: '15'
-marginB: '15'
-marginW: '20'
+pageH: '297'
+pageW: '210'
+marginT: '12'
+marginB: '11'
+marginW: '6'
 versoOffsetY: '0'
 versoOffsetX: '-1'
+cardH: '60'
+cardW: '35'
+cardLandscape: 1
+traitCoupe: '10'
