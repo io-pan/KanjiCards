@@ -28,6 +28,12 @@
   --card-width: 35mm;
   --traitCoupe: 0mm;
   --sheetBGColor: #fff;
+  --OnColor:#ff4300;
+  --KunColor:#0040ff;
+  --OnColorLight:#ffc4c4;
+  --KunColorLight:#a6d3ff;
+  --OnBg:#fff5f9;
+  --KunBg:#F5FAFF;
 }
 
 a {
@@ -394,12 +400,12 @@ body[class*="path-cards"] .main-content  .container {
 	font-size: 3.5mm;
 }
 .view-cards .onyomi {
-	 /*   border-bottom: solid 0.5mm #ffc4c4;*/
 
 }
 .view-cards .kunyomi {
 	background: #F5FAFF;
-	border-bottom: solid 0.5mm #a6d3ff;
+	border-bottom: solid 0.5mm var(--KunColorLight);
+	min-height: 6mm;
 }
 
 
@@ -409,8 +415,8 @@ body[class*="path-cards"] .main-content  .container {
 	font-size: 4mm;
 }
 .view-cards .onyomi .field--name-field-onyomi{
-	padding-top: var(--card-margin);
-	padding-bottom: calc(var(--card-margin)/2);
+	padding-top: 1mm; /*var(--card-margin);*/
+	padding-bottom: 0.5mm;/*calc(var(--card-margin)/2);*/
 }
 .view-cards .kunyomi .field--name-field-kunyomi {
 	padding-top: calc(var(--card-margin)/2);
@@ -422,19 +428,18 @@ body[class*="path-cards"] .main-content  .container {
  		/*margin-bottom: 0.5mm;*/
 }
 	.view-cards .onyomi .field--name-field-onyomi{
-		background: #fff5f9;
+		background: var(--OnBg);
 		padding-left: var(--card-margin);
 		padding-right: var(--card-margin);
-
-		color:#ff4300;
+		color:var(--OnColor);
+		border-top: 0.5mm solid var(--OnColorLight)/*var(--OnColor)*/;
 	}
 		.view-cards .onyomi .onyomi-header  .field.field--name-field-onyomi-traduction{
 			padding-left: var(--card-margin);
 			padding-right: var(--card-margin);
 			margin-top: calc(-1*var(--card-margin)/2);
-	    background: #FFF5F9 !important;
-	    /*background: linear-gradient(180deg, rgba(255, 245, 249, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;*/
-		}
+	    	background: var(--OnBg) !important;
+	    }
 
 
 		.view-cards .onyomi .field--name-field-jukugo-exemple,
@@ -455,45 +460,59 @@ body[class*="path-cards"] .main-content  .container {
 		.view-cards .onyomi .field--name-field-onyomi-exemples > .field__item {
 			padding-left: var(--card-margin);
 			padding-right: var(--card-margin);
-			border-top: solid 0.5mm #ffc4c4;
+			border-top: solid 0.5mm var(--OnColorLight);
 			padding-top: 0.5mm;
-			/*
-			background: #FFF5F9;
-			background: linear-gradient(180deg,rgba(255, 245, 249, 1) 0%, rgba(255, 255, 255, 1) 80%) !important;
-			*/
 		}
 
 
 
 .field--name-field-kunyomi-s > .field__item {
-	border-top: solid 0.5mm #a6d3ff;
+	border-top: solid 0.5mm var(--KunColorLight);
 	clear: both;
 }
-
+.field--name-field-kunyomi-s > .field__item:first-child {
+	border-top: solid 0.5mm var(--KunColorLight)/*var(--KunColor)*/;
+}
 .view-cards .kunyomi .kunyomi-header{
 	
 	padding-left: var(--card-margin);
 	padding-right: var(--card-margin);
-		
+	margin-top: 1mm;
+	min-height: 4.5mm;
 		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;*/
 }
+.view-cards .kunyomi .kunyomi-header .unique{
+	
+	float: left;
+	display: inline-block;
+	line-height: 1mm;
+	margin-top: -0.5mm;
+	position: relative;
+		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;*/
+}
+
 .paragraph--type--kunyomi{
 
 }
 
 
 .view-cards .kunyomi .field--name-field-kunyomi {
-	color:#0040ff;
+	color: var(--KunColor);
 
-	float:left;
+	/*float:left;*/
+	display: inline-block;
+	line-height: 2mm;
 	padding-right: 1mm;
+	position: relative;
+	top:0.5mm;
 }
 	.view-cards .kunyomi .paragraph--type--kunyomi .kunyomi-header .field--name-field-traduction {
 		
-		display: flex;
-	    flex-direction: column;
-	    min-height: 7mm;
-	    justify-content: center;
+		display: block;
+	    /*flex-direction: column;*/
+	    /*min-height: 7mm;*/
+	    line-height: 3.5mm;
+	    /*justify-content: center;*/
 	}
 	.view-cards .kunyomi .paragraph--type--kunyomi.display-block  .kunyomi-header .field--name-field-traduction{
 		float: right;
@@ -520,19 +539,19 @@ body[class*="path-cards"] .main-content  .container {
 	.view-cards .kunyomi .field--name-field-okurigana-s > .field__item {
 		clear: both;
 		margin-left:1mm;
-		border-top: dashed 0.5mm #a6d3ff;
+		border-top: dashed 0.5mm var(--KunColorLight);
 		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;
 		*/
 	}
 	.view-cards .kunyomi .field--name-field-okurigana-s > .field__item .field--name-field-traduction {
-		margin-top: 0.5mm;
-		    min-height: 5mm;
+		margin-top: 0;/*0.5mm;*/
+		   /* min-height: 5mm;*/
 		/*display: flex;
 	    flex-direction: column;
 	    justify-content: center;*/
 
 	      /*  display: inline;*/
-    line-height: 4.5mm;
+    line-height: 3.5mm;
     text-align: right;
 	}
 		.field--name-field-okurigana,
@@ -541,8 +560,12 @@ body[class*="path-cards"] .main-content  .container {
 			margin-right: 0.5mm;
 		}
 		.field--name-field-okurigana-unique {
-			    float: left;
+			    /*float: left;*/
+			    display: inline-block;
+			    line-height: 2mm;
 				padding-top: 1mm;
+				position: relative;
+				top: 0.5mm;
 		}
 		.view-cards .kunyomi .field--name-field-traduction {
 			text-align:right;
@@ -550,16 +573,18 @@ body[class*="path-cards"] .main-content  .container {
 
 	.view-cards .kunyomi .paragraph--type--okurigana {
 		overflow: hidden;
+		margin-top: 1mm;
 		/*display: inline-block;*/
 	}
 	.view-cards .kunyomi .paragraph--type--okurigana * {
 		/*display: inline-block;*/
 	}
 	.view-cards .kunyomi .paragraph--type--okurigana .field--name-field-okurigana {
-		color:#2e7bc3;
-		float: left;
-		display: inline-block;
-		margin-right: 1mm;
+		color: #2e7bc3;
+	    float: left;
+	    display: inline-block;
+	    margin-right: 1mm;
+	    line-height: 3.5mm;
 	}
 
 	.view-cards .kunyomi .field--name-field-kunyomi-exemples{
@@ -592,7 +617,7 @@ body[class*="path-cards"] .main-content  .container {
 			padding-left: var(--card-margin);
 			padding-right: var(--card-margin);
 			padding-top: 0.5mm;
-			border-top: solid 0.5mm #a6d3ff;
+			border-top: solid 0.5mm var(--KunColorLight);
 			/*
 			background: #F5FAFF;
 			background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 80%) !important;
