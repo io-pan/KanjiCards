@@ -61,6 +61,7 @@ function print_settings_preprocess_views_view_list(&$variables) {
         'cardH' => $settings->get('cardH'),
         'cardW' => $settings->get('cardW'),
         'cardLandscape' => $settings->get('cardLandscape'),
+        'cardFold' => $settings->get('cardFold'),
         'traitCoupe' => $settings->get('traitCoupe')
       ];
       $variables['#cache']['tags'] = $settings->getCacheTags();

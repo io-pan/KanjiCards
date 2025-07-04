@@ -38,6 +38,9 @@ print_settings.settings.*:
     cardLandscape:
       type: boolean
       label: 'Imprimer les cartes en mode paysage'
+    cardFold:
+      type: boolean
+      label: 'Imprimer des cartes pliées'
     traitCoupe:
       type: number
       label: 'taille des traits de coupe'

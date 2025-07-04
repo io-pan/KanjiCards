@@ -1562,7 +1562,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: numeric
-          operator: between
+          operator: '='
           value:
             min: ''
             max: ''
@@ -1588,7 +1588,7 @@ display:
             placeholder: ''
           is_grouped: true
           group_info:
-            label: JLPTN_kanji
+            label: 'JLPTN_kanji (field_jlptn_kanji)'
             description: ''
             identifier: field_jlptn_kanji_value
             optional: true
@@ -1910,7 +1910,7 @@ display:
           admin_label: ''
           plugin_id: boolean
           operator: '='
-          value: '0'
+          value: All
           group: 1
           exposed: true
           expose:

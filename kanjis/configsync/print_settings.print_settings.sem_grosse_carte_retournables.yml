@@ -1,8 +1,8 @@
-uuid: 3de37f43-781a-4028-8e9e-fc27266032c8
+uuid: 6f97a4dc-4ebc-4248-ad5b-dfebdbd67098
 langcode: en
 status: true
 dependencies: {  }
-id: sem_grosse
+id: sem_grosse_carte_retournables
 label: 'SEM grosse Carte retournables'
 pageH: '297'
 pageW: '210'
@@ -14,5 +14,4 @@ versoOffsetX: '-1'
 cardH: '60'
 cardW: '35'
 cardLandscape: 0
-cardFold: 0
 traitCoupe: '10'
