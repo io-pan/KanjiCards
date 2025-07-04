@@ -479,14 +479,14 @@ body[class*="path-cards"] .main-content  .container {
 	padding-right: var(--card-margin);
 	margin-top: 1mm;
 	min-height: 4.5mm;
-		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;*/
+	/* margin-bottom: 1mm; reduire la taille*/
 }
 .view-cards .kunyomi .kunyomi-header .unique{
 	
 	float: left;
 	display: inline-block;
 	line-height: 1mm;
-	margin-top: -0.5mm;
+	margin-top: -0.5mm; /* reduire la taille*/
 	position: relative;
 		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;*/
 }
@@ -502,7 +502,7 @@ body[class*="path-cards"] .main-content  .container {
 	/*float:left;*/
 	display: inline-block;
 	line-height: 2mm;
-	padding-right: 1mm;
+	/*padding-right: 1mm;*/
 	position: relative;
 	top:0.5mm;
 }
@@ -540,8 +540,7 @@ body[class*="path-cards"] .main-content  .container {
 		clear: both;
 		margin-left:1mm;
 		border-top: dashed 0.5mm var(--KunColorLight);
-		/*background: linear-gradient(180deg,rgba(245, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;
-		*/
+		/* margin-top: 1mm;  reduire la taille*/
 	}
 	.view-cards .kunyomi .field--name-field-okurigana-s > .field__item .field--name-field-traduction {
 		margin-top: 0;/*0.5mm;*/

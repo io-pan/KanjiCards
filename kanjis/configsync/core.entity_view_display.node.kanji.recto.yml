@@ -31,6 +31,7 @@ dependencies:
     - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
+    - field.field.node.kanji.field_print_priority
     - field.field.node.kanji.field_radical_text
     - field.field.node.kanji.field_rang
     - field.field.node.kanji.field_secondary_radical
@@ -224,6 +225,7 @@ hidden:
   field_onyomi_exemples: true
   field_onyomi_traduction: true
   field_prefixe: true
+  field_print_priority: true
   field_radical_text: true
   field_rang: true
   field_secondary_radical: true

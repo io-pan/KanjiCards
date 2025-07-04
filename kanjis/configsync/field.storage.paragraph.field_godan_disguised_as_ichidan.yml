@@ -1,0 +1,18 @@
+uuid: 1992cde3-b4da-4134-945e-99d0f9036f9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_godan_disguised_as_ichidan
+field_name: field_godan_disguised_as_ichidan
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

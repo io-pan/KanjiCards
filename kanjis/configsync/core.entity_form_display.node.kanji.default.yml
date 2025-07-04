@@ -30,6 +30,7 @@ dependencies:
     - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
+    - field.field.node.kanji.field_print_priority
     - field.field.node.kanji.field_radical_text
     - field.field.node.kanji.field_rang
     - field.field.node.kanji.field_secondary_radical
@@ -346,6 +347,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_print_priority:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_radical_text:
     type: string_textfield
     weight: 26
@@ -414,7 +422,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 25
+    weight: 26
     region: content
     settings:
       display_label: true

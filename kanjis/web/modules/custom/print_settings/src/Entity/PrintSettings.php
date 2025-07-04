@@ -39,6 +39,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "cardH",
  *     "cardW",
  *     "cardLandscape",
+ *     "cardFold", 
  *     "traitCoupe"
  *   },
  *   links = {

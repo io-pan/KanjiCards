@@ -138,7 +138,7 @@
   }
 
   function setMainMargin(domitem, index) {
-    console.log('setMainMargin',drupalSettings['printSettings']);
+    console.log('setMainMargin', drupalSettings['printSettings']);
     // Set padding
     domitem.style.paddingTop    = drupalSettings['printSettings']['marginT']+'mm';
     domitem.style.paddingBottom = 1*drupalSettings['printSettings']['marginB']

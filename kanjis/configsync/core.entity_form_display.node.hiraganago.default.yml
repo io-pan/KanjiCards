@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.hiraganago.field_image
     - field.field.node.hiraganago.field_jlptn
     - field.field.node.hiraganago.field_kunyomi_example
+    - field.field.node.hiraganago.field_kunyomi_exemples
     - field.field.node.hiraganago.field_rang
     - field.field.node.hiraganago.field_tags
     - field.field.node.hiraganago.field_traduction_generale
@@ -16,6 +17,7 @@ dependencies:
     - node.type.hiraganago
   module:
     - image
+    - paragraphs
     - text
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
@@ -26,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 8
     region: content
     settings:
       rows: 9
@@ -51,7 +53,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 2
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
@@ -59,7 +61,7 @@ content:
     third_party_settings: {  }
   field_jlptn:
     type: number
-    weight: 9
+    weight: 0
     region: content
     settings:
       placeholder: ''
@@ -74,11 +76,29 @@ content:
     third_party_settings: {  }
   field_kunyomi_example:
     type: string_textfield
-    weight: 8
+    weight: 4
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_kunyomi_exemples:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_kunyomi_traduction:
     type: string_textfield
@@ -124,14 +144,14 @@ content:
     third_party_settings: {  }
   field_rang:
     type: number
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -141,7 +161,7 @@ content:
     third_party_settings: {  }
   field_traduction_generale:
     type: string_textfield
-    weight: 4
+    weight: 2
     region: content
     settings:
       size: 60
@@ -149,7 +169,7 @@ content:
     third_party_settings: {  }
   field_type:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -159,7 +179,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 3
+    weight: 1
     region: content
     settings:
       size: 60

@@ -3,15 +3,16 @@ langcode: en
 status: true
 dependencies: {  }
 id: sem_grosse
-label: 'sem grosse'
+label: 'SEM grosse Carte retournables'
 pageH: '297'
 pageW: '210'
-marginT: '12'
-marginB: '11'
+marginT: '5'
+marginB: '5'
 marginW: '6'
 versoOffsetY: '0'
 versoOffsetX: '-1'
 cardH: '60'
 cardW: '35'
-cardLandscape: 1
+cardLandscape: 0
+cardFold: 0
 traitCoupe: '10'

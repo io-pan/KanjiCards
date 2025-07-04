@@ -1,0 +1,21 @@
+uuid: e2281a37-6101-4873-842d-5850877f740f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_godan_disguised_as_ichidan
+    - paragraphs.paragraphs_type.kunyomi
+id: paragraph.kunyomi.field_godan_disguised_as_ichidan
+field_name: field_godan_disguised_as_ichidan
+entity_type: paragraph
+bundle: kunyomi
+label: 'Godan disguised as ichidan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

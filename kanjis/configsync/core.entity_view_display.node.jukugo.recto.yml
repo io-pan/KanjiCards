@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.jukugo.field_i_na_adjective
     - field.field.node.jukugo.field_image
     - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_kanji_ref
     - field.field.node.jukugo.field_onyomi
     - field.field.node.jukugo.field_onyomi_example
     - field.field.node.jukugo.field_rang
@@ -20,7 +21,8 @@ dependencies:
 third_party_settings:
   field_group:
     group_front:
-      children: {  }
+      children:
+        - field_jlptn
       label: front
       parent_name: ''
       region: content
@@ -40,9 +42,7 @@ third_party_settings:
         speed: fast
     group_back:
       children:
-        - group_categories
         - field_image
-        - field_traduction_generale
       label: back
       parent_name: ''
       region: content
@@ -64,7 +64,7 @@ third_party_settings:
       children:
         - field_tags
       label: categories
-      parent_name: group_back
+      parent_name: ''
       region: content
       weight: 2
       format_type: html_element
@@ -94,29 +94,23 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 3
+    weight: 8
     region: content
-  field_tags:
-    type: entity_reference_entity_view
+  field_jlptn:
+    type: number_integer
     label: hidden
     settings:
-      view_mode: icon
-      link: false
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 9
-    region: content
-  field_traduction_generale:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
 hidden:
   field_i_na_adjective: true
-  field_jlptn: true
+  field_kanji_ref: true
   field_onyomi: true
   field_onyomi_example: true
   field_rang: true
+  field_tags: true
+  field_traduction_generale: true
   links: true

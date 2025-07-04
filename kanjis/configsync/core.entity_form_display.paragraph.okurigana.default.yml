@@ -3,14 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.okurigana.field_godan_disguised_as_ichidan
     - field.field.paragraph.okurigana.field_okurigana
     - field.field.paragraph.okurigana.field_traduction
+    - field.field.paragraph.okurigana.field_verb_type
     - paragraphs.paragraphs_type.okurigana
 id: paragraph.okurigana.default
 targetEntityType: paragraph
 bundle: okurigana
 mode: default
 content:
+  field_godan_disguised_as_ichidan:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_okurigana:
     type: string_textfield
     weight: 0
@@ -26,6 +35,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_verb_type:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

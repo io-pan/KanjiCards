@@ -1,11 +1,11 @@
 <?php
 
 function bootstrap_subtheme_preprocess_node__view__cards(&$variables) {
-// var_dump($variables);
-// die();
+	// var_dump($variables);
+	// die();
 
-//var_dump($variables['node']->field_is_radical->value);
-	if ($variables['node']->field_is_radical->value) {
+	//var_dump($variables['node']->field_is_radical->value);
+	if ($variables['node']->field_is_radical && $variables['node']->field_is_radical->value) {
 		$variables['attributes']['class'][] = "is-radical";
 	}
 }
@@ -43,6 +43,7 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 	*/
 
  	if ($variables['view']->id()=="cards") {
+		
 		//  $pager = \Drupal\views\Views::getView('cards')->getDisplay('page_recto')->options['pager'];
 		// // var_dump($variables['view']->current_display);
 		//  var_dump($pager);
@@ -51,24 +52,22 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 		// die();	
 		// }
  		
-		/*
-
-				 		\Drupal::logger('radicaux')->info('go copponents');
-						$vid = 'radical';
+		
+/*
+				 		\Drupal::logger('radicaux')->info('go jukugo');
+						// $vid = 'radical';
 
 						$nids = \Drupal::entityQuery('node')
-						  ->condition('type','kanji')
+						  ->condition('type','jukugo')
 						  ->accessCheck(FALSE)
 						  ->execute();
-						$nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+						$jukugos = \Drupal\node\Entity\Node::loadMultiple($nids);
 
-						foreach ($nodes as $key => $node) {
-							if(count($node->get('field_kanji_ref'))==2){
-								$node->get('field_kanji_ref')->removeItem(1);
-								// $node->set('field_kanji_ref', 
-								$node->save();
-							}
+						foreach ($jukugos as $key => $jukugo) {
+			
+							$jukugo->save();
 							
+							continue;
 	
 							if(!empty($node->field_componant_ref->getValue())){
 								// continue;
@@ -140,9 +139,9 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 							$node->save();
 
 						} // each node
-					*/
+					
 
-						
+						*/
 
  	  }
 }

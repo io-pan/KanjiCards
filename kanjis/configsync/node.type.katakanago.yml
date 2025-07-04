@@ -15,6 +15,6 @@ name: katakanago
 type: katakanago
 description: katakanago
 help: null
-new_revision: true
+new_revision: false
 preview_mode: 0
 display_submitted: false

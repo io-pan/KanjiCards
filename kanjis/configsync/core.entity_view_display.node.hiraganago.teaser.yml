@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.hiraganago.field_image
     - field.field.node.hiraganago.field_jlptn
     - field.field.node.hiraganago.field_kunyomi_example
+    - field.field.node.hiraganago.field_kunyomi_exemples
     - field.field.node.hiraganago.field_rang
     - field.field.node.hiraganago.field_tags
     - field.field.node.hiraganago.field_traduction_generale
@@ -158,6 +159,7 @@ hidden:
   field_jlptn: true
   field_kunyomi: true
   field_kunyomi_example: true
+  field_kunyomi_exemples: true
   field_kunyomi_traduction: true
   field_onyomi: true
   field_onyomi_example: true

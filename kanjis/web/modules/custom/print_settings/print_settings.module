@@ -14,8 +14,6 @@ function print_settings_page_attachments(array &$page) {
 }
 
 
-
-
 // Avant l’exécution de la requête SQL
 function print_settings_views_pre_view(ViewExecutable $view, $display_id, array &$args, \Drupal\Core\Routing\RouteMatchInterface $route_match = NULL) {
 
@@ -68,4 +66,56 @@ function print_settings_preprocess_views_view_list(&$variables) {
       $variables['#cache']['tags'] = $settings->getCacheTags();
     }
   }
+}
+
+
+/* Devrait être dans un autre module */
+/**
+ * Implements hook_entity_presave().
+ */
+function print_settings_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::logger('radicaux')->info( 'print_settings_entity_presave -> ' . $entity->id());
+/*
+  switch ($entity->bundle()) {
+    // Here you modify only your day content type
+    case 'jukugo':
+      \Drupal::logger('radicaux')->info( ' -> jukugo ' );
+
+      if (count($entity->get('field_kanji_ref'))==0) {
+      
+\Drupal::logger('radicaux')->info( ' kanji count -> ' . count($entity->get('field_kanji_ref')));
+
+      // Lecture du champ 'title'
+        $title = $entity->label(); // équivalent à getTitle()
+
+        // Décompose chaque caractère (UTF-8 safe)
+        $chars = preg_split('//u', $title, -1, PREG_SPLIT_NO_EMPTY);
+
+        // Prépare la liste des références
+        $refs = [];
+
+        foreach ($chars as $kanji_char) {
+          // Recherche un node de type 'kanji' dont le titre correspond au caractère
+          $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+          $nids = $query
+            ->condition('type', 'kanji')
+            ->accessCheck(FALSE)
+            ->condition('title', $kanji_char)
+            ->range(0, 1)
+            ->execute();
+\Drupal::logger('radicaux')->info( ' kanji count -> ' . count($nids));
+          if (!empty($nids)) {
+            $kanji_node = \Drupal\node\Entity\Node::load(reset($nids));
+            if ($kanji_node) {
+              $refs[] = ['target_id' => $kanji_node->id()];
+            }
+          }
+        }
+
+        // Mise à jour du champ 'kanji_ref'
+        $entity->set('field_kanji_ref', $refs);
+      }
+     break;
+  }
+  */
 }

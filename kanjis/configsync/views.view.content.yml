@@ -15,7 +15,6 @@ dependencies:
     - field.storage.node.field_kunyomi_s
     - field.storage.node.field_main_radical
     - field.storage.node.field_onyomi
-    - field.storage.node.field_rang
     - field.storage.node.field_tags
     - field.storage.node.field_traduction_generale
     - field.storage.node.field_type
@@ -68,70 +67,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-        field_rang:
-          id: field_rang
-          table: node__field_rang
-          field: field_rang
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: rang
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_dictionaire_ndeg:
           id: field_dictionaire_ndeg
           table: node__field_dictionaire_ndeg
@@ -571,7 +506,7 @@ display:
             link_to_entity: false
           group_column: value
           group_columns: {  }
-          group_rows: true
+          group_rows: false
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
@@ -1279,7 +1214,20 @@ display:
           plugin_id: text_custom
           empty: true
           content: 'No content available.'
-      sorts: {  }
+      sorts:
+        field_dictionaire_ndeg_value:
+          id: field_dictionaire_ndeg_value
+          table: node__field_dictionaire_ndeg
+          field: field_dictionaire_ndeg_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         title:
@@ -1310,8 +1258,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1350,9 +1296,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1400,9 +1343,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1442,9 +1382,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1484,9 +1421,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1526,9 +1460,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1616,6 +1547,13 @@ display:
                   min: ''
                   max: ''
                   value: '3'
+              4:
+                title: 'null'
+                operator: empty
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
         field_jlptn_kanji_value:
           id: field_jlptn_kanji_value
           table: node__field_jlptn_kanji
@@ -1645,9 +1583,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
@@ -1684,6 +1619,27 @@ display:
                   min: ''
                   max: ''
                   value: '3'
+              4:
+                title: '2'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2'
+              5:
+                title: '1'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '1'
+              6:
+                title: 'null'
+                operator: empty
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
         field_grade_value:
           id: field_grade_value
           table: node__field_grade
@@ -1710,9 +1666,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1752,9 +1705,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1800,9 +1750,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1841,9 +1788,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: 'i na adjective (field_i_na_adjective)'
@@ -1894,9 +1838,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1945,12 +1886,47 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_print_priority_value:
+          id: field_print_priority_value
+          table: node__field_print_priority
+          field: field_print_priority_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: '0'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'print priority (field_print_priority)'
+            description: ''
+            use_operator: false
+            operator: field_print_priority_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_print_priority_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
           is_grouped: false
           group_info:
             label: ''
@@ -1975,7 +1951,6 @@ display:
           default_row_class: true
           columns:
             node_bulk_form: node_bulk_form
-            field_rang: field_rang
             field_dictionaire_ndeg: field_dictionaire_ndeg
             field_image: field_image
             title: title
@@ -1994,16 +1969,9 @@ display:
             field_i_na_adjective: field_i_na_adjective
             changed: changed
             operations: operations
-          default: field_rang
+          default: field_dictionaire_ndeg
           info:
             node_bulk_form:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_rang:
-              sortable: true
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -2016,7 +1984,7 @@ display:
               empty_column: false
               responsive: ''
             field_image:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -2047,6 +2015,8 @@ display:
               empty_column: false
               responsive: ''
             field_onyomi:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -2093,14 +2063,14 @@ display:
               empty_column: false
               responsive: ''
             type:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_i_na_adjective:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -2124,18 +2094,12 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:
         type: views_query
-      relationships:
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
-          admin_label: author
-          plugin_id: standard
-          required: true
+      relationships: {  }
       show_admin_links: false
       header:
         area_text_custom:
@@ -2171,7 +2135,6 @@ display:
         - 'config:field.storage.node.field_kunyomi_s'
         - 'config:field.storage.node.field_main_radical'
         - 'config:field.storage.node.field_onyomi'
-        - 'config:field.storage.node.field_rang'
         - 'config:field.storage.node.field_tags'
         - 'config:field.storage.node.field_traduction_generale'
         - 'config:field.storage.node.field_type'
@@ -2214,7 +2177,6 @@ display:
         - 'config:field.storage.node.field_kunyomi_s'
         - 'config:field.storage.node.field_main_radical'
         - 'config:field.storage.node.field_onyomi'
-        - 'config:field.storage.node.field_rang'
         - 'config:field.storage.node.field_tags'
         - 'config:field.storage.node.field_traduction_generale'
         - 'config:field.storage.node.field_type'

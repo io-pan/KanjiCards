@@ -1,0 +1,18 @@
+uuid: 4f04b8af-0f89-472a-a595-a1b653c161a0
+langcode: en
+status: true
+dependencies: {  }
+id: sem_grosse_pliees
+label: 'SEM grosse Cartes pliées'
+pageH: '297'
+pageW: '210'
+marginT: '5'
+marginB: '5'
+marginW: '6'
+versoOffsetY: '0'
+versoOffsetX: '-1'
+cardH: '60'
+cardW: '35'
+cardLandscape: 1
+cardFold: 1
+traitCoupe: '10'

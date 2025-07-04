@@ -4,21 +4,25 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kunyomi.field_affichage_a_la_ligne
+    - field.field.paragraph.kunyomi.field_godan_disguised_as_ichidan
     - field.field.paragraph.kunyomi.field_kunyomi
     - field.field.paragraph.kunyomi.field_okurigana_s
     - field.field.paragraph.kunyomi.field_okurigana_unique
     - field.field.paragraph.kunyomi.field_traduction
+    - field.field.paragraph.kunyomi.field_verb_type
     - paragraphs.paragraphs_type.kunyomi
   module:
     - entity_reference_revisions
     - field_group
+    - options
 third_party_settings:
   field_group:
     group_kunyomi_header:
       children:
-        - field_kunyomi
-        - field_okurigana_unique
+        - field_verb_type
+        - field_godan_disguised_as_ichidan
         - field_traduction
+        - group_unique
       label: ' kunyomi-header'
       parent_name: ''
       region: content
@@ -36,18 +40,49 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+    group_unique:
+      children:
+        - field_kunyomi
+        - field_okurigana_unique
+      label: unique
+      parent_name: group_kunyomi_header
+      region: hidden
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: unique
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 id: paragraph.kunyomi.default
 targetEntityType: paragraph
 bundle: kunyomi
 mode: default
 content:
+  field_godan_disguised_as_ichidan:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_kunyomi:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 21
     region: content
   field_okurigana_s:
     type: entity_reference_revisions_entity_view
@@ -64,7 +99,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 22
     region: content
   field_traduction:
     type: string
@@ -72,7 +107,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_verb_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_affichage_a_la_ligne: true
