@@ -4,11 +4,7 @@ status: true
 dependencies:
   config:
     - core.base_field_override.node.kanji.title
-    - field.field.node.kanji.field_jlptn
-    - field.field.node.kanji.field_kunyomi
-    - field.field.node.kanji.field_kunyomi_traduction
     - field.field.node.kanji.field_onyomi
-    - field.field.node.kanji.field_onyomi_example
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
     - field.field.node.kanji.field_rang
@@ -184,30 +180,9 @@ mappings:
       language: null
     unique: {  }
   -
-    target: field_onyomi_example
-    map:
-      value: onyomi_example
-    settings:
-      language: null
-    unique: {  }
-  -
     target: field_onyomi_traduction
     map:
       value: onyomi_traduction
-    settings:
-      language: null
-    unique: {  }
-  -
-    target: field_kunyomi
-    map:
-      value: kunyomi
-    settings:
-      language: null
-    unique: {  }
-  -
-    target: field_kunyomi_traduction
-    map:
-      value: kunyomi_traduction
     settings:
       language: null
     unique: {  }
@@ -220,6 +195,7 @@ mappings:
       reference_by: name
       autocreate: false
       autocreate_bundle: tags
+      feeds_item: false
   -
     target: field_type
     map:
@@ -229,6 +205,7 @@ mappings:
       reference_by: name
       autocreate: false
       autocreate_bundle: type
+      feeds_item: false
   -
     target: field_jlptn
     map:

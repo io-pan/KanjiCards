@@ -303,7 +303,7 @@ display:
             widget: select
             multiple: false
             remember: false
-            default_group: All
+            default_group: '1'
             default_group_multiple:
               1: 1
               2: 2
@@ -330,6 +330,13 @@ display:
                   min: ''
                   max: ''
                   value: '3'
+              4:
+                title: 'null'
+                operator: empty
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
         field_tags_target_id:
           id: field_tags_target_id
           table: node__field_tags
@@ -426,7 +433,7 @@ display:
           admin_label: ''
           plugin_id: boolean
           operator: '='
-          value: '0'
+          value: All
           group: 1
           exposed: true
           expose:

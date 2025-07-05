@@ -19,15 +19,10 @@ dependencies:
     - field.field.node.kanji.field_jlptn_kanji
     - field.field.node.kanji.field_jukugo_exemple
     - field.field.node.kanji.field_kanji_ref
-    - field.field.node.kanji.field_kunyomi
-    - field.field.node.kanji.field_kunyomi_example
     - field.field.node.kanji.field_kunyomi_exemples
     - field.field.node.kanji.field_kunyomi_s
-    - field.field.node.kanji.field_kunyomi_traduction
     - field.field.node.kanji.field_main_radical
-    - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
-    - field.field.node.kanji.field_onyomi_example
     - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
@@ -74,7 +69,9 @@ third_party_settings:
         speed: fast
     group_back:
       children:
+        - field_traduction_generale
         - field_image
+        - field_jlptn
       label: Back
       parent_name: ''
       region: content
@@ -94,9 +91,9 @@ third_party_settings:
         speed: fast
     group_categories:
       children:
-        - field_tags
-        - field_i_na_adjective
         - field_godan_disguised_as_ichidan
+        - field_i_na_adjective
+        - field_tags
       label: categories
       parent_name: ''
       region: content
@@ -176,7 +173,16 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 17
+    weight: 4
+    region: content
+  field_jlptn:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_jlptn_kanji:
     type: number_integer
@@ -204,6 +210,14 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   body: true
   feeds_item: true
@@ -212,16 +226,10 @@ hidden:
   field_i_na_adjective: true
   field_is_josushi: true
   field_is_radical: true
-  field_jlptn: true
   field_jukugo_exemple: true
-  field_kunyomi: true
-  field_kunyomi_example: true
   field_kunyomi_exemples: true
   field_kunyomi_s: true
-  field_kunyomi_traduction: true
-  field_okurigana: true
   field_onyomi: true
-  field_onyomi_example: true
   field_onyomi_exemples: true
   field_onyomi_traduction: true
   field_prefixe: true
@@ -232,7 +240,6 @@ hidden:
   field_strokes: true
   field_suffixe: true
   field_tags: true
-  field_traduction_generale: true
   field_type: true
   field_wiki_reading: true
   links: true

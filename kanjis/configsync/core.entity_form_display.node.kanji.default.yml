@@ -18,15 +18,10 @@ dependencies:
     - field.field.node.kanji.field_jlptn_kanji
     - field.field.node.kanji.field_jukugo_exemple
     - field.field.node.kanji.field_kanji_ref
-    - field.field.node.kanji.field_kunyomi
-    - field.field.node.kanji.field_kunyomi_example
     - field.field.node.kanji.field_kunyomi_exemples
     - field.field.node.kanji.field_kunyomi_s
-    - field.field.node.kanji.field_kunyomi_traduction
     - field.field.node.kanji.field_main_radical
-    - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
-    - field.field.node.kanji.field_onyomi_example
     - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
@@ -225,22 +220,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_kunyomi:
-    type: string_textfield
-    weight: 12
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_kunyomi_example:
-    type: string_textfield
-    weight: 15
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_kunyomi_exemples:
     type: paragraphs
     weight: 11
@@ -279,14 +258,6 @@ content:
         convert: '0'
         duplicate: duplicate
     third_party_settings: {  }
-  field_kunyomi_traduction:
-    type: string_textfield
-    weight: 14
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_main_radical:
     type: entity_reference_autocomplete
     weight: 2
@@ -297,25 +268,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_okurigana:
-    type: string_textfield
-    weight: 13
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_onyomi:
     type: string_textfield
     weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_onyomi_example:
-    type: string_textfield
-    weight: 9
     region: content
     settings:
       size: 60

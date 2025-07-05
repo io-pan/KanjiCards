@@ -19,9 +19,9 @@ third_party_settings:
   field_group:
     group_kunyomi_header:
       children:
+        - field_traduction
         - field_verb_type
         - field_godan_disguised_as_ichidan
-        - field_traduction
         - group_unique
       label: ' kunyomi-header'
       parent_name: ''
@@ -107,7 +107,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 23
     region: content
   field_verb_type:
     type: list_key

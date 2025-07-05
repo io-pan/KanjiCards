@@ -18,15 +18,10 @@ dependencies:
     - field.field.node.kanji.field_jlptn_kanji
     - field.field.node.kanji.field_jukugo_exemple
     - field.field.node.kanji.field_kanji_ref
-    - field.field.node.kanji.field_kunyomi
-    - field.field.node.kanji.field_kunyomi_example
     - field.field.node.kanji.field_kunyomi_exemples
     - field.field.node.kanji.field_kunyomi_s
-    - field.field.node.kanji.field_kunyomi_traduction
     - field.field.node.kanji.field_main_radical
-    - field.field.node.kanji.field_okurigana
     - field.field.node.kanji.field_onyomi
-    - field.field.node.kanji.field_onyomi_example
     - field.field.node.kanji.field_onyomi_exemples
     - field.field.node.kanji.field_onyomi_traduction
     - field.field.node.kanji.field_prefixe
@@ -179,22 +174,6 @@ content:
     third_party_settings: {  }
     weight: 37
     region: content
-  field_kunyomi:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_kunyomi_example:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 23
-    region: content
   field_kunyomi_exemples:
     type: entity_reference_revisions_entity_view
     label: above
@@ -213,14 +192,6 @@ content:
     third_party_settings: {  }
     weight: 38
     region: content
-  field_kunyomi_traduction:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
   field_main_radical:
     type: entity_reference_label
     label: above
@@ -229,14 +200,6 @@ content:
     third_party_settings: {  }
     weight: 33
     region: content
-  field_okurigana:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
   field_onyomi:
     type: string
     label: hidden
@@ -244,14 +207,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_onyomi_example:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_onyomi_exemples:
     type: entity_reference_revisions_entity_view
