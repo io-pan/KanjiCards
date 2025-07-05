@@ -3,7 +3,8 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 
-function print_settings_page_attachments(array &$page) {
+function print_settings_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'print_settings/miseenpage';
   // $routeName = \Drupal::routeMatch()->getRouteName();
   // if (!in_array($routeName, [
   // 	'layout_builder.overrides.node.view', 
@@ -49,6 +50,9 @@ function print_settings_preprocess_views_view_list(&$variables) {
       $variables['orientation'] = $settings->get('cardLandscape')
                                   ? 'orientation-paysage'
                                   : 'orientation-portrait';
+      $variables['cardtype'] = $settings->get('cardFold')
+                                  ? 'carte-pliable'
+                                  : 'carte-retournable';
 
       $variables['#attached']['drupalSettings']['printSettings'] = [
         'pageH' => $settings->get('pageH'),

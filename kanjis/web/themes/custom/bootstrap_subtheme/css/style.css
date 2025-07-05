@@ -213,8 +213,6 @@ body[class*="path-cards"] .main-content  .container {
     height:  calc(var(--card-height)/2);
 }
 
-
-
 .view-cards.view-display-id-page_recto  .view-content .item-list > ul > li {
 	text-align: center;
 }
@@ -255,27 +253,33 @@ body[class*="path-cards"] .main-content  .container {
 	/*border-top: 1px solid #f5f5f5;*/
 	background-color: #fff;
 }
-
-
+.view-cards .carte-retournable .back {
+	transform: rotate(180deg);
+}
 .view-cards .node--view-mode-verso .node__title {
 	display: none;
 }
 	.view-cards .node__title {
-		    width: 100%;
+		width: 100%;
 		font-family: 'kanji';
 		font-size: 24mm;
 		line-height: 29mm;
 		margin-block-end: 0;
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%, 0) rotate(180deg);
-		/*transform: translate(-50%, 0) rotate(180deg);*/
 		z-index: 3;
+		transform: translate(-50%, 0);
 	}
-	.trad-jlpn,
-	.view-cards.view-display-id-page_recto .front {
+	.view-cards .carte-pliable .node__title{
+		transform: translate(-50%, 0) rotate(180deg);
+	}
+
+	.carte-pliable .trad-jlpn,
+	.view-cards.view-display-id-page_recto .carte-pliable .front {
 		transform: rotate(180deg);
-	}	
+	}
+
+
 	.view-cards .node--type-jukugo .node__title {
 		font-size: 11mm;
 		position: relative;
@@ -388,11 +392,20 @@ body[class*="path-cards"] .main-content  .container {
 	.view-cards .node--view-mode-verso .field--name-field-traduction-generale {
 		text-align: center;
 	}
+
+	/*
 	.trad-jlpn  .field--name-field-jlptn {
 	 	float: left;
 		color: #5f5fff;
 		padding-right: 1mm;
-
+	}*/
+	.field--name-field-jlptn {
+		font-size: 3mm;	
+	    line-height: 1mm;
+	 	position: absolute;
+		color: #5f5fff;
+		bottom: calc(var(--card-margin)/2);
+		left: calc(var(--card-margin)/2);
 	}
 
 .view-cards .onyomi,

@@ -1,9 +1,9 @@
-uuid: de947317-e1db-4244-9b23-b223a5077ea0
+uuid: b8ddc47b-97f0-4572-9e32-794c03092de3
 langcode: en
 status: true
 dependencies: {  }
 id: sem_grosse_cartes_pliees
-label: 'SEM grosse Cartes pliées'
+label: 'SEM grosse Cartes pliees'
 pageH: '297'
 pageW: '210'
 marginT: '5'

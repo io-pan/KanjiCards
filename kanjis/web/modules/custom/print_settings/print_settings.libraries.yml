@@ -1,0 +1,7 @@
+miseenpage:
+  version: 1.x
+  js:
+    assets/js/index.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

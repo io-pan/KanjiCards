@@ -19,7 +19,7 @@
  */
 #}
 {% if attributes -%}
-  <div{{ attributes.addClass([orientation]) }}>
+  <div{{ attributes.addClass([orientation,cardtype]) }}>
 {% endif %}
   {% if title %}
     <h3>{{ title }}</h3>

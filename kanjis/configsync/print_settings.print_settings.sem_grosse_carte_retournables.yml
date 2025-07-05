@@ -1,4 +1,4 @@
-uuid: 6f97a4dc-4ebc-4248-ad5b-dfebdbd67098
+uuid: f3aaa821-521d-44b6-9d8e-602ea22047f3
 langcode: en
 status: true
 dependencies: {  }
@@ -14,4 +14,5 @@ versoOffsetX: '-1'
 cardH: '60'
 cardW: '35'
 cardLandscape: 0
+cardFold: 0
 traitCoupe: '10'

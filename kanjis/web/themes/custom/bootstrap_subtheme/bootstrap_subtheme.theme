@@ -53,26 +53,32 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 		// }
  		
 		
+			// General trad -> ON trad.
+	 		\Drupal::logger('kanji on trad')->info('go kanji');
+			// $vid = 'radical';
+
+			$nids = \Drupal::entityQuery('node')
+			  ->condition('type','kanji')
+			  ->accessCheck(FALSE)
+			  ->execute();
+			$kanjis = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+			foreach ($kanjis as $key => $kanji) {
+				// var_dump($kanji->get('field_onyomi_traduction')->getValue()[0]['value']);
+				// var_dump($kanji->field_onyomi_traduction->value);
+				// var_dump($kanji->field_traduction_generale->value);
+				// die();
+
+
+				if(empty($kanji->field_onyomi_traduction->getValue())
+					|| 'Array' == $kanji->field_onyomi_traduction->value ) {
+
+					$kanji->field_onyomi_traduction->value = $kanji->field_traduction_generale->value;
+					$kanji->save();
+				}
+			}
+
 /*
-				 		\Drupal::logger('radicaux')->info('go jukugo');
-						// $vid = 'radical';
-
-						$nids = \Drupal::entityQuery('node')
-						  ->condition('type','jukugo')
-						  ->accessCheck(FALSE)
-						  ->execute();
-						$jukugos = \Drupal\node\Entity\Node::loadMultiple($nids);
-
-						foreach ($jukugos as $key => $jukugo) {
-			
-							$jukugo->save();
-							
-							continue;
-	
-							if(!empty($node->field_componant_ref->getValue())){
-								// continue;
-							}
-
 							$refs = $node->field_composant->getValue();
 							foreach($refs as $ref){
 								$term_name = $ref['value'];//$node->field_radical_text->value;
