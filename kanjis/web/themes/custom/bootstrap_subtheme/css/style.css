@@ -400,12 +400,16 @@ body[class*="path-cards"] .main-content  .container {
 		padding-right: 1mm;
 	}*/
 	.field--name-field-jlptn {
-		font-size: 3mm;	
-	    line-height: 1mm;
-	 	position: absolute;
-		color: #5f5fff;
-		bottom: calc(var(--card-margin)/2);
-		left: calc(var(--card-margin)/2);
+	    font-size: 3mm;
+	    line-height: 3mm;
+	    position: absolute;
+	    color: #5f5fff;
+	    /*bottom: calc(var(--card-margin) / 2);*/
+	    left: calc(var(--card-margin) / 2);
+	    /*background: white;*/
+	    border-radius: 3mm;
+	    width: 3mm;
+	    height: 3mm;
 	}
 
 .view-cards .onyomi,
@@ -694,24 +698,32 @@ body[class*="path-cards"] .main-content  .container {
 }
 
 
-
-
-
+.view-cards .carte-retournable .back .categories {
+	display: none;
+}
 .view-cards .categories {
 
 		position: absolute;
-				font-size: 3mm;
+		font-size: 3mm;
 		line-height: 5mm;
-		bottom: 0;
-
+		
 }
 	.view-cards .categories {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		left: 0;/*calc(-1*var(--card-margin));*/
-	  z-index: 9;
-	  background-color: rgba(248, 248, 248, 1);
+    /* top: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* left: 0; */
+    z-index: 9;
+    background-color: rgb(234 237 245);
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3mm;
+    padding-left: 4.5mm;
+}
 	}
 	.field--name-field-traduction-generale{
 			bottom: 0;
@@ -724,9 +736,10 @@ body[class*="path-cards"] .main-content  .container {
 		}
 
 		.view-cards .categories .field--name-field-tags .field--tags__items {
-			display: flex;
+			/*display: flex;
 			flex-direction: column;
-			margin-bottom: -1px;
+			margin-bottom: -1px;*/
+			position: relative;
 		}
 /*
 .view-cards .field--name-field-traduction-generale {
@@ -748,7 +761,9 @@ body[class*="path-cards"] .main-content  .container {
 
 
 .view-cards .categories .field--tags__item {
-	min-width: 4mm;
+	height: 3mm;
+	width: 3mm;
+	position: absolute;
 	margin: 0;
     line-height: 2mm;
     margin-block: 0;
@@ -758,9 +773,46 @@ body[class*="path-cards"] .main-content  .container {
 }
 .view-cards .categories .svg-inline--fa {
 	color: white;
-    padding: 0.5mm;
-    width: 3.5mm;
-    height: 3.5mm;
+    padding: 0.2mm;
+    width: 2.6mm;
+    height: 2.6mm;
+    position: absolute;
+}
+.view-cards .categories .weight-0 {
+	left: 0mm;
+}
+.view-cards .categories .weight-1 {
+	left: 3mm;
+}
+.view-cards .categories .weight-2 {
+	left: 6mm;
+}
+.view-cards .categories .weight-3 {
+	left: 9mm;
+}
+.view-cards .categories .weight-4 {
+	left: 12mm;
+}
+.view-cards .categories .weight-5 {
+	left: 15mm;
+}
+.view-cards .categories .weight-6 {
+	left: 18mm;
+}
+.view-cards .categories .weight-7 {
+	left: 21mm;
+}
+.view-cards .categories .weight-8 {
+	left: 24mm;
+}
+.view-cards .categories .weight-9 {
+	left: 27mm;
+}
+.view-cards .categories .weight-10 {
+	left: 30mm;
+}
+.view-cards .categories .weight-11 {
+	left: 33mm;
 }
 
 .view-cards  .is-radical .field--name-field-main-radical .field--name-name {

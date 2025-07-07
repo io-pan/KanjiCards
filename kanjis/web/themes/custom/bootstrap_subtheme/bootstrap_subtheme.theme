@@ -10,7 +10,12 @@ function bootstrap_subtheme_preprocess_node__view__cards(&$variables) {
 	}
 }
 
-
+function bootstrap_subtheme_preprocess_taxonomy_term(&$variables) {
+  $term = $variables['term'];
+  if ($term instanceof \Drupal\taxonomy\TermInterface) {
+    $variables['weight'] = $term->get('weight')->value;
+  }
+}
 function bootstrap_subtheme_preprocess_views_view(&$variables) {
 
 	/*

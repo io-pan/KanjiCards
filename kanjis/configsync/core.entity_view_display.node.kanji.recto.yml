@@ -71,7 +71,7 @@ third_party_settings:
       children:
         - field_traduction_generale
         - field_image
-        - field_jlptn
+        - group_categories
       label: Back
       parent_name: ''
       region: content
@@ -91,13 +91,14 @@ third_party_settings:
         speed: fast
     group_categories:
       children:
+        - field_jlptn
+        - field_tags
         - field_godan_disguised_as_ichidan
         - field_i_na_adjective
-        - field_tags
       label: categories
-      parent_name: ''
+      parent_name: group_back
       region: content
-      weight: 2
+      weight: 6
       format_type: html_element
       format_settings:
         classes: categories
@@ -210,6 +211,15 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  field_tags:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: icon
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_traduction_generale:
     type: string
     label: hidden
@@ -239,7 +249,6 @@ hidden:
   field_secondary_radical: true
   field_strokes: true
   field_suffixe: true
-  field_tags: true
   field_type: true
   field_wiki_reading: true
   links: true

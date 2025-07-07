@@ -50,7 +50,7 @@ third_party_settings:
       label: trad-jlpn
       parent_name: ''
       region: content
-      weight: 2
+      weight: 3
       format_type: html_element
       format_settings:
         classes: trad-jlpn
@@ -69,7 +69,6 @@ third_party_settings:
         - group_onyomi_header
         - field_jukugo_exemple
         - field_onyomi_exemples
-        - field_onyomi_example
       label: onyomi
       parent_name: ''
       region: content
@@ -91,10 +90,6 @@ third_party_settings:
       children:
         - field_kunyomi_s
         - field_kunyomi_exemples
-        - field_kunyomi
-        - field_okurigana
-        - field_kunyomi_traduction
-        - field_kunyomi_example
       label: kunyomi
       parent_name: ''
       region: content
@@ -123,6 +118,26 @@ third_party_settings:
       format_type: html_element
       format_settings:
         classes: onyomi-header
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_categories:
+      children:
+        - field_type
+      label: categories
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: categories
         show_empty_fields: false
         id: ''
         label_as_html: false
@@ -192,6 +207,15 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_type:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: icon
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
 hidden:
   body: true
   feeds_item: true
@@ -217,6 +241,5 @@ hidden:
   field_suffixe: true
   field_tags: true
   field_traduction_generale: true
-  field_type: true
   field_wiki_reading: true
   links: true
