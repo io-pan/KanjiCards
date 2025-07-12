@@ -1968,6 +1968,7 @@ display:
             field_i_na_adjective: field_i_na_adjective
             changed: changed
             operations: operations
+            field_components_rank: field_components_rank
           default: field_dictionaire_ndeg
           info:
             node_bulk_form:
@@ -2083,6 +2084,13 @@ display:
               empty_column: false
               responsive: priority-low
             operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_components_rank:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false

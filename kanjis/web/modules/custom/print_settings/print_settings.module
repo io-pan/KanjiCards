@@ -79,7 +79,7 @@ function print_settings_preprocess_views_view_list(&$variables) {
  * Implements hook_entity_presave().
  */
 function print_settings_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  \Drupal::logger('radicaux')->info( 'print_settings_entity_presave -> ' . $entity->id());
+ // \Drupal::logger('radicaux')->info( 'print_settings_entity_presave -> ' . $entity->id());
 /*
   switch ($entity->bundle()) {
     // Here you modify only your day content type

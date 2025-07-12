@@ -1,0 +1,23 @@
+uuid: 01d581ea-9563-46e9-abaf-e75702f9fc2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components_rank
+    - node.type.kanji
+id: node.kanji.field_components_rank
+field_name: field_components_rank
+entity_type: node
+bundle: kanji
+label: 'components rank'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

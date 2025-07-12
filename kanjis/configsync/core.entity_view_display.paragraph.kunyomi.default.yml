@@ -4,24 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kunyomi.field_affichage_a_la_ligne
-    - field.field.paragraph.kunyomi.field_godan_disguised_as_ichidan
+    - field.field.paragraph.kunyomi.field_exception
     - field.field.paragraph.kunyomi.field_kunyomi
     - field.field.paragraph.kunyomi.field_okurigana_s
     - field.field.paragraph.kunyomi.field_okurigana_unique
     - field.field.paragraph.kunyomi.field_traduction
-    - field.field.paragraph.kunyomi.field_verb_type
     - paragraphs.paragraphs_type.kunyomi
   module:
     - entity_reference_revisions
     - field_group
-    - options
 third_party_settings:
   field_group:
     group_kunyomi_header:
       children:
         - field_traduction
-        - field_verb_type
-        - field_godan_disguised_as_ichidan
         - group_unique
       label: ' kunyomi-header'
       parent_name: ''
@@ -66,16 +62,6 @@ targetEntityType: paragraph
 bundle: kunyomi
 mode: default
 content:
-  field_godan_disguised_as_ichidan:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_kunyomi:
     type: string
     label: hidden
@@ -109,12 +95,6 @@ content:
     third_party_settings: {  }
     weight: 23
     region: content
-  field_verb_type:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   field_affichage_a_la_ligne: true
+  field_exception: true

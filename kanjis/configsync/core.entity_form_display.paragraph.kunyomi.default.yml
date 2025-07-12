@@ -4,12 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kunyomi.field_affichage_a_la_ligne
-    - field.field.paragraph.kunyomi.field_godan_disguised_as_ichidan
+    - field.field.paragraph.kunyomi.field_exception
     - field.field.paragraph.kunyomi.field_kunyomi
     - field.field.paragraph.kunyomi.field_okurigana_s
     - field.field.paragraph.kunyomi.field_okurigana_unique
     - field.field.paragraph.kunyomi.field_traduction
-    - field.field.paragraph.kunyomi.field_verb_type
     - paragraphs.paragraphs_type.kunyomi
   module:
     - paragraphs
@@ -20,14 +19,14 @@ mode: default
 content:
   field_affichage_a_la_ligne:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  field_godan_disguised_as_ichidan:
+  field_exception:
     type: boolean_checkbox
-    weight: 4
+    weight: 3
     region: content
     settings:
       display_label: true
@@ -42,7 +41,7 @@ content:
     third_party_settings: {  }
   field_okurigana_s:
     type: paragraphs
-    weight: 6
+    weight: 5
     region: content
     settings:
       title: Paragraph
@@ -75,12 +74,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_verb_type:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.kanji.body
     - field.field.node.kanji.feeds_item
     - field.field.node.kanji.field_componant_ref
+    - field.field.node.kanji.field_components_rank
     - field.field.node.kanji.field_composant
     - field.field.node.kanji.field_dictionaire_ndeg
     - field.field.node.kanji.field_godan_disguised_as_ichidan
@@ -41,7 +42,6 @@ dependencies:
     - field_group
     - image
     - paragraphs
-    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -88,6 +88,7 @@ third_party_settings:
         - field_jlptn
         - field_jlptn_kanji
         - field_grade
+        - field_components_rank
         - field_rang
       label: level
       region: content
@@ -127,6 +128,13 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_components_rank:
+    type: number
+    weight: 21
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_composant:
@@ -320,7 +328,7 @@ content:
     third_party_settings: {  }
   field_rang:
     type: number
-    weight: 21
+    weight: 22
     region: content
     settings:
       placeholder: ''
@@ -341,15 +349,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_tags:
-    type: term_reference_tree
+    type: options_buttons
     weight: 17
     region: content
-    settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
+    settings: {  }
     third_party_settings: {  }
   field_traduction_generale:
     type: string_textfield

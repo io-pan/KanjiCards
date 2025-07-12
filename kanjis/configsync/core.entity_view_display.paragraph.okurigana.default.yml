@@ -3,28 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.okurigana.field_godan_disguised_as_ichidan
+    - field.field.paragraph.okurigana.field_exception
     - field.field.paragraph.okurigana.field_okurigana
     - field.field.paragraph.okurigana.field_traduction
-    - field.field.paragraph.okurigana.field_verb_type
     - paragraphs.paragraphs_type.okurigana
-  module:
-    - options
 id: paragraph.okurigana.default
 targetEntityType: paragraph
 bundle: okurigana
 mode: default
 content:
-  field_godan_disguised_as_ichidan:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_okurigana:
     type: string
     label: hidden
@@ -41,11 +28,5 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_verb_type:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-hidden: {  }
+hidden:
+  field_exception: true

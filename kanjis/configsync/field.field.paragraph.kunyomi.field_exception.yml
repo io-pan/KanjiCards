@@ -1,15 +1,15 @@
-uuid: e2281a37-6101-4873-842d-5850877f740f
+uuid: f61dc4b3-2177-4e5b-ad79-16a1224a5485
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_godan_disguised_as_ichidan
+    - field.storage.paragraph.field_exception
     - paragraphs.paragraphs_type.kunyomi
-id: paragraph.kunyomi.field_godan_disguised_as_ichidan
-field_name: field_godan_disguised_as_ichidan
+id: paragraph.kunyomi.field_exception
+field_name: field_exception
 entity_type: paragraph
 bundle: kunyomi
-label: 'Godan disguised as ichidan'
+label: exception
 description: ''
 required: false
 translatable: false
