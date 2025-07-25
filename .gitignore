@@ -1,5 +1,5 @@
+kanjis/web/sites/default/files/*
 kanjis/web/sites/default/files/php/*
-
 kanjis/vendor
 kanjis/composer.phar
 kanjis/composer
@@ -11,3 +11,4 @@ kanjis/drupal.phar
 kanjis/drupal
 kanjis/web/sites/default/files/php/twig/.K8TaM_76of-P5n1YHZn75bbFyOw
 desktop.ini
+images/*
