@@ -13,9 +13,27 @@ function bootstrap_subtheme_preprocess_node__view__cards(&$variables) {
 function bootstrap_subtheme_preprocess_taxonomy_term(&$variables) {
   $term = $variables['term'];
   if ($term instanceof \Drupal\taxonomy\TermInterface) {
-    $variables['weight'] = $term->get('weight')->value;
+  	
+  	if('tags'== $term->bundle()){
+    	$variables['weight'] = $term->get('weight')->value;
+  	} // tags
+
+   	else if('type'== $term->bundle()) {
+    	$parent = \Drupal::entityTypeManager()
+    		->getStorage('taxonomy_term')
+    		->loadParents($term->id());
+    	if($parent) {
+	    	$parent = reset($parent);
+	  		$variables['roottype'] = $parent->label();
+	  	}
+	  	else {
+	  		$variables['roottype'] = $term->label();
+	  	}
+  	} // 'type'
   }
 }
+
+
 function bootstrap_subtheme_preprocess_views_view(&$variables) {
 
 	/*
@@ -58,32 +76,33 @@ function bootstrap_subtheme_preprocess_views_view(&$variables) {
 		// }
  		
 		
+			
 			// General trad -> ON trad.
-	 		\Drupal::logger('kanji on trad')->info('go kanji');
-			// $vid = 'radical';
+	 		// \Drupal::logger('kanji on trad')->info('go kanji');
+			// // $vid = 'radical';
 
-			$nids = \Drupal::entityQuery('node')
-			  ->condition('type','kanji')
-			  ->accessCheck(FALSE)
-			  ->execute();
-			$kanjis = \Drupal\node\Entity\Node::loadMultiple($nids);
+			// $nids = \Drupal::entityQuery('node')
+			//   ->condition('type','kanji')
+			//   ->accessCheck(FALSE)
+			//   ->execute();
+			// $kanjis = \Drupal\node\Entity\Node::loadMultiple($nids);
 
-			foreach ($kanjis as $key => $kanji) {
-				// var_dump($kanji->get('field_onyomi_traduction')->getValue()[0]['value']);
-				// var_dump($kanji->field_onyomi_traduction->value);
-				// var_dump($kanji->field_traduction_generale->value);
-				// die();
+			// foreach ($kanjis as $key => $kanji) {
+			// 	// var_dump($kanji->get('field_onyomi_traduction')->getValue()[0]['value']);
+			// 	// var_dump($kanji->field_onyomi_traduction->value);
+			// 	// var_dump($kanji->field_traduction_generale->value);
+			// 	// die();
 
 
-				if(empty($kanji->field_onyomi_traduction->getValue())
-					|| 'Array' == $kanji->field_onyomi_traduction->value ) {
+			// 	if(empty($kanji->field_onyomi_traduction->getValue())
+			// 		|| 'Array' == $kanji->field_onyomi_traduction->value ) {
 
-					$kanji->field_onyomi_traduction->value = $kanji->field_traduction_generale->value;
-					$kanji->save();
-				}
-			}
+			// 		$kanji->field_onyomi_traduction->value = $kanji->field_traduction_generale->value;
+			// 		$kanji->save();
+			// 	}
+			// }
 
-/*
+							/*
 							$refs = $node->field_composant->getValue();
 							foreach($refs as $ref){
 								$term_name = $ref['value'];//$node->field_radical_text->value;

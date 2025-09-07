@@ -145,11 +145,12 @@ body[class*="path-cards"] .main-content  .container {
 }
 
 .view-cards .pager {
-	max-width: 500px;
+    max-width: 500px;
     display: block;
     position: fixed;
-    top: 500px;
+    bottom: 0;
     right: 0;
+    z-index: 9999;
 }
 .view-cards .pager .pager__item {
 	border: 1px solid;
@@ -400,16 +401,17 @@ body[class*="path-cards"] .main-content  .container {
 		padding-right: 1mm;
 	}*/
 	.field--name-field-jlptn {
-	    font-size: 3mm;
-	    line-height: 3mm;
-	    position: absolute;
-	    color: #5f5fff;
-	    /*bottom: calc(var(--card-margin) / 2);*/
-	    left: calc(var(--card-margin) / 2);
-	    /*background: white;*/
-	    border-radius: 3mm;
-	    width: 3mm;
-	    height: 3mm;
+    font-size: 3mm;
+    line-height: 3mm;
+    position: absolute;
+    color: #5f5fff;
+    /* bottom: calc(var(--card-margin) / 2); */
+    left: 0;
+    background: white;
+    /* border-radius: 3mm; */
+    width: 4.5mm;
+    height: 4mm;
+    top: -8px;
 	}
 
 .view-cards .onyomi,
@@ -421,7 +423,7 @@ body[class*="path-cards"] .main-content  .container {
 }
 .view-cards .kunyomi {
 	background: #F5FAFF;
-	border-bottom: solid 0.5mm var(--KunColorLight);
+	/*border-bottom: solid 0.5mm var(--KunColorLight);*/
 	min-height: 6mm;
 }
 
@@ -701,12 +703,16 @@ body[class*="path-cards"] .main-content  .container {
 .view-cards .carte-retournable .back .categories {
 	display: none;
 }
+
+.view-cards .node--view-mode-recto  .categories {
+	/*font-size: 0mm;
+	height: 2mm;*/
+}
 .view-cards .categories {
 
 		position: absolute;
 		font-size: 3mm;
 		line-height: 5mm;
-		
 }
 	.view-cards .categories {
     /* top: 0; */
@@ -723,6 +729,9 @@ body[class*="path-cards"] .main-content  .container {
     bottom: 0;
     height: 3mm;
     padding-left: 4.5mm;
+}
+.view-cards .back .categories {
+	height: 1.5mm;
 }
 	}
 	.field--name-field-traduction-generale{
@@ -776,7 +785,7 @@ body[class*="path-cards"] .main-content  .container {
     padding: 0.2mm;
     width: 2.6mm;
     height: 2.6mm;
-    position: absolute;
+    /*position: absolute;*/
 }
 .view-cards .categories .weight-0 {
 	left: 0mm;
@@ -814,6 +823,24 @@ body[class*="path-cards"] .main-content  .container {
 .view-cards .categories .weight-11 {
 	left: 33mm;
 }
+
+.view-cards .categories .root-type-Verbe {
+	left:33mm;
+}
+
+.term-bundle--type,
+.term-bundle--tags {
+	padding: 0;
+    width: 3mm;
+    height: 3mm;
+    position: absolute;
+    line-height: 0px;
+}
+
+.term-bundle--tags svg{
+	display: none;
+}
+
 
 .view-cards  .is-radical .field--name-field-main-radical .field--name-name {
 	color: #ff5f5f;
@@ -1019,6 +1046,8 @@ body[class*="path-cards"] .main-content  .container {
 
 
 
+
+
 /*******************************************/
 /*	RADICAUX
 /*---------------------------------------------*/
@@ -1039,3 +1068,19 @@ body[class*="path-cards"] .main-content  .container {
 	background-color: #8f8;
 }
 */
+
+
+/************************************************/
+/* JUKUGO  */
+
+.node--type-jukugo .node__content {
+    padding-block-end: 0;
+}
+
+.node--type-jukugo .field--name-field-traduction-generale {
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	color:#939393;
+	width: 100%;
+}

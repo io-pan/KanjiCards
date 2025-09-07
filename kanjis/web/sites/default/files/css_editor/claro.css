@@ -39,3 +39,8 @@ text-decoration: none;
  .view-id-radicaux .views-field-name {
 font-family: 'radicaux';
 }
+
+
+.display-inline {
+  display:inline-block;
+}

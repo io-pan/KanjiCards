@@ -3,15 +3,12 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 
+
+/**
+ * Implements hook_page_attachments().
+ */
 function print_settings_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'print_settings/miseenpage';
-  // $routeName = \Drupal::routeMatch()->getRouteName();
-  // if (!in_array($routeName, [
-  // 	'layout_builder.overrides.node.view', 
-  // 	'layout_builder.defaults.node.view'
-  // 	])) {
-  //   $page['#attached']['library'] = array_diff($page['#attached']['library'], ['contextual/drupal.contextual-links', 'contextual/drupal.contextual-toolbar']);
-  // }
 }
 
 
