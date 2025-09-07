@@ -1,0 +1,29 @@
+uuid: fa561f80-3095-42ca-a86a-2e87ad213657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.onomatopee
+    - taxonomy.vocabulary.type
+id: node.onomatopee.field_type
+field_name: field_type
+entity_type: node
+bundle: onomatopee
+label: type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type: type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: tags
+field_type: entity_reference

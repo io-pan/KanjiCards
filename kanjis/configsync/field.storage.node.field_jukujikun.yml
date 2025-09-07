@@ -1,11 +1,11 @@
-uuid: 89492286-a30e-4029-9f34-b4e2840fa6eb
+uuid: c3de7759-d562-4a1a-847b-c1b40d60acca
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_i_na_adjective
-field_name: field_i_na_adjective
+id: node.field_jukujikun
+field_name: field_jukujikun
 entity_type: node
 type: boolean
 settings: {  }

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.mazegaki.field_rang
     - field.field.node.mazegaki.field_tags
     - field.field.node.mazegaki.field_traduction_generale
+    - field.field.node.mazegaki.field_type
     - node.type.mazegaki
   module:
     - field_group
@@ -109,4 +110,5 @@ hidden:
   field_jlptn: true
   field_onyomi: true
   field_rang: true
+  field_type: true
   links: true

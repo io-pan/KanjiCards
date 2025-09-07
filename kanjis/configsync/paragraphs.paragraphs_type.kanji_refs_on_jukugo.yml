@@ -1,0 +1,10 @@
+uuid: d5fbdde1-7a62-4ecb-a1cb-98b5b46299ae
+langcode: en
+status: true
+dependencies: {  }
+id: kanji_refs_on_jukugo
+label: 'kanji refs'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

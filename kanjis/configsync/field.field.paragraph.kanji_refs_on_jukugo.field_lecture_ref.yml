@@ -1,0 +1,43 @@
+uuid: 29f5bc46-c618-4ad4-83cb-ce34da949d91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lecture_ref
+    - paragraphs.paragraphs_type.kanji_refs_on_jukugo
+    - paragraphs.paragraphs_type.kunyomi
+    - paragraphs.paragraphs_type.onyomi
+id: paragraph.kanji_refs_on_jukugo.field_lecture_ref
+field_name: field_lecture_ref
+entity_type: paragraph
+bundle: kanji_refs_on_jukugo
+label: 'lecture ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kunyomi: kunyomi
+      onyomi: onyomi
+    negate: 0
+    target_bundles_drag_drop:
+      exemple:
+        weight: 6
+        enabled: false
+      kanji_refs_on_jukugo:
+        weight: 7
+        enabled: false
+      kunyomi:
+        weight: 8
+        enabled: true
+      okurigana:
+        weight: 9
+        enabled: false
+      onyomi:
+        weight: 10
+        enabled: true
+field_type: entity_reference

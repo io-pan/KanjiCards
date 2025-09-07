@@ -1,0 +1,40 @@
+uuid: f83d24e0-94ca-4046-9508-2684fbbc7b00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.onyomi.field_onyomi
+    - field.field.paragraph.onyomi.field_rare
+    - field.field.paragraph.onyomi.field_traduction
+    - paragraphs.paragraphs_type.onyomi
+id: paragraph.onyomi.default
+targetEntityType: paragraph
+bundle: onyomi
+mode: default
+content:
+  field_onyomi:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rare:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_traduction:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

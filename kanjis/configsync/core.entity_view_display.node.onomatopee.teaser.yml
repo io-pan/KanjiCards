@@ -1,0 +1,51 @@
+uuid: 29b7b6c5-3db2-4641-9ae1-35330b25140e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.onomatopee.field_jlptn
+    - field.field.node.onomatopee.field_kunyomi_exemples
+    - field.field.node.onomatopee.field_tags
+    - field.field.node.onomatopee.field_traduction_generale
+    - field.field.node.onomatopee.field_type
+    - node.type.onomatopee
+  module:
+    - user
+id: node.onomatopee.teaser
+targetEntityType: node
+bundle: onomatopee
+mode: teaser
+content:
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_jlptn: true
+  field_kunyomi_exemples: true

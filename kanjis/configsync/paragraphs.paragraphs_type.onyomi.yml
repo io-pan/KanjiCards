@@ -1,0 +1,10 @@
+uuid: f98f3749-9f11-459f-aa5d-381eb3b5fd8a
+langcode: en
+status: true
+dependencies: {  }
+id: onyomi
+label: onyomi
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

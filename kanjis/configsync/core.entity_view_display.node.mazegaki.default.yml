@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.mazegaki.field_rang
     - field.field.node.mazegaki.field_tags
     - field.field.node.mazegaki.field_traduction_generale
+    - field.field.node.mazegaki.field_type
     - image.style.wide
     - node.type.mazegaki
   module:
@@ -63,6 +64,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   links:
     settings: {  }

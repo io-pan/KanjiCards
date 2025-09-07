@@ -1,0 +1,43 @@
+uuid: 0664de01-caee-4c0a-8a36-899b9f771174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onyomi_s
+    - node.type.kanji
+    - paragraphs.paragraphs_type.onyomi
+  module:
+    - entity_reference_revisions
+id: node.kanji.field_onyomi_s
+field_name: field_onyomi_s
+entity_type: node
+bundle: kanji
+label: onyomi_s
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      onyomi: onyomi
+    negate: 0
+    target_bundles_drag_drop:
+      exemple:
+        weight: 6
+        enabled: false
+      kanji_refs_on_jukugo:
+        weight: 7
+        enabled: false
+      kunyomi:
+        weight: 8
+        enabled: false
+      okurigana:
+        weight: 9
+        enabled: false
+      onyomi:
+        weight: 10
+        enabled: true
+field_type: entity_reference_revisions

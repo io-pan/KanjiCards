@@ -1,9 +1,0 @@
-uuid: 93299dc4-3947-4df1-9468-e0c1048275d1
-langcode: en
-status: true
-dependencies: {  }
-name: 'verb type'
-vid: verb_type
-description: null
-weight: 0
-new_revision: false

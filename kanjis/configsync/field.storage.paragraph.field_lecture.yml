@@ -1,0 +1,21 @@
+uuid: 66ffaeed-d278-44b4-b824-2a6a5f4f4402
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_lecture
+field_name: field_lecture
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

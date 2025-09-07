@@ -1,0 +1,23 @@
+uuid: 5fe9cbed-e364-40f9-8f2b-719548315cd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_offset
+    - taxonomy.vocabulary.type
+id: taxonomy_term.type.field_offset
+field_name: field_offset
+entity_type: taxonomy_term
+bundle: type
+label: offset
+description: "décalage de l'icône en mm."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

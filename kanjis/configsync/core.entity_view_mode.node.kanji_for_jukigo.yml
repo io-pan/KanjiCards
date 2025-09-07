@@ -1,0 +1,11 @@
+uuid: 62a6e5bd-29a8-48f0-a0a6-56d86e27cb3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.kanji_for_jukigo
+label: 'kanji for jukugo'
+description: null
+targetEntityType: node
+cache: true

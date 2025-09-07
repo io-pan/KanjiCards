@@ -4,15 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.recto
-    - field.field.node.jukugo.field_i_na_adjective
+    - field.field.node.jukugo.field_composants
     - field.field.node.jukugo.field_image
     - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_jukujikun
     - field.field.node.jukugo.field_kanji_ref
     - field.field.node.jukugo.field_onyomi
     - field.field.node.jukugo.field_onyomi_example
     - field.field.node.jukugo.field_rang
     - field.field.node.jukugo.field_tags
     - field.field.node.jukugo.field_traduction_generale
+    - field.field.node.jukugo.field_type
     - node.type.jukugo
   module:
     - field_group
@@ -21,8 +23,7 @@ dependencies:
 third_party_settings:
   field_group:
     group_front:
-      children:
-        - field_jlptn
+      children: {  }
       label: front
       parent_name: ''
       region: content
@@ -42,7 +43,9 @@ third_party_settings:
         speed: fast
     group_back:
       children:
+        - field_traduction_generale
         - field_image
+        - group_categories
       label: back
       parent_name: ''
       region: content
@@ -62,11 +65,12 @@ third_party_settings:
         speed: fast
     group_categories:
       children:
+        - field_jlptn
         - field_tags
       label: categories
-      parent_name: ''
+      parent_name: group_back
       region: content
-      weight: 2
+      weight: 8
       format_type: html_element
       format_settings:
         classes: categories
@@ -94,7 +98,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_jlptn:
     type: number_integer
@@ -105,12 +109,29 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  field_tags:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_traduction_generale:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
 hidden:
-  field_i_na_adjective: true
+  field_composants: true
+  field_jukujikun: true
   field_kanji_ref: true
   field_onyomi: true
   field_onyomi_example: true
   field_rang: true
-  field_tags: true
-  field_traduction_generale: true
+  field_type: true
   links: true

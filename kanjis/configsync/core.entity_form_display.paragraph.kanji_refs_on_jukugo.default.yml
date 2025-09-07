@@ -1,0 +1,41 @@
+uuid: f1bc79a0-f18f-4895-ae15-bc731cc91376
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kanji_refs_on_jukugo.field_kanji_ref
+    - field.field.paragraph.kanji_refs_on_jukugo.field_lecture
+    - field.field.paragraph.kanji_refs_on_jukugo.field_lecture_ref
+    - paragraphs.paragraphs_type.kanji_refs_on_jukugo
+id: paragraph.kanji_refs_on_jukugo.default
+targetEntityType: paragraph
+bundle: kanji_refs_on_jukugo
+mode: default
+content:
+  field_kanji_ref:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_lecture:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_lecture_ref:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

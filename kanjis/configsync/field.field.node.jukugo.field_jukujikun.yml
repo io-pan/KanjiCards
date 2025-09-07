@@ -1,21 +1,21 @@
-uuid: 7d7f7e50-ba70-45f8-b08c-edc170030e21
+uuid: 3b2593f9-32eb-4caa-97f3-fde1e7fb9cde
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_i_na_adjective
+    - field.storage.node.field_jukujikun
     - node.type.jukugo
-id: node.jukugo.field_i_na_adjective
-field_name: field_i_na_adjective
+id: node.jukugo.field_jukujikun
+field_name: field_jukujikun
 entity_type: node
 bundle: jukugo
-label: 'i na adjective'
+label: jukujikun
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  on_label: na
-  off_label: i
+  on_label: 'On'
+  off_label: 'Off'
 field_type: boolean

@@ -1,0 +1,89 @@
+uuid: 64762461-0c9d-4bce-85cf-008fe0940ded
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.kanji_for_jukigo
+    - field.field.node.kanji.body
+    - field.field.node.kanji.feeds_item
+    - field.field.node.kanji.field_componant_ref
+    - field.field.node.kanji.field_components_rank
+    - field.field.node.kanji.field_composant
+    - field.field.node.kanji.field_dictionaire_ndeg
+    - field.field.node.kanji.field_grade
+    - field.field.node.kanji.field_image
+    - field.field.node.kanji.field_is_josushi
+    - field.field.node.kanji.field_is_radical
+    - field.field.node.kanji.field_jlptn
+    - field.field.node.kanji.field_jlptn_kanji
+    - field.field.node.kanji.field_jukugo_exemple
+    - field.field.node.kanji.field_kanji_ref
+    - field.field.node.kanji.field_kunyomi_exemples
+    - field.field.node.kanji.field_kunyomi_s
+    - field.field.node.kanji.field_main_radical
+    - field.field.node.kanji.field_onyomi
+    - field.field.node.kanji.field_onyomi_exemples
+    - field.field.node.kanji.field_onyomi_s
+    - field.field.node.kanji.field_onyomi_traduction
+    - field.field.node.kanji.field_prefixe
+    - field.field.node.kanji.field_print_priority
+    - field.field.node.kanji.field_radical_text
+    - field.field.node.kanji.field_rang
+    - field.field.node.kanji.field_secondary_radical
+    - field.field.node.kanji.field_strokes
+    - field.field.node.kanji.field_suffixe
+    - field.field.node.kanji.field_tags
+    - field.field.node.kanji.field_traduction_generale
+    - field.field.node.kanji.field_type
+    - field.field.node.kanji.field_wiki_reading
+    - node.type.kanji
+  module:
+    - user
+_core:
+  default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
+id: node.kanji.kanji_for_jukigo
+targetEntityType: node
+bundle: kanji
+mode: kanji_for_jukigo
+content:
+  field_onyomi_traduction:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_componant_ref: true
+  field_components_rank: true
+  field_composant: true
+  field_dictionaire_ndeg: true
+  field_grade: true
+  field_image: true
+  field_is_josushi: true
+  field_is_radical: true
+  field_jlptn: true
+  field_jlptn_kanji: true
+  field_jukugo_exemple: true
+  field_kanji_ref: true
+  field_kunyomi_exemples: true
+  field_kunyomi_s: true
+  field_main_radical: true
+  field_onyomi: true
+  field_onyomi_exemples: true
+  field_onyomi_s: true
+  field_prefixe: true
+  field_print_priority: true
+  field_radical_text: true
+  field_rang: true
+  field_secondary_radical: true
+  field_strokes: true
+  field_suffixe: true
+  field_tags: true
+  field_traduction_generale: true
+  field_type: true
+  field_wiki_reading: true
+  links: true

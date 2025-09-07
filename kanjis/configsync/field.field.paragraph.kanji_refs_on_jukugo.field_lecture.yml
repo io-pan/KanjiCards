@@ -1,0 +1,19 @@
+uuid: b17fa03b-fea3-45b6-9854-638deaaf3255
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lecture
+    - paragraphs.paragraphs_type.kanji_refs_on_jukugo
+id: paragraph.kanji_refs_on_jukugo.field_lecture
+field_name: field_lecture
+entity_type: paragraph
+bundle: kanji_refs_on_jukugo
+label: lecture
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

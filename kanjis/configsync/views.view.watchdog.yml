@@ -636,7 +636,7 @@ display:
               empty_column: false
               responsive: priority-low
             message:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -682,7 +682,18 @@ display:
           plugin_id: standard
           required: false
       css_class: admin-dblog
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '[view:total-rows] items'
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:

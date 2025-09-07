@@ -1,0 +1,23 @@
+uuid: e15d1a29-547d-4201-91ea-20cf2423b599
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jlptn
+    - node.type.onomatopee
+id: node.onomatopee.field_jlptn
+field_name: field_jlptn
+entity_type: node
+bundle: onomatopee
+label: JLPTN
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

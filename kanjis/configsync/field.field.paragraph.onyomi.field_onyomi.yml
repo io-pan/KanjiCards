@@ -1,0 +1,19 @@
+uuid: 94b5b49b-4766-4206-8c9c-da76daa81dca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_onyomi
+    - paragraphs.paragraphs_type.onyomi
+id: paragraph.onyomi.field_onyomi
+field_name: field_onyomi
+entity_type: paragraph
+bundle: onyomi
+label: onyomi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

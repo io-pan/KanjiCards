@@ -1,12 +1,12 @@
-uuid: 325ba7f7-c2e7-46e7-a432-19aa27bc1fce
+uuid: 6510254c-bf74-41e7-bdb0-968d2ec79161
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_godan_disguised_as_ichidan
-field_name: field_godan_disguised_as_ichidan
-entity_type: node
+    - paragraphs
+id: paragraph.field_rare
+field_name: field_rare
+entity_type: paragraph
 type: boolean
 settings: {  }
 module: core

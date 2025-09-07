@@ -1,0 +1,21 @@
+uuid: 8cbd2c2b-4d99-4887-8168-18643a90d212
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rare
+    - paragraphs.paragraphs_type.onyomi
+id: paragraph.onyomi.field_rare
+field_name: field_rare
+entity_type: paragraph
+bundle: onyomi
+label: rare
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

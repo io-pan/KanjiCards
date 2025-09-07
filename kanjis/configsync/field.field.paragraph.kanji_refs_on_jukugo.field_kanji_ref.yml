@@ -1,0 +1,29 @@
+uuid: 913bc6a5-d9f1-43cc-b4c4-f5a0c28c8563
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kanji_ref
+    - node.type.kanji
+    - paragraphs.paragraphs_type.kanji_refs_on_jukugo
+id: paragraph.kanji_refs_on_jukugo.field_kanji_ref
+field_name: field_kanji_ref
+entity_type: paragraph
+bundle: kanji_refs_on_jukugo
+label: kanji_ref
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      kanji: kanji
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

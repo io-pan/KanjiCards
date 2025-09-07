@@ -3,18 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.jukugo.field_i_na_adjective
+    - field.field.node.jukugo.field_composants
     - field.field.node.jukugo.field_image
     - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_jukujikun
     - field.field.node.jukugo.field_kanji_ref
     - field.field.node.jukugo.field_onyomi
     - field.field.node.jukugo.field_onyomi_example
     - field.field.node.jukugo.field_rang
     - field.field.node.jukugo.field_tags
     - field.field.node.jukugo.field_traduction_generale
+    - field.field.node.jukugo.field_type
     - image.style.wide
     - node.type.jukugo
   module:
+    - entity_reference_revisions
     - image
     - user
 id: node.jukugo.default
@@ -22,15 +25,14 @@ targetEntityType: node
 bundle: jukugo
 mode: default
 content:
-  field_i_na_adjective:
-    type: boolean
+  field_composants:
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 31
+    weight: 102
     region: content
   field_image:
     type: image
@@ -51,6 +53,16 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 21
+    region: content
+  field_jukujikun:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_kanji_ref:
     type: entity_reference_label
@@ -92,6 +104,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   links:
     settings: {  }

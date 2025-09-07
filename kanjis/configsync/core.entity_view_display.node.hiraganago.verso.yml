@@ -43,6 +43,7 @@ third_party_settings:
         speed: fast
     group_back:
       children:
+        - field_kunyomi_exemples
         - field_tags
       label: back
       parent_name: ''

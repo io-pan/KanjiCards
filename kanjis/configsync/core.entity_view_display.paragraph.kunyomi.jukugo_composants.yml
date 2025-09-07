@@ -1,0 +1,75 @@
+uuid: 3e96ce43-a936-4b41-940f-99c7c2460ca7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.jukugo_composants
+    - field.field.paragraph.kunyomi.field_affichage_a_la_ligne
+    - field.field.paragraph.kunyomi.field_exception
+    - field.field.paragraph.kunyomi.field_kunyomi
+    - field.field.paragraph.kunyomi.field_okurigana_s
+    - field.field.paragraph.kunyomi.field_okurigana_unique
+    - field.field.paragraph.kunyomi.field_traduction
+    - paragraphs.paragraphs_type.kunyomi
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_kunyomi_header:
+      children:
+        - group_unique
+      label: ' kunyomi-header'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: ' kunyomi-header'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_unique:
+      children: {  }
+      label: unique
+      parent_name: group_kunyomi_header
+      region: hidden
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: unique
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.kunyomi.jukugo_composants
+targetEntityType: paragraph
+bundle: kunyomi
+mode: jukugo_composants
+content:
+  field_kunyomi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_affichage_a_la_ligne: true
+  field_exception: true
+  field_okurigana_s: true
+  field_okurigana_unique: true
+  field_traduction: true

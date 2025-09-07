@@ -4,15 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.exemple_like
-    - field.field.node.jukugo.field_i_na_adjective
+    - field.field.node.jukugo.field_composants
     - field.field.node.jukugo.field_image
     - field.field.node.jukugo.field_jlptn
+    - field.field.node.jukugo.field_jukujikun
     - field.field.node.jukugo.field_kanji_ref
     - field.field.node.jukugo.field_onyomi
     - field.field.node.jukugo.field_onyomi_example
     - field.field.node.jukugo.field_rang
     - field.field.node.jukugo.field_tags
     - field.field.node.jukugo.field_traduction_generale
+    - field.field.node.jukugo.field_type
     - node.type.jukugo
   module:
     - field_group
@@ -69,10 +71,12 @@ content:
     weight: 1
     region: content
 hidden:
-  field_i_na_adjective: true
+  field_composants: true
   field_image: true
   field_jlptn: true
+  field_jukujikun: true
   field_kanji_ref: true
   field_rang: true
   field_tags: true
+  field_type: true
   links: true

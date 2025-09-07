@@ -1,0 +1,11 @@
+uuid: 193b0f00-661f-411a-8b11-6fe509dffb1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.jukugo_composants
+label: 'jukugo composants'
+description: null
+targetEntityType: paragraph
+cache: true

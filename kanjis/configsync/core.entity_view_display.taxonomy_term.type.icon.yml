@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.icon
+    - field.field.taxonomy_term.type.field_bg_color
     - field.field.taxonomy_term.type.field_color
     - field.field.taxonomy_term.type.field_fa_icon
+    - field.field.taxonomy_term.type.field_offset
     - taxonomy.vocabulary.type
 id: taxonomy_term.type.icon
 targetEntityType: taxonomy_term
@@ -30,3 +32,5 @@ content:
     region: content
 hidden:
   description: true
+  field_bg_color: true
+  field_offset: true

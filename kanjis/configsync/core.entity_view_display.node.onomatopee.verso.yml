@@ -1,0 +1,39 @@
+uuid: 042a58e8-ce70-4584-9c34-235a7cd90c31
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.verso
+    - field.field.node.onomatopee.field_jlptn
+    - field.field.node.onomatopee.field_kunyomi_exemples
+    - field.field.node.onomatopee.field_tags
+    - field.field.node.onomatopee.field_traduction_generale
+    - field.field.node.onomatopee.field_type
+    - node.type.onomatopee
+  module:
+    - entity_reference_revisions
+    - user
+id: node.onomatopee.verso
+targetEntityType: node
+bundle: onomatopee
+mode: verso
+content:
+  field_kunyomi_exemples:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_jlptn: true
+  field_tags: true
+  field_traduction_generale: true
+  field_type: true

@@ -9,7 +9,7 @@ id: node.jukugo.field_onyomi
 field_name: field_onyomi
 entity_type: node
 bundle: jukugo
-label: onyomi
+label: lecture
 description: ''
 required: false
 translatable: false
