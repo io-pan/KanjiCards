@@ -1,0 +1,7 @@
+name: Jukugo Module
+type: module
+description: Gère les interactions AJAX entre Kanji et Jukugo.
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - paragraphs

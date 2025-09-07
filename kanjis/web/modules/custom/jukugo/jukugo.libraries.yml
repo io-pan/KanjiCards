@@ -1,0 +1,11 @@
+jukugo:
+  version: 1.x
+  js:
+    js/jukugo.js: {}
+  css:
+    theme:
+      css/jukugo.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once

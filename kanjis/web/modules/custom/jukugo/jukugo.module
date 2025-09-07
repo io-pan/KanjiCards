@@ -1,0 +1,365 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Component\Utility\NestedArray;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function jukugo_page_attachments(array &$attachments) {
+ 
+  
+  $attachments['#attached']['library'][] = 'jukugo/jukugo';
+
+      // // ONYOMI_S
+      // \Drupal::logger('ONYOMI_S')->info('go');
+      // $nids = \Drupal::entityQuery('node')
+      //   ->condition('type','kanji')
+      //   ->accessCheck(FALSE)
+      //   ->execute();
+      // $kanjis = \Drupal\node\Entity\Node::loadMultiple($nids);
+      // foreach ($kanjis as $key => $kanji) {
+
+      //   // echo('KANJI '.$kanji->label() . "<br>");
+
+      //   $onyomi = $kanji->get('field_onyomi')->getValue()[0]['value'];
+      //   $delimiters = ['、', ','];
+      //   $newStr = str_replace($delimiters, $delimiters[0], $onyomi); 
+      //   $onyomis = explode($delimiters[0], $newStr);
+      //   $onyomis = array_map('trim', $onyomis);
+      //   $onyomis = array_filter($onyomis);
+
+      //   foreach ($onyomis as $key => $on) {
+      //     // echo($on);
+          
+      //     // check si rare.
+      //     $delimiters = ['(', ')', '（', '）'];
+      //     $on = str_replace($delimiters, $delimiters[0], $on); 
+      //     $pos = strpos($on, $delimiters[0]);
+      //     if ($pos === false) {
+      //       $rare = false;
+      //     }
+      //     else {
+      //       $rare = true;
+      //       $on = str_replace($delimiters[0], '', $on); 
+      //     }
+
+      //     // traduction pour le 1er.
+      //     $traduction = ($key==0) 
+      //                   ? $kanji->get('field_onyomi_traduction')->getValue()[0]['value']
+      //                   : '';
+      //     // echo($traduction);
+      //     // echo($rare);
+
+      //     // ajout para onyomi
+      //     $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->create([
+      //       'type' => 'onyomi',
+      //       'field_onyomi' => $on,
+      //       'field_traduction' => $traduction,
+      //       'field_rare' => $rare,
+      //     ]);
+
+      //     $kanji->field_onyomi_s->appendItem($paragraph);
+      //     $paragraph->save();
+      //     // echo('<hr>');
+      //   }
+      //   $kanji->save();
+      // }
+
+
+  
+ return;
+  // var_dump('jukugo_page_attachments');    echo('<hr>');
+  
+      // JUKUGO REF to paragraph + lecture.
+      \Drupal::logger('jukugo on trad')->info('go kanji');
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type','jukugo')
+        ->accessCheck(FALSE)
+        ->execute();
+      $jukugos = \Drupal\node\Entity\Node::loadMultiple($nids);
+      
+      echo('JUKUGO ID; kanji; kana;Kanji ID;msg<br>');
+      foreach ($jukugos as $key => $jukugo) {
+        if ($jukugo->field_jlptn->value != 5) {
+          continue;
+        }
+
+        if ($jukugo->hasField('field_onyomi') 
+        && !$jukugo->get('field_onyomi')->isEmpty()) {
+
+          $onyomi = $jukugo->get('field_onyomi')->getValue()[0]['value'];
+          
+
+          foreach ($jukugo->get('field_kanji_ref')->getValue() as $kref) {
+            $kid = $kref['target_id'];
+            $msg = $jukugo->id() . ';' . $jukugo->label() . ';'.$onyomi.';'. $kid . ';';
+
+            // get potential lectures
+            $kanalist = _kanjiLectures($kid);
+            if (empty($kanalist)) {
+              \Drupal::logger('jukugo composant')->warning('kanji ' . $kid . ' 0 lecture');
+              echo($msg.'kanji has no lecture<br>');
+              continue;
+            }
+            // var_dump($kanalist);
+
+            $found = _jukugoComponentLecture($onyomi, $kanalist);
+            if (count($found) == 1) {
+              // Create composants
+              // $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->create([
+              //   'type' => 'kanji_refs_on_jukugo',
+              //   'field_kanji_ref' => $kid,
+              //   'field_lecture_ref' => $found[0]['key'],
+              //   'field_lecture' => $found[0]['value'] // value may have been transform with rendaku
+              // ]);
+              echo($msg.'OK');
+            }
+            else if (count($found) > 1) {
+              echo($msg.'multiple lecture fit');
+            }
+            else { 
+              echo($msg.'no lecture fit at all');
+            }
+
+           // $jukugo->field_composants->appendItem($paragraph);
+           // $paragraph->save();
+            echo('<br>');
+
+          } // each kanji ref in jukugo
+         // $jukugo->save();  
+        }
+        else {
+          \Drupal::logger('jukugo')->warning('jukugo ' . $jukugo->id() . 'no field_onyomi');
+          echo($msg.'no field_onyomi');
+          continue;
+        }
+
+      }
+      die();
+}
+
+
+
+function jukugo_preprocess_node(&$variables) {
+  if ($variables['node']->bundle() == 'jukugo') {
+  }
+}
+
+
+function jukugo_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ('node_jukugo_edit_form' != $form_id || !isset($form['field_composants'])) {
+    return;
+  }
+
+  foreach ($form['field_composants']['widget'] as $delta => &$component) {
+    if (!is_array($component) || !isset($component['subform'])) {
+      continue;
+    }
+
+    $kanji_ref = $component['subform']['field_kanji_ref']['widget'][0]['target_id']['#default_value'] ?? NULL;
+    if ($kanji_ref instanceof \Drupal\node\NodeInterface) {
+      $kanji_ref = $kanji_ref->id();
+    }
+
+    // Cible le champ lecture.
+    if (isset($component['subform']['field_lecture_ref'])) {
+      $component['subform']['field_lecture_ref']['#prefix'] = '<div id="lecture-wrapper-' . $delta . '">';
+      $component['subform']['field_lecture_ref']['#suffix'] = '</div>';
+ 
+      // On le feed.
+      $options = _kanjiLectures($kanji_ref);
+      $options[0] = 'jukujikun';
+      $component['subform']['field_lecture_ref']['widget']['#options'] = $options;
+    }
+
+
+  	// \Drupal::logger('jukugo_form_alter 1')->debug('field_kanji_ref:'.isset($component['subform']['field_kanji_ref']));
+
+  	// TEST OK
+    // Ajoute l'AJAX sur le champ kanji
+    // if (isset($component['subform']['field_lecture'])) {
+    //   $component['subform']['field_lecture']['widget'][0]['value']['#ajax'] = [
+		// 	  'callback' => 'jukugo_title_ajax_callback',
+		// 	  'event' => 'change', 
+		// 	  'wrapper' => 'lecture-wrapper-' . $delta,
+		// 	  'method' => 'replaceWith',
+		// 	  'progress' => [
+		// 	    'type' => 'throbber',
+		// 	    'message' => t('Chargement des lectures...'),
+		// 	  ]
+		// 	];
+    // }
+
+    // Ajoute  l'AJAX sur le champ kanji
+    if (isset($component['subform']['field_kanji_ref'])) {
+    	// pour une select: $component['subform']['field_kanji_ref']['widget']['#ajax'] = [
+      $component['subform']['field_kanji_ref']['widget'][0]['target_id']['#ajax'] = [
+			  
+        //'callback' => 'jukugo_title_ajax_callback',
+        'callback' => 'jukugo_update_lecture_options',
+			  'event' => 'change', 
+			  'wrapper' => 'lecture-wrapper-' . $delta,
+			  'method' => 'replaceWith',
+			  'progress' => [
+			    'type' => 'throbber',
+			    'message' => t('Chargement des lectures...'),
+			  ]
+			];
+    }
+  }
+}
+
+
+/**
+ * Callback AJAXde test.
+ */
+function jukugo_title_ajax_callback(array &$form, FormStateInterface $form_state) {
+
+  $current_value = $form_state->getValue('field_jlptn')[0]['value'] ?? 0;
+  $new_value = (int) $current_value + 1;
+
+  $form['field_jlptn']['widget'][0]['value']['#value'] = $new_value;
+  return $form['field_jlptn'];
+}
+
+
+/**
+ * Callback AJAX pour mettre à jour les lectures.
+ */
+function jukugo_update_lecture_options(array &$form, FormStateInterface $form_state) {
+  $triggering_element = $form_state->getTriggeringElement();
+
+  // Trouver l’élément déclencheur dans la structure du formulaire.
+  $parents = $triggering_element['#parents'];
+  $delta=$parents[1];
+
+  $target_id = $composants_values['field_kanji_ref'][0]['target_id'] ?? NULL;
+	$raw_value = $triggering_element['#value'];
+	$target_id = NULL;
+
+	// Extraire l’ID entre parenthèses
+	if (preg_match('/\((\d+)\)$/', $raw_value, $matches)) {
+	  $target_id = $matches[1];
+	}
+
+  if ($target_id) {
+    $kanji_node = Node::load($target_id);
+    $lectures = [];
+
+    if ($kanji_node && $kanji_node->bundle() == 'kanji') {
+      $options = _kanjiLectures($target_id);
+      $options[0] = 'jukujikun';  // add option for exeptions.
+      // var_dump($options);
+      $form['field_composants']['widget'][$delta]['subform']['field_lecture_ref']['widget']['#options'] = $options;
+      // var_dump($options);die();
+
+      // Enregistre les options dans le FormState pour la validation
+      $form_state->set(['jukugo_dynamic_options', $delta], $options);
+
+    }
+  } else {
+    return [];
+  }
+
+  return $form['field_composants']['widget'][$delta]['subform']['field_lecture_ref'];
+}
+
+/*
+*/
+function _jukugoComponentLecture($jukugo_lecture, $kanjiLectures) {
+  $found = []; // returned value;
+
+if ($jukugo_lecture == 'でぐち') {
+  echo("<hr>");
+}
+
+
+  foreach ($kanjiLectures as $tid => $kana) {
+    if (false!==strpos($jukugo_lecture, $kana)) {
+      $found[] = ['key' => $tid, 'value' => $kana];
+    }
+  }
+  if (!count($found)) {
+    // not found =>
+    // try rendaku
+    
+    $rendakuMap = [
+        // Hiragana
+        'か' => 'が', 'き' => 'ぎ', 'く' => 'ぐ', 'け' => 'げ', 'こ' => 'ご',
+        'さ' => 'ざ', 'し' => 'じ', 'す' => 'ず', 'せ' => 'ぜ', 'そ' => 'ぞ',
+        'た' => 'だ', 'ち' => 'ぢ', 'つ' => 'づ', 'て' => 'で', 'と' => 'ど',
+        'は' => 'ば', 'ひ' => 'び', 'ふ' => 'ぶ', 'へ' => 'べ', 'ほ' => 'ぼ',
+        // Katakana
+        'カ' => 'ガ', 'キ' => 'ギ', 'ク' => 'グ', 'ケ' => 'ゲ', 'コ' => 'ゴ',
+        'サ' => 'ザ', 'シ' => 'ジ', 'ス' => 'ズ', 'セ' => 'ゼ', 'ソ' => 'ゾ',
+        'タ' => 'ダ', 'チ' => 'ヂ', 'ツ' => 'ヅ', 'テ' => 'デ', 'ト' => 'ド',
+        'ハ' => 'バ', 'ヒ' => 'ビ', 'フ' => 'ブ', 'ヘ' => 'ベ', 'ホ' => 'ボ'
+    ];
+    foreach ($kanjiLectures as $tid => $kana) {
+      // remplaement du 1er kana.
+      $premierKana = mb_substr($kana, 0, 1, "UTF-8");
+      if(isset($rendakuMap[$premierKana])) {
+        $kana = $rendakuMap[$premierKana] . mb_substr($kana, 1, null, "UTF-8");;
+        if (false!==strpos($jukugo_lecture, $kana)) {
+          $found[] = ['key' => $tid, 'value' => $kana];
+
+          echo('RENDAKU!!!!!!!!!!!<br>');
+        }
+      }
+    }
+
+    if (!count($found)) {
+      // not found => 
+      // convert jukugo_lecture into KATAKANA and retry
+
+      $jukugo_lecture = mb_convert_kana($jukugo_lecture, "C", "UTF-8");
+      foreach ($kanjiLectures as $tid => $kana) {
+        if (false!==strpos($jukugo_lecture, $kana)) {
+          $found[] = ['key' => $tid, 'value' => $kana];
+        }
+      }
+      if (!count($found)) {
+        // not found => 
+        // try rendaku
+        foreach ($kanjiLectures as $tid => $kana) {
+          // remplaement du 1er kana.
+          $premierKana = mb_substr($kana, 0, 1, "UTF-8");
+          if(isset($rendakuMap[$premierKana])) {
+            $kana = $rendakuMap[$premierKana] . mb_substr($kana, 1, null, "UTF-8");;
+            if (false!==strpos($jukugo_lecture, $kana)) {
+              $found[] = ['key' => $tid, 'value' => $kana];
+
+          echo('RENDAKU!!!!!!!!!!!<br>');
+            }
+          }
+        }
+      }
+    }
+  }
+  return $found;
+}
+
+function _kanjiLectures($kanji_id) {
+  $kanji_node = Node::load($kanji_id);
+  $kanaList = [];
+
+  if ($kanji_node && $kanji_node->bundle() == 'kanji') {
+    // ON
+    foreach ($kanji_node->get('field_onyomi_s')->referencedEntities() as $para) {
+      if ($para->hasField('field_onyomi') && !$para->get('field_onyomi')->isEmpty()) {
+        $kanaList[$para->id()] = $para->get('field_onyomi')->value;
+      }
+    }
+    // KUN
+    foreach ($kanji_node->get('field_kunyomi_s')->referencedEntities() as $para) {
+      if ($para->hasField('field_kunyomi') && !$para->get('field_kunyomi')->isEmpty()) {
+        $kanaList[$para->id()] = $para->get('field_kunyomi')->value;
+      }
+    }
+  }
+
+  return $kanaList;
+}
