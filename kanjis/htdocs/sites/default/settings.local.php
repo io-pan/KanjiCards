@@ -10,7 +10,7 @@ $config['environment_indicator.indicator']['bg_color'] = "#60e5f3";
 $config['environment_indicator.indicator']['fg_color'] = "#ffffff";
 $config['environment_indicator.indicator']['name'] = 'local';
 
-$settings['config_sync_directory'] = '../config-drupal';
+$settings['config_sync_directory'] = '../configsync';
 $settings['file_temp_path'] = 'C:\Users\ROUSSEAUL\Documents\www_Deps\_Temp'; // 'tmp';
 $settings['file_public_path'] = 'sites/default/files';
 //$settings['file_public_path'] = '../../_Public';
