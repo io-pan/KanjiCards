@@ -1213,7 +1213,7 @@
                 "source": "https://git.drupalcode.org/project/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
             },
-            "install-path": "../../web/modules/contrib/admin_toolbar"
+            "install-path": "../../htdocs/modules/contrib/admin_toolbar"
         },
         {
             "name": "drupal/bootstrap",
@@ -1274,7 +1274,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap"
             },
-            "install-path": "../../web/themes/contrib/bootstrap"
+            "install-path": "../../htdocs/themes/contrib/bootstrap"
         },
         {
             "name": "drupal/core",
@@ -1449,7 +1449,7 @@
             "support": {
                 "source": "https://github.com/drupal/core/tree/11.2.4"
             },
-            "install-path": "../../web/core"
+            "install-path": "../../htdocs/core"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -1693,7 +1693,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/css_editor"
             },
-            "install-path": "../../web/modules/contrib/css_editor"
+            "install-path": "../../htdocs/modules/contrib/css_editor"
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -1760,7 +1760,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_revisions"
             },
-            "install-path": "../../web/modules/contrib/entity_reference_revisions"
+            "install-path": "../../htdocs/modules/contrib/entity_reference_revisions"
         },
         {
             "name": "drupal/feeds",
@@ -1873,7 +1873,7 @@
                 "source": "https://git.drupalcode.org/project/feeds",
                 "issues": "https://www.drupal.org/project/issues/feeds"
             },
-            "install-path": "../../web/modules/contrib/feeds"
+            "install-path": "../../htdocs/modules/contrib/feeds"
         },
         {
             "name": "drupal/feeds_tamper",
@@ -1947,7 +1947,7 @@
                 "source": "http://cgit.drupalcode.org/feeds_tamper",
                 "issues": "http://drupal.org/project/issues/feeds_tamper"
             },
-            "install-path": "../../web/modules/contrib/feeds_tamper"
+            "install-path": "../../htdocs/modules/contrib/feeds_tamper"
         },
         {
             "name": "drupal/field_group",
@@ -2026,7 +2026,7 @@
                 "source": "https://git.drupalcode.org/project/field_group",
                 "issues": "https://www.drupal.org/project/issues/field_group"
             },
-            "install-path": "../../web/modules/contrib/field_group"
+            "install-path": "../../htdocs/modules/contrib/field_group"
         },
         {
             "name": "drupal/fontawesome",
@@ -2083,7 +2083,7 @@
                 "source": "https://git.drupalcode.org/project/fontawesome",
                 "issues": "https://drupal.org/project/issues/fontawesome"
             },
-            "install-path": "../../web/modules/contrib/fontawesome"
+            "install-path": "../../htdocs/modules/contrib/fontawesome"
         },
         {
             "name": "drupal/node_weight",
@@ -2135,7 +2135,7 @@
                 "source": "https://git.drupalcode.org/project/node_weight",
                 "issues": "https://drupal.org/project/issues/node_weight"
             },
-            "install-path": "../../web/modules/contrib/node_weight"
+            "install-path": "../../htdocs/modules/contrib/node_weight"
         },
         {
             "name": "drupal/paragraphs",
@@ -2219,7 +2219,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs"
             },
-            "install-path": "../../web/modules/contrib/paragraphs"
+            "install-path": "../../htdocs/modules/contrib/paragraphs"
         },
         {
             "name": "drupal/tamper",
@@ -2283,7 +2283,7 @@
                 "source": "http://cgit.drupalcode.org/tamper",
                 "issues": "http://drupal.org/project/issues/tamper"
             },
-            "install-path": "../../web/modules/contrib/tamper"
+            "install-path": "../../htdocs/modules/contrib/tamper"
         },
         {
             "name": "drupal/token",
@@ -2358,7 +2358,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
             },
-            "install-path": "../../web/modules/contrib/token"
+            "install-path": "../../htdocs/modules/contrib/token"
         },
         {
             "name": "drupal/views_aggregator",
@@ -2414,7 +2414,7 @@
                 "source": "https://git.drupalcode.org/project/views_aggregator",
                 "issues": "https://www.drupal.org/project/issues/views_aggregator"
             },
-            "install-path": "../../web/modules/contrib/views_aggregator"
+            "install-path": "../../htdocs/modules/contrib/views_aggregator"
         },
         {
             "name": "drupal/views_infinite_scroll",
@@ -2485,7 +2485,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/views_infinite_scroll"
             },
-            "install-path": "../../web/modules/contrib/views_infinite_scroll"
+            "install-path": "../../htdocs/modules/contrib/views_infinite_scroll"
         },
         {
             "name": "drush/drush",
